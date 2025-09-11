@@ -1,0 +1,131 @@
+ <%- include('../../../partials/header.ejs') %>
+
+<section class="content inbox">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                                <h2>Contact Support
+                    <small class="text-muted">Welcome to Novax-Assets</small>
+                </h2>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <ul class="breadcrumb float-md-right">
+                    <li class="breadcrumb-item"><a href="dashboard"><i class="zmdi zmdi-home"></i> Novax-Assets </a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Contact Support</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card">
+                    <form method="POST" action="/member/account/support/create_ticket">
+                        <div class="body">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12 col-xl-12">
+                                    <div class="form-group form-float">
+                                    <strong>Mail To:</strong>
+                                        <input type="text" value="contact@novax-assets.com" name="to" class="form-control" placeholder="To:" readonly>
+                                    </div>
+                                    <div class="form-group form-float">
+                                    <strong>Mail Subject:</strong>
+                                        <input type="text" name="subject" class="form-control" placeholder="Subject">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-lg-12 col-xl-12">
+                                    <strong>Message:</strong>
+                                    <textarea name="message" class="form-control">
+
+                                </textarea>
+                                    <button type="submit" name="submit" value="submit" class="btn btn-primary btn-round waves-effect m-t-20">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        <div class="container-fluid">
+        <div class="row clearfix">
+          <div class="col-lg-12">
+            
+            <div class="tab-content">
+              <div
+                role="tabpanel"
+                class="tab-pane in active"
+                id="details"
+                aria-expanded="true"
+              >
+                <div class="card" id="details">
+                  <div class="body">
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6">
+                        
+                      </div>
+                      <div class="col-md-6 col-sm-6 text-right">
+
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                      <h2>Support</h2>  
+                        <div class="table-responsive">
+                          
+                          <table
+                            id="mainTable"
+                            class="table table-striped"
+                            style="cursor: pointer"
+                          >
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Subject</th>
+                                <th>Message</th>
+                                <th>Date</th>
+                              </tr>
+                            </thead>
+                                                        <tbody>
+                                                          <% if (tickets && tickets.length > 0) { %>
+                                                            <% tickets.forEach(function(ticket, index) { %>
+                                                              <tr>
+                                                                <td><%= index + 1 %></td>
+                                                                <td><%= ticket.name %></td>
+                                                                <td><%= ticket.subject %></td>
+                                                                <td><%= ticket.message %></td>
+                                                                <td><%= ticket.useDate %></td>
+                                                              </tr>
+                                                            <% }); %>
+                                                          <% } else { %>
+                                                            <tr>
+                                                              <td colspan="5" class="text-center">No support tickets found.</td>
+                                                            </tr>
+                                                          <% } %>
+                                                      </tbody>
+                                                      </table>
+                        </div>
+                      </div>
+                    </div>
+
+                  
+                              
+                           
+                  
+                  </div>
+                </div>
+              </div>
+              
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+ <%- include('../../../partials/footer.ejs') %>

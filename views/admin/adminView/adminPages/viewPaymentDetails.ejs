@@ -1,0 +1,133 @@
+<%-include('../../adminlayout/partials/header')%>
+<body>
+  <div class="container-scroller">
+    <%-include('../../adminlayout/partials/navbar') %>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <%-include('../../adminlayout/partials/topbar') %>
+
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="page-header">
+            <h3 class="page-title">View Payment Details</h3>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/novax-assets/admin/payment">Edit Payment Details</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                 View Payment Details
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <div class="row">
+            <div class="col-md-8 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Crypto Payment Details</h4>
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Currency</th>
+                          <th>Wallet Address</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>BTC</td>
+                          <td><%= payments.btc %></td>
+                        </tr>
+                        <tr>
+                          <td>ETH</td>
+                          <td><%= payments.eth %></td>
+                        </tr>
+                        <tr>
+                          <td>USDT (ERC20)</td>
+                          <td><%= payments.usdt_erc20 %></td>
+                        </tr>
+                        <tr>
+                          <td>USDT (TRC20)</td>
+                          <td><%= payments.usdt_trc20 %></td>
+                        </tr>
+                        <tr>
+                          <td>ADA</td>
+                          <td><%= payments.ada %></td>
+                        </tr>
+                        <!-- <tr>
+                          <td>DOGE</td>
+                          <td><%= payments.doge %></td>
+                        </tr>
+                        <tr>
+                          <td>XRP</td>
+                          <td><%= payments.xrp %></td> -->
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-8 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Bank Payment Details</h4>
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Details</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Account Name</td>
+                          <td><%= payments.account_name %></td>
+                        </tr>
+                        <tr>
+                          <td>Account Number</td>
+                          <td><%= payments.account_number %></td>
+                        </tr>
+                        <tr>
+                          <td>Bank Name</td>
+                          <td><%= payments.bank_name %></td>
+                        </tr>
+                        <tr>
+                          <td>Account Type</td>
+                          <td><%= payments.account_type %></td>
+                        </tr>
+                        <tr>
+                          <td>Routing Number</td>
+                          <td><%= payments.routing_number %></td>
+                        </tr>
+                        <tr>
+                          <td>Swift Code</td>
+                          <td><%= payments.swift_code %></td>
+                        </tr>
+                        <tr>
+                          <td>Bank Address</td>
+                          <td><%= payments.bank_address %></td>
+                        </tr>
+                        <tr>
+                          <td>Beneficiary Address</td>
+                          <td><%= payments.beneficiary_address %></td>
+                        </tr>
+                      
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<%-include('../../adminlayout/partials/footer') %>

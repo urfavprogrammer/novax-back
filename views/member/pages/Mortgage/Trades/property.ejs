@@ -1,0 +1,79 @@
+ <%- include('../../../../partials/header.ejs') %>
+
+ <section class="content home" style="margin-top:90px !important;">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Mortgage
+                        <small class="text-muted">Welcome to Novax-Assets</small>
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                   
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a href="/member/account/property"><i class="zmdi zmdi-back"></i> Back</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Mortgage & Properties</a></li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+       
+        <div class="container-fluid">
+            
+            <div class="row clearfix">
+                <link rel="stylesheet" type="text/css" href="/assets/main.259e36d1.css">
+            </div>
+            
+            <div class="row clearfix">
+                 <% Mortgages.forEach(function(mortgage) { %>
+                                <div class="col-lg-4 col-md-12">
+                    <div class="property-card dark:property-card-dark grid grid-cols-1" style="margin-bottom: 30px">
+                        <div class="flex flex-col relative rounded-2xl bg-lofty-white dark:bg-gray-900 overflow-hidden">
+                            <a class="h-full block absolute t-0 l-0 w-full rounded-xl" href="property/mortgage/<%=mortgage.id%>"></a>
+                            <div class="absolute flex z-2 left-2 top-2">
+        <span class="text-sxs sm:text-xs font-medium uppercase <%= mortgage.status === 'sold' ? 'bg-lofty-dark' : 'bg-lofty-green' %> text-white rounded-full text-xs py-1.5 px-2.5"><%=mortgage.status%></span>
+                                                                
+                                                            </div>
+                            <div class="relative w-full overflow-hidden">
+                                <div class="w-full h-full relative pt-3/5">
+                                    <div class="absolute top-0 left-0 w-full h-full"><a
+                                            class="h-full block absolute t-0 l-0 w-full rounded-xl z-3"
+                                            href="property/mortgage/<%=mortgage.id%>"></a>
+                                        <picture>
+                                            <img loading="lazy"
+                                                src="/uploads/morgage/<%=mortgage.image%>"
+                                                alt="Property front" class="w-full h-full object-cover">
+                                        </picture>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-3 pt-3 pb-2 bg-lofty-white z-20 dark:bg-lofty-600 grow">
+                                <div class="flex items-end justify-between">
+                                    <div class="flex flex-col flex-1 w-full"><span
+                                            class="text-16 font-bold text-lofty-dark dark:text-lofty-white whitespace-nowrap overflow-hidden overflow-ellipsis break-all"><%=mortgage.address%></span><span
+                                            class="text-12 font-medium text-lofty-dark/50 dark:text-lofty-white whitespace-nowrap overflow-hidden overflow-ellipsis break-all"><%=mortgage.city%></span>
+                                        <div class="flex flex-col mt-2"><span
+                                                class="flex text-16 text-lofty-light font-semibold"><span><%=mortgage.estimated_price%></span></span><span
+                                                class="flex text-14 text-lofty-dark font-semibold"><span><%=mortgage.down_payment%></span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center justify-center flex-1 bg-lofty-light grow-0">
+                                <span class="flex items-center justify-center py-3 text-12 font-semibold text-lofty-white">
+                                    Make an
+                                    offer
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               <% }) %>
+    </section>
+      <script src="/assets/bundles/libscripts.bundle.js"></script>
+    <script src="/assets/bundles/vendorscripts.bundle.js"></script>
+    <script src="/assets/bundles/mainscripts.bundle.js"></script>
+</body>
+
+</html>
+

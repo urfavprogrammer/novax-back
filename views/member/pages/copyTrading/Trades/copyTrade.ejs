@@ -1,0 +1,2022 @@
+<%-include('../../../../partials/header.ejs')%>
+
+<section class="content home">
+  <div class="block-header" style="margin-top: 5rem">
+    <div class="row">
+      <div class="col-lg-7 col-md-6 col-sm-12">
+        <h2>Copy Trader</h2>
+      </div>
+      <div class="col-lg-5 col-md-6 col-sm-12">
+        <ul class="breadcrumb float-md-right">
+          <li class="breadcrumb-item">
+            <a href="/member/account/dashboard"
+              ><i class="zmdi zmdi-home"></i>
+            </a>
+          </li>
+          <li class="breadcrumb-item"><a href="javascript:void(0);"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row clearfix" style="display: block !important">
+      <div
+        _ngcontent-ng-c2528745257=""
+        class="user-header-content-wrapper ng-tns-c2528745257-36 snipcss-aev7n"
+      >
+        <div
+          _ngcontent-ng-c2528745257=""
+          class="user-header-content et-flex-between ng-tns-c2528745257-36"
+        >
+          <div
+            _ngcontent-ng-c2528745257=""
+            class="user-info-container et-flex-between ng-tns-c2528745257-36"
+          >
+            <div
+              _ngcontent-ng-c2528745257=""
+              class="user-avatar ng-tns-c2528745257-36"
+            >
+              <img
+                _ngcontent-ng-c2528745257=""
+                automation-id="user-head-add-photo-button"
+                class="et-avatar et-avatar-xl ng-tns-c2528745257-36"
+                src="/uploads/<%= trader.avatar %>"
+                alt="<%= trader.name %>"
+              />
+            </div>
+            <div
+              _ngcontent-ng-c2528745257=""
+              class="user-information et-flex-column et-flex-justify-center ng-tns-c2528745257-36"
+            >
+              <div
+                _ngcontent-ng-c2528745257=""
+                class="user-name-container et-flex-align-center et-font-xs ng-tns-c2528745257-36 bigger-name ng-star-inserted"
+              >
+                <span
+                  _ngcontent-ng-c2528745257=""
+                  automation-id="user-header-full-name"
+                  class="user-full-name ets-bold ng-tns-c2528745257-36 ets-title-main ng-star-inserted"
+                  ><%= trader.name %></span
+                >
+              </div>
+              <!--<span _ngcontent-ng-c2528745257="" automation-id="user-header-username" class="user-name ng-tns-c2528745257-36 ets-plain-text ng-star-inserted">@FundManagerZech </span>-->
+            </div>
+          </div>
+          <div
+            _ngcontent-ng-c2528745257=""
+            class="action-buttons et-flex-center ng-tns-c2528745257-36"
+          >
+            <a href="/member/account/copytrader/fund_trader/<%= trader.id %>">
+              <copy-button
+                _ngcontent-ng-c2528745257=""
+                automation-id="user-page-copy-button-container"
+                btnclass="ets-button-basic ets-button-primary ets-button-big"
+                class="ng-tns-c2528745257-36 ng-star-inserted"
+                ><button
+                  automation-id="copy-button-execution"
+                  ng-if="!$ctrl.isRestricted"
+                  ng-class="$ctrl.btnClass"
+                  class="ng-binding ng-scope ets-button-basic ets-button-primary ets-button-big"
+                >
+                  Copy
+                </button></copy-button
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row clearfix" style="display: block !important">
+      <et-tabs
+        _ngcontent-ng-c1408283083=""
+        _nghost-ng-c3597547719=""
+        class="snipcss-ZIfMv"
+      >
+        <nav
+          _ngcontent-ng-c3597547719=""
+          class="tabs-container ng-star-inserted"
+        >
+          <div _ngcontent-ng-c3597547719="" class="edge-start"></div>
+          <a
+            _ngcontent-ng-c3597547719=""
+            class="et-tab tab-text et-font-xs active-tab ng-star-inserted"
+            href="javascript:void(0)"
+            automation-id="et-tab-feed"
+          >
+            <span
+              _ngcontent-ng-c3597547719=""
+              class="icon-four-squares tab-icon ng-star-inserted"
+            ></span>
+            Overview
+            <div _ngcontent-ng-c3597547719="" class="tab-border"></div>
+          </a>
+
+          <div _ngcontent-ng-c3597547719="" class="edge-end"></div>
+        </nav>
+      </et-tabs>
+    </div>
+    <div class="row clearfix" style="display: block !important">
+      <div class="card">
+        <et-card
+          _ngcontent-ng-c3688704706=""
+          _nghost-ng-c659745017=""
+          class="ng-star-inserted snipcss-5gcJa"
+        >
+          <section style="padding: 2rem" _ngcontent-ng-c659745017="">
+            <et-card-title
+              _ngcontent-ng-c3688704706=""
+              _nghost-ng-c3130752205=""
+            >
+              <h2 _ngcontent-ng-c3130752205="" class="et-h2 et-font-s">
+                <div _ngcontent-ng-c3688704706="" class="ng-star-inserted">
+                  <div _ngcontent-ng-c3688704706="" style="margin-bottom: 40px;">
+                    About <%= trader.name %>
+                  </div>
+                </div>
+              </h2>
+            </et-card-title>
+            <et-card-content
+              _ngcontent-ng-c3688704706=""
+              _nghost-ng-c1576166095=""
+            >
+            <!-- <p
+                _ngcontent-ng-c3357387556=""
+                automation-id="full-bio-popup-text"
+                class="user-full-bio ets-plane-text"
+              >  -->
+              
+              <% (trader.overview || []).forEach(function(line) { %>
+                
+                <p style="margin-bottom: 10px;"><%= line %></p>
+              <% }) %>
+
+
+                Minimum: $<%= trader.minimum %>
+              <!-- </p> -->
+              <div
+                _ngcontent-ng-c3688704706=""
+                class="stats-container et-horizontal-divider et-margin-top-l ng-star-inserted"
+              >
+                <div
+                  _ngcontent-ng-c3688704706=""
+                  class="user-social-stat et-flex-column et-flex-align-center ng-star-inserted"
+                >
+                  <span
+                    _ngcontent-ng-c3688704706=""
+                    automation-id="user-bio-copiers-number"
+                    class="et-font-xxl ets-bold"
+                  >
+                    $<%= trader.minimum %> </span
+                  ><span _ngcontent-ng-c3688704706="" class="ets-secondary-info"
+                    >Minimum Copy</span
+                  >
+                </div>
+                <div
+                  _ngcontent-ng-c3688704706=""
+                  class="et-vertical-divider ng-star-inserted"
+                ></div>
+                <div
+                  _ngcontent-ng-c3688704706=""
+                  class="user-social-stat et-flex-column et-flex-align-center ng-star-inserted"
+                >
+                  <span
+                    _ngcontent-ng-c3688704706=""
+                    automation-id="user-bio-followers-number"
+                    class="et-font-xxl ets-bold"
+                  >
+                    <%= trader.earningRate %> </span
+                  ><span _ngcontent-ng-c3688704706="" class="ets-secondary-info"
+                    >Earn rate</span
+                  >
+                </div>
+              </div>
+              <div
+                _ngcontent-ng-c3688704706=""
+                class="user-insight ets-info ets-regular ng-star-inserted"
+              >
+                <span _ngcontent-ng-c3688704706="" class="user-insight-text"
+                  >The portfolio is heavily diversified with a wide distribution
+                  across various instruments, indicating a balanced approach to
+                  risk and potentially reducing concentration risk.
+                  <span
+                    _ngcontent-ng-c3688704706=""
+                    class="ets-icon-info insight-disclaimer"
+                  ></span
+                ></span>
+              </div>
+            </et-card-content>
+          </section>
+        </et-card>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  @font-face {
+    font-family: iconFont;
+    font-weight: 400;
+    font-style: normal;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/icomoon/icomoon.ttf)
+      format("truetype");
+  }
+  @font-face {
+    font-family: iconGeneralFont;
+    font-weight: 400;
+    font-style: normal;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/icomoon/general/general-v.6.3.ttf)
+      format("truetype");
+  }
+  @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800,300i,400i,500i,600i,700i,800i&display=swap");
+  @font-face {
+    font-family: "iconFont";
+    font-weight: normal;
+    font-style: normal;
+    src: url("https://etoro-cdn.etorostatic.com/web-client/et/fonts/icomoon/icomoon.ttf")
+      format("ttf");
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/fonts/tajawal/Tajawal-Light.ttf)
+      format("truetype");
+    unicode-range: U+0600 -U 6FF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-weight: 400;
+    font-style: normal;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/fonts/tajawal/Tajawal-Regular.ttf)
+      format("truetype");
+    unicode-range: U+0600 -U 6FF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: normal;
+    font-weight: 600;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/fonts/tajawal/Tajawal-Medium.ttf)
+      format("truetype");
+    unicode-range: U+0600 -U 6FF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/fonts/tajawal/Tajawal-Bold.ttf)
+      format("truetype");
+    unicode-range: U+0600 -U 6FF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: normal;
+    font-weight: 800;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/fonts/tajawal/Tajawal-ExtraBold.ttf)
+      format("truetype");
+    unicode-range: U+0600 -U 6FF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/fonts/noto-sans/NotoSansSC-Light.otf)
+      format("opentype");
+    unicode-range: U+4E00 -U 9FFF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-weight: 400;
+    font-style: normal;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/fonts/noto-sans/NotoSansSC-Regular.otf)
+      format("opentype");
+    unicode-range: U+4E00 -U 9FFF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: normal;
+    font-weight: 600;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/fonts/noto-sans/NotoSansSC-Medium.otf)
+      format("opentype");
+    unicode-range: U+4E00 -U 9FFF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/fonts/noto-sans/NotoSansSC-Bold.otf)
+      format("opentype");
+    unicode-range: U+4E00 -U 9FFF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/fonts/bai-jamjuree/BaiJamjuree-Light.ttf)
+      format("truetype");
+    unicode-range: U+0E00 -U 0E 7F;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/fonts/bai-jamjuree/BaiJamjuree-Regular.ttf)
+      format("truetype");
+    unicode-range: U+0E00 -U 0E 7F;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: normal;
+    font-weight: 600;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/fonts/bai-jamjuree/BaiJamjuree-SemiBold.ttf)
+      format("truetype");
+    unicode-range: U+0E00 -U 0E 7F;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/fonts/bai-jamjuree/BaiJamjuree-Bold.ttf)
+      format("truetype");
+    unicode-range: U+0E00 -U 0E 7F;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: normal;
+    font-weight: 300;
+    src: local("Open Sans Light"), local("OpenSans-Light"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-300.woff2)
+        format("woff2"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-300.woff)
+        format("woff");
+    unicode-range: U+0041-007A, U+005F-FFFF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: italic;
+    font-weight: 300;
+    src: local("Open Sans Light Italic"), local("OpenSans-LightItalic"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-300italic.woff2)
+        format("woff2"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-300italic.woff)
+        format("woff");
+    unicode-range: U+0041-007A, U+005F-FFFF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Open Sans Regular"), local("OpenSans-Regular"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-regular.woff2)
+        format("woff2"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-regular.woff)
+        format("woff");
+    unicode-range: U+0041-007A, U+005F-FFFF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: italic;
+    font-weight: 400;
+    src: local("Open Sans Italic"), local("OpenSans-Italic"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-italic.woff2)
+        format("woff2"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-italic.woff)
+        format("woff");
+    unicode-range: U+0041-007A, U+005F-FFFF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: normal;
+    font-weight: 600;
+    src: local("Open Sans SemiBold"), local("OpenSans-SemiBold"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-600.woff2)
+        format("woff2"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-600.woff)
+        format("woff");
+    unicode-range: U+0041-007A, U+005F-FFFF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: italic;
+    font-weight: 600;
+    src: local("Open Sans SemiBold Italic"), local("OpenSans-SemiBoldItalic"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-600italic.woff2)
+        format("woff2"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-600italic.woff)
+        format("woff");
+    unicode-range: U+0041-007A, U+005F-FFFF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: normal;
+    font-weight: 700;
+    src: local("Open Sans Bold"), local("OpenSans-Bold"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-700.woff2)
+        format("woff2"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-700.woff)
+        format("woff");
+    unicode-range: U+0041-007A, U+005F-FFFF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: italic;
+    font-weight: 700;
+    src: local("Open Sans Bold Italic"), local("OpenSans-BoldItalic"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-700italic.woff2)
+        format("woff2"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-700italic.woff)
+        format("woff");
+    unicode-range: U+0041-007A, U+005F-FFFF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: normal;
+    font-weight: 800;
+    src: local("Open Sans ExtraBold"), local("OpenSans-ExtraBold"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-800.woff2)
+        format("woff2"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-800.woff)
+        format("woff");
+    unicode-range: U+0041-007A, U+005F-FFFF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-style: italic;
+    font-weight: 800;
+    src: local("Open Sans ExtraBold Italic"), local("OpenSans-ExtraBoldItalic"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-800italic.woff2)
+        format("woff2"),
+      url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-800italic.woff)
+        format("woff");
+    unicode-range: U+0041-007A, U+005F-FFFF;
+  }
+  @font-face {
+    font-family: general-font;
+    font-weight: 300;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/dinot/DINOT.otf)
+      format("truetype");
+    unicode-range: U+0030-0039, U+002F;
+  }
+  @font-face {
+    font-family: general-font;
+    font-weight: 600;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/dinot/DINOT-Bold.otf)
+      format("truetype");
+    unicode-range: U+0030-0039, U+002F;
+  }
+  @font-face {
+    font-family: general-font;
+    font-weight: 400;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/dinot/DINOT-Medium.otf)
+      format("truetype");
+    unicode-range: U+0030-0039, U+002F;
+  }
+  @font-face {
+    font-family: general-font;
+    font-weight: 700;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/dinot/DINOT-Bold.otf)
+      format("truetype");
+    unicode-range: U+0030-0039, U+002F;
+  }
+  @font-face {
+    font-family: general-font;
+    font-weight: 300;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/roboto/Roboto-Regular.ttf);
+    unicode-range: U+0021, U+0040, U+0023-026, U+005E, U+0024, U+00A2, U+00A3,
+      U+00A4, U+00A5, U+20A3, U+20A4, U+20A6, U+20A7, U+20A8, U+20A9, U+20AA,
+      U+20AB, U+20AC, U+20B1, U+20B9, U+20BA, U+20BC, U+20BD;
+  }
+  @font-face {
+    font-family: general-font;
+    font-weight: 400;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/roboto/Roboto-Medium.ttf);
+    unicode-range: U+0021, U+0040, U+0023-026, U+005E, U+0024, U+00A2, U+00A3,
+      U+00A4, U+00A5, U+20A3, U+20A4, U+20A6, U+20A7, U+20A8, U+20A9, U+20AA,
+      U+20AB, U+20AC, U+20B1, U+20B9, U+20BA, U+20BC, U+20BD;
+  }
+  @font-face {
+    font-family: general-font;
+    font-weight: 600;
+    src: url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/roboto/Roboto-Bold.ttf);
+    unicode-range: U+0021, U+0040, U+0023-026, U+005E, U+0024, U+00A2, U+00A3,
+      U+00A4, U+00A5, U+20A3, U+20A4, U+20A6, U+20A7, U+20A8, U+20A9, U+20AA,
+      U+20AB, U+20AC, U+20B1, U+20B9, U+20BA, U+20BC, U+20BD;
+  }
+  body {
+    direction: ltr;
+  }
+  @media all {
+    body {
+      color: var(--neutral-100);
+      font-family: "Open Sans", sans-serif;
+    }
+  }
+  * {
+    scrollbar-color: var(--neutral-40-dm, #555b70) transparent;
+    scrollbar-width: thin;
+  }
+
+  @media all {
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      box-sizing: border-box;
+    }
+
+    * {
+      -webkit-tap-highlight-color: rgba(var(--rgb-neutral-100), 0);
+    }
+
+    div {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      background-color: var(--neutral-20);
+    }
+  }
+
+  @media screen and (min-width: 741px) {
+    body {
+      overflow: hidden;
+    }
+  }
+
+  @media all {
+    body {
+      color: var(--neutral-100);
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -ms-user-select: none;
+    }
+
+    body {
+      background-color: var(--neutral-20);
+      font-family: "Open Sans", sans-serif;
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      background-color: var(--neutral-20);
+    }
+  }
+
+  @media screen and (min-width: 741px) {
+    html {
+      overflow: hidden;
+    }
+  }
+
+  @media all {
+    html {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  :root {
+    --aa-base-unit: 16;
+    --aa-spacing-factor: 1;
+    --aa-spacing: calc(var(--aa-base-unit) * var(--aa-spacing-factor) * 1px);
+    --aa-spacing-half: calc(var(--aa-spacing) / 2);
+    --aa-font-size: calc(var(--aa-base-unit) * 1px);
+    --aa-background-color-rgb: 255, 255, 255;
+    --aa-scrollbar-thumb-background-color-rgb: var(--aa-background-color-rgb);
+  }
+
+  :root {
+    --primary-100: #1b1d61;
+    --primary-100-hover: #1b1d61;
+    --primary-110-hover: #1b1d61;
+    --rgb-neutral-100: 0, 0, 0;
+    --secondary-110: #0079b9;
+    --neutral-100: #2c2c2c;
+    --neutral-90: #777;
+    --neutral-70: #bababa;
+    --neutral-40: #ddd;
+    --neutral-20: #f1f1f1;
+    --neutral-0: #fff;
+    --neutral-70-dm: #85899b;
+    --neutral-40-dm: #555b70;
+    --neutral-20-dm: #32374b;
+    --neutral-0-dm: #181c27;
+    --rating-lowest: #3dae23;
+    --rating-low: #48c328;
+  }
+
+  :root {
+    --button-basic-transition-delay-border-color: 0.65s;
+    --button-basic-transition-delay-background-color: 0.5s;
+  }
+
+  .user-header-content-wrapper[_ngcontent-ng-c2528745257] {
+    padding: 12px 20px 24px 24px;
+  }
+
+  @media (min-width: 1024px) {
+    .user-header-content-wrapper[_ngcontent-ng-c2528745257] {
+      padding: 20px;
+      border-bottom: 1px solid var(--neutral-20);
+    }
+  }
+
+  .user-full-bio[_ngcontent-ng-c3357387556] {
+    white-space: pre-wrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  :-webkit-scrollbar {
+    width: 6px;
+  }
+
+  :-webkit-scrollbar-thumb:active,
+  :-webkit-scrollbar-thumb {
+    border-radius: 16px;
+    background-color: var(--neutral-70, #bababa);
+    background-clip: padding-box;
+  }
+
+  :-webkit-scrollbar-track {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .et-flex-between {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media all {
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .head-breadcrumbs[_ngcontent-ng-c4029640666] {
+    padding-bottom: 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .head-breadcrumbs.new-design[_ngcontent-ng-c4029640666] {
+    padding-bottom: 18px;
+    line-height: 1;
+  }
+
+  .et-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media all {
+    li {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .user-avatar[_ngcontent-ng-c2528745257] {
+    margin-inline-end: 20px;
+    position: relative;
+  }
+
+  .et-flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .et-flex-justify-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .user-information[_ngcontent-ng-c2528745257] {
+    min-height: 70px;
+  }
+
+  button {
+    outline: 0;
+  }
+
+  @media all {
+    button {
+      border: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+  }
+
+  .et-button-positive-outline {
+    background-color: var(--neutral-0);
+    border-color: var(--rating-lowest);
+    color: var(--rating-lowest);
+  }
+
+  .et-add-to-watchlist-button-expended[_ngcontent-ng-c2528745257] {
+    font-family: general-font, Open Sans, Arial, sans-serif;
+    font-style: normal;
+    font-size: 1rem;
+    letter-spacing: -0.3px;
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 0.94rem;
+    border: 1px solid var(--neutral-40);
+    text-transform: lowercase;
+    font-weight: 600;
+    min-height: 50px;
+    margin-inline-end: 12px;
+    position: relative;
+    color: var(--primary-100);
+    border-radius: 6px;
+  }
+
+  .et-button-positive-outline:hover {
+    border-color: var(--rating-low);
+    color: var(--rating-low);
+  }
+
+  .et-add-to-watchlist-button-expended[_ngcontent-ng-c2528745257]:hover {
+    border-color: var(--primary-110-hover);
+    color: var(--primary-110-hover);
+  }
+
+  [_nghost-ng-c206250979] {
+    display: inline-block;
+    position: relative;
+  }
+
+  @media all {
+    a {
+      text-decoration: none;
+      outline: 0;
+    }
+
+    a {
+      color: var(--neutral-100);
+    }
+
+    a {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .head-breadcrumbs[_ngcontent-ng-c4029640666]
+    .crumb-item[_ngcontent-ng-c4029640666]
+    .crumb[_ngcontent-ng-c4029640666] {
+    display: flex;
+    align-items: center;
+    color: var(--neutral-100);
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  .head-breadcrumbs.new-design[_ngcontent-ng-c4029640666]
+    .crumb-item[_ngcontent-ng-c4029640666]
+    .crumb[_ngcontent-ng-c4029640666] {
+    font-family: general-font, Open Sans, Arial, sans-serif;
+    font-style: normal;
+    font-size: 0.75rem;
+    letter-spacing: -0.2px;
+    text-transform: none;
+    font-weight: 600;
+    color: var(--neutral-40-dm);
+  }
+
+  .head-breadcrumbs[_ngcontent-ng-c4029640666]
+    .crumb-item[_ngcontent-ng-c4029640666]
+    .crumb[_ngcontent-ng-c4029640666]::after {
+    content: "/";
+    padding: 0 5px;
+  }
+
+  .head-breadcrumbs.new-design[_ngcontent-ng-c4029640666]
+    .crumb-item[_ngcontent-ng-c4029640666]
+    .crumb[_ngcontent-ng-c4029640666]::after {
+    position: relative;
+    content: "\e905";
+    font-family: iconGeneralFont, sans-serif;
+    font-size: 7px;
+    padding: 0 8px;
+  }
+
+  .head-breadcrumbs.new-design[_ngcontent-ng-c4029640666]
+    .crumb-item[_ngcontent-ng-c4029640666]
+    .crumb[_ngcontent-ng-c4029640666]:hover {
+    color: var(--neutral-20-dm);
+  }
+
+  .head-breadcrumbs[_ngcontent-ng-c4029640666]
+    .crumb-item[_ngcontent-ng-c4029640666]:last-child
+    .crumb[_ngcontent-ng-c4029640666] {
+    color: var(--neutral-90);
+  }
+
+  .head-breadcrumbs.new-design[_ngcontent-ng-c4029640666]
+    .crumb-item[_ngcontent-ng-c4029640666]:last-child
+    .crumb[_ngcontent-ng-c4029640666] {
+    color: var(--neutral-70-dm);
+  }
+
+  .head-breadcrumbs[_ngcontent-ng-c4029640666]
+    .crumb-item[_ngcontent-ng-c4029640666]:last-child
+    .crumb[_ngcontent-ng-c4029640666]::after {
+    display: none;
+  }
+
+  .et-avatar {
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .et-avatar-xl {
+    height: 70px;
+    width: 70px;
+  }
+
+  .et-font-xs {
+    font-family: general-font, Open Sans, Arial, sans-serif;
+    font-style: normal;
+    font-size: 0.875rem;
+    letter-spacing: -0.25px;
+  }
+
+  .et-flex-align-center {
+    display: flex;
+    align-items: center;
+  }
+
+  @media all {
+    span {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .ets-plain-text {
+    color: var(--neutral-100, #2c2c2c);
+    font-family: Open Sans, ariel, sans-serif;
+  }
+
+  .ets-plain-text {
+    font-size: 16px;
+    letter-spacing: -0.25px;
+    font-weight: 400;
+  }
+
+  .user-name[_ngcontent-ng-c2528745257] {
+    color: var(--neutral-90);
+    margin-inline-end: 8px;
+  }
+
+  .et-add-to-watchlist-button-expended[_ngcontent-ng-c2528745257]
+    et-watchlist-quick-edit[_ngcontent-ng-c2528745257] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+  }
+
+  .et-add-to-watchlist-button-expended[_ngcontent-ng-c2528745257]
+    .watchlist-button-placeholder[_ngcontent-ng-c2528745257] {
+    height: 20px;
+    width: 20px;
+  }
+
+  .et-add-to-watchlist-button-expended[_ngcontent-ng-c2528745257]
+    span[_ngcontent-ng-c2528745257]::first-letter {
+    text-transform: capitalize;
+  }
+
+  .ets-button-basic {
+    padding: 0 15px;
+    box-shadow: none;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--neutral-0, #fff);
+    min-width: 140px;
+    line-height: 45px;
+    font-size: 14px;
+    border-radius: 50px;
+    text-align: center;
+    transition: var(--button-basic-transition-delay-border-color, 0.65s) ease
+        border-color,
+      var(--button-basic-transition-delay-background-color, 0.5s) ease
+        background-color,
+      var(--button-basic-transition-delay-color, 0.5s) ease color;
+  }
+
+  .ets-button-basic.ets-button-big {
+    line-height: 50px;
+    font-size: 16px;
+  }
+
+  .ets-button-basic.ets-button-primary:not(.ets-button-basic-outline) {
+    background: var(--primary-100, #3fb923);
+  }
+
+  @media (min-width: 768px) {
+    .ets-button-basic.ets-button-primary:not(.ets-button-basic-outline):hover {
+      background: var(--primary-100-hover, #48c328);
+    }
+  }
+
+  .ets-title-main {
+    color: var(--neutral-100, #2c2c2c);
+    font-family: Open Sans, ariel, sans-serif;
+  }
+
+  .ets-title-main {
+    font-size: 22px;
+    letter-spacing: -0.4px;
+    font-weight: 700;
+  }
+
+  .ets-bold {
+    font-weight: 700;
+  }
+
+  .user-full-name[_ngcontent-ng-c2528745257] {
+    margin-inline-end: 8px;
+  }
+
+  .et-add-to-watchlist-button-expended[_ngcontent-ng-c2528745257]
+    et-watchlist-quick-edit[_ngcontent-ng-c2528745257]
+    et-select.no-arrow {
+    width: 100%;
+    height: 100%;
+  }
+
+  et-select-header {
+    color: var(--neutral-100, #2c2c2c);
+  }
+
+  [_nghost-ng-c3317408547] {
+    color: var(--secondary-110);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 3px;
+    background-color: var(--neutral-0);
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+    padding: 9px;
+    box-sizing: border-box;
+    box-shadow: inset 0 1px #c8c8c866,
+      0 1px 2px 0 rgba(var(--rgb-neutral-100), 0.3);
+    -webkit-user-select: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .new-dropdown-style [_nghost-ng-c3317408547] {
+    background-color: transparent;
+    font-weight: 300;
+    box-shadow: none;
+    color: var(--neutral-100);
+    outline: 0;
+  }
+
+  .new-dropdown-style [_nghost-ng-c3317408547] {
+    font-weight: 700;
+  }
+
+  et-select-header.three-dots-dropdown-header[_ngcontent-ng-c1408283083] {
+    padding: 10px;
+    margin-inline-end: -10px;
+    font-size: 1rem;
+  }
+
+  .header-text[_ngcontent-ng-c3317408547] {
+    flex: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-transform: uppercase;
+  }
+
+  .new-dropdown-style
+    [_nghost-ng-c3317408547]
+    .header-text[_ngcontent-ng-c3317408547] {
+    text-transform: capitalize;
+  }
+
+  .select-header-icon
+    [_nghost-ng-c3317408547]
+    .header-text[_ngcontent-ng-c3317408547] {
+    font-size: unset;
+  }
+
+  .icon-arrow-down[_ngcontent-ng-c3317408547] {
+    display: none;
+  }
+
+  .new-dropdown-style
+    [_nghost-ng-c3317408547]
+    .icon-arrow-down[_ngcontent-ng-c3317408547] {
+    display: block;
+    font-size: 0.5em;
+    padding: 0 0 0 0.63rem;
+  }
+
+  .new-dropdown-style
+    [_nghost-ng-c3317408547]
+    .icon-arrow-down[_ngcontent-ng-c3317408547] {
+    font-size: 1.1em;
+  }
+
+  .select-header-icon
+    [_nghost-ng-c3317408547]
+    .icon-arrow-down[_ngcontent-ng-c3317408547] {
+    display: none;
+  }
+
+  .icon-arrow-down:before {
+    content: "\e906";
+    font-family: iconGeneralFont, sans-serif;
+    font-family: iconGeneralFont;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .arrow-down[_ngcontent-ng-c3317408547] {
+    display: block;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-top: 6px solid var(--secondary-110);
+    box-sizing: border-box;
+    margin: 6px 5px 0;
+  }
+
+  .new-dropdown-style
+    [_nghost-ng-c3317408547]
+    .arrow-down[_ngcontent-ng-c3317408547] {
+    display: none;
+  }
+
+  .select-header-icon
+    [_nghost-ng-c3317408547]
+    .arrow-down[_ngcontent-ng-c3317408547] {
+    display: none;
+  }
+
+  .pi-level-star--6[_ngcontent-ng-c1201838865] {
+    fill: #1a2d3d;
+  }
+
+  .pi-level-star[_ngcontent-ng-c1201838865] {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  et-pi-level-star[_ngcontent-ng-c2528745257] .pi-level-star {
+    width: 18px;
+    height: 18px;
+  }
+
+  [_nghost-ng-c1370385705] et-select-header {
+    background: transparent;
+  }
+
+  .watchlists-edit[_ngcontent-ng-c1370385705] {
+    box-shadow: none;
+    border: none;
+  }
+
+  et-watchlist-quick-edit[_nghost-ng-c1370385705]
+    et-select-header[_ngcontent-ng-c1370385705] {
+    padding: 5px 0;
+  }
+
+  .et-add-to-watchlist-button-expended[_ngcontent-ng-c2528745257]
+    et-watchlist-quick-edit[_ngcontent-ng-c2528745257]
+    et-select-header.watchlists-edit {
+    color: inherit;
+    width: 100%;
+    height: 50px;
+    left: 0;
+  }
+
+  .watchlists-edit[_ngcontent-ng-c1370385705]:after {
+    content: "\e93e";
+    font-family: iconFont, sans-serif;
+    font-style: normal;
+    font-size: 22px;
+    text-align: center;
+    color: var(--neutral-40-dm);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .et-add-to-watchlist-button-expended[_ngcontent-ng-c2528745257]
+    et-watchlist-quick-edit[_ngcontent-ng-c2528745257]
+    et-select-header.watchlists-edit::after {
+    color: inherit;
+    position: absolute;
+    inset-inline-start: 15px;
+  }
+
+  .icon-three-dots[_ngcontent-ng-c1408283083] {
+    color: var(--neutral-40-dm);
+  }
+
+  .icon-three-dots:before {
+    content: "\e988";
+    font-family: iconGeneralFont, sans-serif;
+    font-family: iconGeneralFont;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .icon-three-dots[_ngcontent-ng-c1408283083]:hover {
+    color: var(--neutral-0-dm);
+  }
+
+  .pi-level-star[_ngcontent-ng-c1201838865] > svg[_ngcontent-ng-c1201838865] {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .no-arrow
+    [_nghost-ng-c3317408547]
+    .icon-arrow-down[_ngcontent-ng-c3317408547] {
+    display: none;
+  }
+
+  .no-arrow [_nghost-ng-c3317408547] .arrow-down[_ngcontent-ng-c3317408547] {
+    display: none;
+  }
+</style>
+<style>
+  [_nghost-ng-c3597547719] {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    padding: 0 20px;
+    background-color: var(--neutral-0);
+    border-bottom: 1px solid var(--neutral-20);
+    min-height: 60px;
+  }
+
+  .tabs-container[_ngcontent-ng-c3597547719] {
+    display: flex;
+    height: 60px;
+    justify-self: center;
+  }
+
+  .tabs-slot-container[_ngcontent-ng-c3597547719] {
+    opacity: 0;
+  }
+
+  .tabs-slot-container.end-slot[_ngcontent-ng-c3597547719] {
+    justify-self: flex-end;
+  }
+
+  .edge-start[_ngcontent-ng-c3597547719] {
+    position: relative;
+  }
+
+  @media all {
+    a {
+      text-decoration: none;
+      outline: 0;
+    }
+
+    a {
+      color: var(--neutral-100);
+    }
+
+    a {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .et-font-xs {
+    font-family: general-font, Open Sans, Arial, sans-serif;
+    font-style: normal;
+    font-size: 0.875rem;
+    letter-spacing: -0.25px;
+  }
+
+  .et-tab[_ngcontent-ng-c3597547719] {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    color: var(--neutral-70-dm);
+    position: relative;
+    cursor: pointer;
+    min-width: 120px;
+    width: max-content;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1365px) {
+    .et-tab[_ngcontent-ng-c3597547719] {
+      min-width: 100px;
+    }
+  }
+
+  .tab-text[_ngcontent-ng-c3597547719] {
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+
+  .et-tab[_ngcontent-ng-c3597547719]:not(:last-of-type) {
+    margin-inline-end: 20px;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1365px) {
+    .et-tab[_ngcontent-ng-c3597547719]:not(:last-child) {
+      margin-inline-end: 10px;
+    }
+  }
+
+  .et-tab.active-tab[_ngcontent-ng-c3597547719] {
+    color: var(--neutral-20-dm);
+  }
+
+  @media (min-width: 1024px) {
+    .et-tab[_ngcontent-ng-c3597547719]:hover {
+      color: var(--neutral-40-dm);
+    }
+  }
+
+  .et-tab.active-tab[_ngcontent-ng-c3597547719]:hover {
+    color: var(--neutral-20-dm);
+    cursor: default;
+  }
+
+  .edge-end[_ngcontent-ng-c3597547719] {
+    position: relative;
+  }
+
+  .tab-slot[_ngcontent-ng-c1408283083] {
+    pointer-events: none;
+  }
+
+  @media all {
+    span {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .tab-icon[_ngcontent-ng-c3597547719] {
+    margin-inline-end: 10px;
+    font-size: 1.2rem;
+  }
+
+  .icon-four-squares:before {
+    content: "\e921";
+    font-family: iconFont, sans-serif;
+    font-style: normal;
+  }
+
+  .tab-border[_ngcontent-ng-c3597547719] {
+    opacity: 0;
+    height: 2px;
+    border-radius: 10px;
+    background-color: var(--neutral-20-dm);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .et-tab.active-tab[_ngcontent-ng-c3597547719]
+    .tab-border[_ngcontent-ng-c3597547719] {
+    opacity: 1;
+  }
+
+  .icon-portfolio-chart-full:before {
+    content: "\e903";
+    font-family: iconGeneralFont, sans-serif;
+    font-family: iconGeneralFont;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .icon-candles-chart:before {
+    content: "\e953";
+    font-family: iconGeneralFont, sans-serif;
+    font-family: iconGeneralFont;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  button {
+    outline: 0;
+  }
+
+  @media all {
+    button {
+      border: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+  }
+
+  .et-button-positive-outline:hover {
+    border-color: var(--rating-low);
+    color: var(--rating-low);
+  }
+
+  .et-add-to-watchlist-button-expended[_ngcontent-ng-c2528745257]:hover {
+    border-color: var(--primary-110-hover);
+    color: var(--primary-110-hover);
+  }
+
+  .head-breadcrumbs[_ngcontent-ng-c4029640666]
+    .crumb-item[_ngcontent-ng-c4029640666]
+    .crumb[_ngcontent-ng-c4029640666]::after {
+    content: "/";
+    padding: 0 5px;
+  }
+
+  .head-breadcrumbs.new-design[_ngcontent-ng-c4029640666]
+    .crumb-item[_ngcontent-ng-c4029640666]
+    .crumb[_ngcontent-ng-c4029640666]::after {
+    position: relative;
+    content: "\e905";
+    font-family: iconGeneralFont, sans-serif;
+    font-size: 7px;
+    padding: 0 8px;
+  }
+
+  .head-breadcrumbs.new-design[_ngcontent-ng-c4029640666]
+    .crumb-item[_ngcontent-ng-c4029640666]
+    .crumb[_ngcontent-ng-c4029640666]:hover {
+    color: var(--neutral-20-dm);
+  }
+
+  .user-tabs-slot[_ngcontent-ng-c1408283083] {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+  }
+
+  .user-name-container[_ngcontent-ng-c1408283083] {
+    font-family: general-font, Open Sans, Arial, sans-serif;
+    font-style: normal;
+    font-size: 0.875rem;
+    letter-spacing: -0.25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-inline-start: 12px;
+    line-height: 1.3;
+  }
+
+  [_nghost-ng-c206250979] {
+    display: inline-block;
+    position: relative;
+  }
+
+  .user-name[_ngcontent-ng-c1408283083] {
+    color: var(--neutral-90);
+  }
+
+  .user-name[_ngcontent-ng-c1408283083] {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 200px;
+    white-space: nowrap;
+  }
+
+  .et-flex {
+    display: flex;
+  }
+
+  et-select-header {
+    color: var(--neutral-100, #2c2c2c);
+  }
+
+  [_nghost-ng-c3317408547] {
+    color: var(--secondary-110);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 3px;
+    background-color: var(--neutral-0);
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+    padding: 9px;
+    box-sizing: border-box;
+    box-shadow: inset 0 1px #c8c8c866,
+      0 1px 2px 0 rgba(var(--rgb-neutral-100), 0.3);
+    -webkit-user-select: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .new-dropdown-style [_nghost-ng-c3317408547] {
+    background-color: transparent;
+    font-weight: 300;
+    box-shadow: none;
+    color: var(--neutral-100);
+    outline: 0;
+  }
+
+  .new-dropdown-style [_nghost-ng-c3317408547] {
+    font-weight: 700;
+  }
+
+  et-select-header.three-dots-dropdown-header[_ngcontent-ng-c1408283083] {
+    padding: 10px;
+    margin-inline-end: -10px;
+    font-size: 1rem;
+  }
+
+  .avatar-ph[_ngcontent-ng-c650221007] {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: block;
+  }
+
+  et-avatar[_ngcontent-ng-c1408283083] a.avatar-ph {
+    height: 35px;
+    width: 35px;
+  }
+
+  @media all {
+    .avatar {
+      width: 100%;
+      height: 100%;
+    }
+
+    .avatar {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .avatar-ph[_ngcontent-ng-c650221007] .avatar[_ngcontent-ng-c650221007] {
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .ets-icon-star-fill[_ngcontent-ng-c650221007] {
+    width: 24px;
+    height: 24px;
+    background-color: var(--neutral-0);
+    border-radius: 50%;
+    position: absolute;
+    text-align: center;
+    line-height: 22px;
+    bottom: -9px;
+    right: -7px;
+    box-shadow: -2px -2px 1px 0 rgba(var(--rgb-neutral-100), 0.1);
+    color: var(--neutral-40-dm);
+    z-index: 1;
+  }
+
+  .pi-star-6:before {
+    color: #1a2d3d;
+  }
+
+  .ets-icon-small:before {
+    font-size: 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .ets-icon-star-fill:before {
+    font-family: iconGeneralFont;
+    content: "\e98b";
+  }
+
+  .et-button {
+    font-family: general-font, Open Sans, Arial, sans-serif;
+    font-style: normal;
+    font-size: 0.875rem;
+    letter-spacing: -0.25px;
+    color: var(--neutral-0);
+    font-weight: 600;
+    line-height: 20px;
+    border: 1px solid;
+    border-radius: 4px;
+    cursor: pointer;
+    min-height: 45px;
+    min-width: 160px;
+    max-width: 100%;
+    outline-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .et-button-positive {
+    background-color: var(--rating-lowest);
+  }
+
+  .et-copy-button-collapsed {
+    font-family: general-font, Open Sans, Arial, sans-serif;
+    font-style: normal;
+    font-size: 0.875rem;
+    letter-spacing: -0.25px;
+    background-color: var(--primary-100);
+    min-width: 100px;
+    min-height: 35px;
+    padding: 0 12px;
+  }
+
+  .et-button-positive:hover {
+    background-color: var(--rating-low);
+  }
+
+  .et-copy-button-collapsed:hover {
+    background-color: var(--primary-100-hover);
+  }
+
+  .header-text[_ngcontent-ng-c3317408547] {
+    flex: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-transform: uppercase;
+  }
+
+  .new-dropdown-style
+    [_nghost-ng-c3317408547]
+    .header-text[_ngcontent-ng-c3317408547] {
+    text-transform: capitalize;
+  }
+
+  .select-header-icon
+    [_nghost-ng-c3317408547]
+    .header-text[_ngcontent-ng-c3317408547] {
+    font-size: unset;
+  }
+
+  [_nghost-ng-c1370385705] et-select-header {
+    background: transparent;
+  }
+
+  .watchlists-edit[_ngcontent-ng-c1370385705] {
+    box-shadow: none;
+    border: none;
+  }
+
+  et-watchlist-quick-edit[_nghost-ng-c1370385705]
+    et-select-header[_ngcontent-ng-c1370385705] {
+    padding: 5px 0;
+  }
+
+  .watchlists-edit[_ngcontent-ng-c1370385705]:after {
+    content: "\e93e";
+    font-family: iconFont, sans-serif;
+    font-style: normal;
+    font-size: 22px;
+    text-align: center;
+    color: var(--neutral-40-dm);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .et-add-to-watchlist-button-expended[_ngcontent-ng-c2528745257]
+    et-watchlist-quick-edit[_ngcontent-ng-c2528745257]
+    et-select-header.watchlists-edit::after {
+    color: inherit;
+    position: absolute;
+    inset-inline-start: 15px;
+  }
+
+  .icon-three-dots[_ngcontent-ng-c1408283083] {
+    color: var(--neutral-40-dm);
+  }
+
+  .icon-three-dots:before {
+    content: "\e988";
+    font-family: iconGeneralFont, sans-serif;
+    font-family: iconGeneralFont;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .icon-three-dots[_ngcontent-ng-c1408283083]:hover {
+    color: var(--neutral-0-dm);
+  }
+
+  .icon-arrow-down[_ngcontent-ng-c3317408547] {
+    display: none;
+  }
+
+  .new-dropdown-style
+    [_nghost-ng-c3317408547]
+    .icon-arrow-down[_ngcontent-ng-c3317408547] {
+    display: block;
+    font-size: 0.5em;
+    padding: 0 0 0 0.63rem;
+  }
+
+  .new-dropdown-style
+    [_nghost-ng-c3317408547]
+    .icon-arrow-down[_ngcontent-ng-c3317408547] {
+    font-size: 1.1em;
+  }
+
+  .select-header-icon
+    [_nghost-ng-c3317408547]
+    .icon-arrow-down[_ngcontent-ng-c3317408547] {
+    display: none;
+  }
+
+  .icon-arrow-down:before {
+    content: "\e906";
+    font-family: iconGeneralFont, sans-serif;
+    font-family: iconGeneralFont;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .arrow-down[_ngcontent-ng-c3317408547] {
+    display: block;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-top: 6px solid var(--secondary-110);
+    box-sizing: border-box;
+    margin: 6px 5px 0;
+  }
+
+  .new-dropdown-style
+    [_nghost-ng-c3317408547]
+    .arrow-down[_ngcontent-ng-c3317408547] {
+    display: none;
+  }
+
+  .select-header-icon
+    [_nghost-ng-c3317408547]
+    .arrow-down[_ngcontent-ng-c3317408547] {
+    display: none;
+  }
+
+  .et-add-to-watchlist-button-collapsed[_ngcontent-ng-c1408283083] {
+    border: 1px solid var(--neutral-40);
+    margin-inline-end: 9px;
+    border-radius: 4px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .et-add-to-watchlist-button-collapsed[_ngcontent-ng-c1408283083]
+    et-watchlist-quick-edit[_ngcontent-ng-c1408283083]
+    et-select-header {
+    padding: 0;
+    width: 35px;
+    height: 35px;
+  }
+
+  .et-add-to-watchlist-button-collapsed[_ngcontent-ng-c1408283083]
+    et-watchlist-quick-edit[_ngcontent-ng-c1408283083]
+    et-select-header::after {
+    color: var(--primary-100);
+    position: absolute;
+    left: 6.5px;
+  }
+
+  .no-arrow
+    [_nghost-ng-c3317408547]
+    .icon-arrow-down[_ngcontent-ng-c3317408547] {
+    display: none;
+  }
+
+  .no-arrow [_nghost-ng-c3317408547] .arrow-down[_ngcontent-ng-c3317408547] {
+    display: none;
+  }
+</style>
+<style>
+  [_nghost-ng-c1576166095] {
+    display: block;
+    letter-spacing: -0.3px;
+    color: var(--neutral-100);
+    font-size: 16px;
+  }
+
+  .et-h2 {
+    font-family: general-font, Open Sans, Arial, sans-serif;
+    font-style: normal;
+    font-size: 0.875rem;
+    letter-spacing: -0.25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--neutral-90);
+  }
+
+  .et-font-s {
+    font-family: general-font, Open Sans, Arial, sans-serif;
+    font-style: normal;
+    font-size: 1rem;
+    letter-spacing: -0.3px;
+  }
+
+  .et-h2[_ngcontent-ng-c3130752205] {
+    color: var(--neutral-100);
+    margin: 0 0 18px;
+    line-height: normal;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    text-transform: unset;
+  }
+
+  .short-bio-container[_ngcontent-ng-c3688704706] {
+    overflow: hidden;
+  }
+
+  .et-margin-bottom-l {
+    margin-bottom: 1.5rem;
+  }
+
+  .et-margin-top-l {
+    margin-top: 1.5rem;
+  }
+
+  .et-horizontal-divider {
+    height: 0.5px;
+    width: 100%;
+    border-top: solid 1px var(--neutral-20);
+  }
+
+  .stats-container[_ngcontent-ng-c3688704706] {
+    height: 80px;
+    display: flex;
+    padding-top: 24px;
+  }
+
+  .ets-info {
+    color: var(--neutral-100, #2c2c2c);
+    font-family: Open Sans, ariel, sans-serif;
+  }
+
+  .ets-info {
+    font-size: 14px;
+    letter-spacing: -0.25px;
+    font-weight: 400;
+  }
+
+  .ets-regular {
+    font-weight: 400;
+  }
+
+  .user-insight[_ngcontent-ng-c3688704706] {
+    padding: 24px;
+    background-color: var(--primary-10-hover);
+    margin-top: 20px;
+  }
+
+  .about-me-text[_ngcontent-ng-c3688704706] {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  .about-me-text[_ngcontent-ng-c3688704706] {
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-bottom: 6px;
+  }
+
+  @media all {
+    a {
+      text-decoration: none;
+      outline: 0;
+    }
+
+    a {
+      color: var(--neutral-100);
+    }
+
+    a {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .ets-link-primary {
+    cursor: pointer;
+  }
+
+  .ets-link-primary {
+    color: var(--primary-110, #3dae23);
+  }
+
+  .ets-link-sudo-button-mid {
+    margin: 0 12px;
+    line-height: 45px;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .user-bio-link[_ngcontent-ng-c3688704706] {
+    font-weight: 600;
+    line-height: unset;
+    margin: 0;
+  }
+
+  .user-bio-link.full-bio-link[_ngcontent-ng-c3688704706] {
+    margin-inline-end: 0.62rem;
+  }
+
+  @media (min-width: 768px) {
+    .ets-link-primary:hover {
+      color: var(--primary-110-hover, #46ba28);
+    }
+  }
+
+  .strategies-chips-container[_ngcontent-ng-c2122197411] {
+    padding-top: 18px;
+    display: block;
+  }
+
+  .et-flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .et-flex-align-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .user-social-stat[_ngcontent-ng-c3688704706] {
+    width: 50%;
+    align-items: center;
+  }
+
+  .et-vertical-divider {
+    width: 0.5px;
+    height: 100%;
+    border-left: solid 1px var(--neutral-20);
+    -moz-border-start: 1px solid var(--neutral-20);
+  }
+
+  @media all {
+    span {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .user-insight-text[_ngcontent-ng-c3688704706] {
+    position: relative;
+  }
+
+  .ets-chip {
+    width: -moz-fit-content;
+    width: fit-content;
+    align-items: center;
+    cursor: pointer;
+    flex: none;
+    display: flex;
+    border-radius: 100px;
+    padding: 0 15px;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    border: solid 1px;
+    transition: 0.5s ease border-color, 0.3s ease color,
+      0.3s ease background-color;
+    line-height: 33px;
+    height: 35px;
+    justify-content: center;
+    color: var(--neutral-40-dm, #555b70);
+    border-color: var(--neutral-40, #ddd);
+  }
+
+  .ets-chip:not(.ets-chip-period) {
+    min-width: 24px;
+  }
+
+  .chip-user-bio-country[_ngcontent-ng-c3688704706] {
+    height: auto;
+    margin-top: 7px;
+    padding: 3px 8px;
+    line-height: 1;
+  }
+
+  .et-font-xs {
+    font-family: general-font, Open Sans, Arial, sans-serif;
+    font-style: normal;
+    font-size: 0.875rem;
+    letter-spacing: -0.25px;
+  }
+
+  .ets-chip.ets-no-border-chip {
+    border: none;
+    color: var(--neutral-40-dm, #555b70);
+    background: var(--neutral-10, #f7f7f7);
+  }
+
+  .ets-no-border-chip[_ngcontent-ng-c2122197411] {
+    margin-bottom: 10px;
+  }
+
+  .ets-chip.ets-no-border-chip:active,
+  .ets-chip.ets-no-border-chip:hover {
+    background: var(--neutral-20, #f1f1f1);
+  }
+
+  .sectors-container[_ngcontent-ng-c2122197411] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .et-font-xxl {
+    font-family: general-font, Open Sans, Arial, sans-serif;
+    font-style: normal;
+    font-size: 1.75rem;
+    letter-spacing: -0.45px;
+  }
+
+  .ets-bold {
+    font-weight: 700;
+  }
+
+  .ets-secondary-info {
+    color: var(--neutral-90, #777);
+    font-family: Open Sans, ariel, sans-serif;
+  }
+
+  .ets-secondary-info {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .insight-disclaimer[_ngcontent-ng-c3688704706] {
+    color: var(--neutral-70-dm);
+    position: absolute;
+    bottom: -2px;
+    right: -5px;
+    transform: translate(100%);
+  }
+
+  .ets-icon-info:before {
+    font-family: iconGeneralFont;
+    content: "\e92b";
+  }
+
+  .et-font-weight-normal {
+    font-weight: 400;
+  }
+
+  .et-semi-bold-font {
+    font-weight: 600;
+  }
+
+  .ets-no-border-chip[_ngcontent-ng-c2122197411]
+    .et-semi-bold-font[_ngcontent-ng-c2122197411] {
+    margin-inline-start: 0.13rem;
+  }
+</style>
+ </style>
+    <script src="/assets/bundles/libscripts.bundle.js"></script>
+    <script src="/assets/bundles/vendorscripts.bundle.js"></script>
+    <script src="/assets/bundles/mainscripts.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<%- include('../../../partials/header.ejs') %>
+<br><hr>
+<section class="content profile-page">
+  <div class="block-header">
+    <div class="row">
+      <div class="col-lg-7 col-md-6 col-sm-12">
+        <h2 style="color: black">
+          Profile
+          <small class="text-muted">Welcome to Novax-Assets</small>
+        </h2>
+      </div>
+      <div class="col-lg-5 col-md-6 col-sm-12">
+        <ul class="breadcrumb float-md-right">
+          <li class="breadcrumb-item" style="color: skyblue;">
+            <a href="/member/account/dashboard"
+              ><i class="zmdi zmdi-home"></i> Home </a
+            >
+          </li>
+
+          <li class="breadcrumb-item active">User Profile</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row clearfix">
+      <div class="col-lg-4 col-md-12">
+        <div class="card member-card">
+          <div class="header l-cyan">
+            <h4 class="m-t-10"><%= user.fullname.charAt(0).toUpperCase() + user.fullname.slice(1) %></h4>
+          </div>
+          <div class="member-img">
+            <a href="/member/account/edit_profile" class="">
+              <img
+                src="<%= user.avatarUrl %>"
+                class="rounded-circle"
+                alt="profile-image"
+              />
+            </a>
+          </div>
+          <div class="body">
+            <div class="col-12" style="margin-top: 30px">
+              <p class="text-muted"><%= user.email %></p>
+              <p class="text-muted"></p>
+              <p class="text-muted"><%= user.country %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-12">
+        <div class="card rounded">
+          <div class="card-text" style="color: #2ca8ff; text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 20px; margin: 5px">
+           <strong> Update Your Account</strong>
+          </div>
+        </div>
+       
+          <div role="tabpanel" class="tab-pane active" id="usersettings">
+            <div id="message"></div>
+            <form enctype="multipart/form-data" id="myForm">
+              <div class="card">
+                <div class="header">
+                  <h2><strong>Profile</strong> Picture</h2>
+                </div>
+                <div class="body">
+                  <div class="form-group">
+                    <input
+                      type="file"
+                      name="avatar"
+                      class="form-control"
+                      placeholder="Profile Picture"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-12">
+                <button
+                  type="submit"
+                  value="submit"
+                  name="submit"
+                  class="btn btn-info btn-round"
+                >
+                  Change Profile Picture
+                </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="card">
+            <div class="header">
+              <h2><strong>Account</strong> Settings</h2>
+            </div>
+            <form method="post" action="/member/account/profile/update_profile" id="form2">
+              <div class="body">
+                <div class="row clearfix">
+                  <div class="col-lg-6 col-md-12">
+                    <div class="form-group">
+                      <input
+                        name="name"
+                        value="<%= user.fullname %>"
+                        type="text"
+                        class="form-control"
+                        placeholder="Full Name"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-12">
+                    <div class="form-group">
+                      <input
+                        name="username"
+                        value="<%= user.username %>"
+                        type="text"
+                        class="form-control"
+                        placeholder="User Name"
+                        readonly
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-12">
+                    <div class="form-group">
+                      <input
+                        type="tel"
+                        name="phone"
+                        value="<%= user.phone_number %>"
+                        class="form-control"
+                        placeholder="Phone"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-12">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        value="<%= user.country %>"
+                        class="form-control"
+                        name="country"
+                        placeholder="Country"
+                      />
+                    </div>
+                  </div>
+                  <!-- <div class="col-lg-6 col-md-12">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        name="address"
+                        value=""
+                        class="form-control"
+                        placeholder="Bank Details: Name, Account No, Bank etc"
+                      />
+                    </div>
+                  </div> -->
+                  <!-- <div class="col-lg-6 col-md-12">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        value=""
+                        class="form-control"
+                        name="wallet"
+                        placeholder="Wallet: eg ETH, 0xff3i2nd8ck...."
+                      />
+                    </div>
+                  </div> -->
+
+                  <div class="col-md-12">
+                    <button
+                      type="submit"
+                      value="submit1"
+                      name="submit1"
+                      class="btn btn-info btn-round"
+                    >
+                      Change Information
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const myForm = document.getElementById('myForm');
+     
+      // const form2 = document.getElementById('form2');
+
+myForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+     const messageDiv = document.getElementById('message');
+    messageDiv.innerHTML = '';
+    const formData = new FormData(this);
+    fetch('/member/account/profile/upload_avatar', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        messageDiv.innerHTML = `<div class="bg-green-100 border border-green-200 text-green-700 px-3 py-2 rounded relative mb-4" style="background-color: green;" role="alert">
+            <span class="block sm:inline font-semibold" style="color:white">Profile Picture updated successfully!</span>
+        </div>`;
+        window.location.reload();
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+// form2.addEventListener('submit', function(event) {
+//     event.preventDefault(); 
+//     const dataToUpdate = {
+//         name: name,
+//         phone: phone,
+//         country: country,
+//         address: address,
+//         wallet: wallet
+//     };
+
+//     fetch('/member/account/profile/update_profile', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(dataToUpdate)
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log('Success:', data);
+//         alert('Profile information updated successfully!');
+//     })
+//     .catch(error => {
+//         console.error('Error:', error.message);
+//     });
+// });
+
+    </script>
+
+    <%- include('../../../partials/footer.ejs') %>
+  </div>
+</section>

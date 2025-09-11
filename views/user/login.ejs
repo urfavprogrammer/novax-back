@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <!-- Title -->
+	<title>Account Login - Novax-Assets</title>
+ 
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="IGX Networks">
+	<meta name="robots" content="index, follow">
+   
+	<meta name="keywords" content="modern, property, real estate, reit,">
+	<meta name="description" content="Novax-Assets. Streamline property management and Investments, and boost productivity with our intuitive and feature-rich solution that Elevates your real estate business today!">
+   
+	<meta property="og:title" content="Novax-Assets">
+	<meta property="og:description" content="Novax-Assets. Streamline property management and Investments, and boost productivity with our intuitive and feature-rich solution that Elevates your real estate business today!">
+	<meta property="og:image" content="social-image.html">
+	<meta name="format-detection" content="telephone=no">
+   
+	<meta name="twitter:title" content="Novax-Assets">
+	<meta name="twitter:description" content="Novax-Assets. Streamline property management and Investments, and boost productivity with our intuitive and feature-rich solution that Elevates your real estate business today!">
+	<meta name="twitter:image" content="social-image.html">
+	<meta name="twitter:card" content="summary_large_image">
+
+	<!-- MOBILE SPECIFIC -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/NovaxLogo.png">
+    <link href="/assets/csss/css/style.css" rel="stylesheet">
+
+<!--Start of Tawk.to Script-->
+<!-- <script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6734e5c92480f5b4f59dabda/1icja37dn';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script> -->
+<!--End of Tawk.to Script-->
+
+</head>
+
+<body>
+    <div class="fix-wrapper">
+       
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-6">
+                    <div class="card mb-0 h-auto">
+                        <div class="card-body">
+                            <div class="text-center mb-3">
+                                <a href="/"><img class="logo-auth" src="../assets/images/NovaxLogo2.png" alt=""></a>
+                            </div>
+                                                        <h4 class="text-center mb-4">Sign in your account</h4>
+                                                          <% if (locals.success) { %>
+        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" style="background-color: green;" role="alert">
+            <span class="block sm:inline font-semibold" style="color:white"><%= success %></span>
+        </div>
+        <% } %>
+        <% if (locals.error || (locals.errors && locals.errors.length)) { %>
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" style="background-color: red;" role="alert">
+            <% if (locals.error) { %>
+            <span class="block sm:inline font-semibold" style="color:white"><%= error %></span>
+            <% } %>
+            <% if (locals.errors && locals.errors.length) { %>
+            <ul class="mt-2 list-disc list-inside">
+                <% errors.forEach(function(err) { %>
+                <li style="color: white;"><%= err.msg %></li>
+                <% }); %>
+            </ul>
+            <% } %>
+        </div>
+        <% } %>
+                            <form method="post" action="/auth/login">
+                                <div class="form-group mb-4">
+                                    <label class="form-label" for="username">Email/Username</label>
+                                    <input type="text" name="username" class="form-control" placeholder="Enter username" id="username">
+                                    <input type="text" name="email" class="form-control" placeholder="Enter email" id="email" hidden>
+                                </div>
+                               <div class="form-group mb-3 mb-sm-4">
+									<label class="form-label">Password</label>
+									<div class="position-relative">
+										<input type="password" name="password" id="password" class="form-control"  placeholder="Enter Password">
+										
+									</div>
+								</div>
+                                <div class="form-row d-flex flex-wrap justify-content-between align-items-baseline mb-2">
+                                    <div class="form-group mb-sm-4 mb-1">
+                                        <div class="form-check custom-checkbox ms-1">
+                                            <input type="checkbox" class="form-check-input" id="basic_checkbox_1">
+                                            <label class="form-check-label" for="basic_checkbox_1">Remember my preference</label>
+                                        </div>
+											
+                                    </div>
+                                    <div class="form-group ms-2">
+                                        <a href="forgot-password.html">Forgot Password?</a>
+										
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" name="submit" value="submit" class="btn btn-primary btn-block">Secure Login</button>
+                                </div>
+                            </form>
+                            <div class="new-account mt-3">
+                                <p>Don't have an account? <a class="text-primary" href="/auth/register">Get Started</a></p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/deznav-init.js"></script>
+
+</body>
+
+
+
+</html>

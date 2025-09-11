@@ -1,0 +1,964 @@
+<%- include('../../../../partials/header.ejs') %>
+
+
+    <section class="content home">
+        <div class="block-header" style="margin-top:5rem;">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2 style="color: black;">When they invest, you invest
+                        <small class="text-muted">You can use CopyTrader to copy the moves of other investors. Find users who match
+                            your investment plan and diversify with a click
+                        </small>
+                    </h2>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                   
+                    <ul class="breadcrumb float-md-right">
+                        <li class="breadcrumb-item"><a href="/member/account/dashboard"><i class="zmdi zmdi-home"></i> </a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0);"></a></li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-fluid">
+            <div class="row clearfix justify-content-center">
+                        <% traders.forEach(trader=> { %>    
+                                <div class="col-lg-4 col-md-4" style="width:auto !important">
+                    <et-user-card _ngcontent-ng-c3976956719="" automation-id="discover-people-results-grid-item" _nghost-ng-c3236568359="" class="ng-star-inserted snipcss-rrGcp">
+                        <div _ngcontent-ng-c3236568359="" class="card-wrap ng-star-inserted">
+                            <header _ngcontent-ng-c3236568359="" automation-id="user-card-header">
+                                <et-card-avatar _ngcontent-ng-c3236568359="" automation-id="watchlist-item-grid-wrapp-user-header" _nghost-ng-c3591224755="">
+                                    <div _ngcontent-ng-c3591224755="" class="card-avatar-wrap">
+                                        <et-smart-signals _ngcontent-ng-c3591224755="" automation-id="trade-item-info" class="avatar-info" _nghost-ng-c148223938="">
+                                            <div _ngcontent-ng-c148223938="" class="content-wrapper">
+                                                <div _ngcontent-ng-c3591224755="" class="ets-avatar-m ets-instrument-icon style-CnFmO" id="style-CnFmO">
+                                                    <img _ngcontent-ng-c3591224755="" automation-id="trade-item-avatar" loading="lazy" class="avatar-img ets-avatar-m" src="/uploads/<%= trader.avatar %>" alt="<%= trader.name %>">
+                                                    <div _ngcontent-ng-c3591224755="" automation-id="trade-item-pi-icon" class="icon-indicator ets-plain-text ets-icon-star-fill pi-star-2 ng-star-inserted"></div>
+                                                </div>
+                                            </div>
+                                        </et-smart-signals>
+                                        <div _ngcontent-ng-c3591224755="" automation-id="trade-item-info" class="avatar-info">
+                                            <div _ngcontent-ng-c3591224755="" automation-id="trade-item-name" class="symbol ets-bold ets-info"><%= trader.name %> </div>
+
+                                        </div>
+                                    </div>
+                                </et-card-avatar>
+                            </header>
+                            <section _ngcontent-ng-c3236568359="" class="price-rate-info ng-star-inserted">
+                                <div _ngcontent-ng-c3236568359="" class="user-card-change-wrap">
+                                    <div _ngcontent-ng-c3236568359="" automation-id="watchlist-item-grid-user-rate-change-and-risk-num" class="user-card-change-p ets-positive"> <%= trader.minimum %> </div>
+                                    <div _ngcontent-ng-c3236568359="" automation-id="watchlist-item-grid-user-label-return" class="user-card-change-text">Minimum</div>
+                                </div>
+                                <div _ngcontent-ng-c3236568359="" class="user-card-risk-wrap ng-star-inserted">
+                                    <div _ngcontent-ng-c3236568359="" automation-id="watchlist-item-grid-user-risk-score" class="risk-default risk-level6"><%= trader.rate %></div>
+                                    <div _ngcontent-ng-c3236568359="" class="user-card-risk-text">Rate</div>
+                                </div>
+                            </section>
+                            <section _ngcontent-ng-c3236568359="" class="user-card-bottom-wrap">
+                                <a href="copytrader/trader/<%= trader.id %>">
+                                <et-copy-button _ngcontent-ng-c3236568359="" automation-id="watchlist-item-grid-btn-copy-user" class="user-card-copy-button" _nghost-ng-c4186398575="">
+                                    
+                                        <button _ngcontent-ng-c4186398575="" automation-id="copy-button-execution" class="et-copy-button ets-button-basic ets-button-primary ets-button-small"> Copy </button>
+                                    
+                                </et-copy-button>
+                                </a>
+                                <section _ngcontent-ng-c3236568359="" automation-id="watchlist-item-grid-wrapp-bottom-header" class="users-rate-info ng-star-inserted"><span _ngcontent-ng-c3236568359="" class="users-rate-number">Earning Rate</span><span _ngcontent-ng-c3236568359="" automation-id="watchlist-item-grid-user-rate-change" class="user-card-change-p ets-positive"><span _ngcontent-ng-c3236568359="" class="arrow-sign"></span><%= trader.earningRate %></span></section>
+                            </section>
+                        </div>
+                    </et-user-card>
+               
+        
+                         
+            </div>
+    <% }); %>  
+        </section>
+     
+<style>
+
+    @font-face { 
+  font-family:DINOT;
+  font-weight:600;
+  font-style:normal;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/dinot/DINOT-Bold.otf) format("truetype");
+} 
+@font-face { 
+  font-family:DINOT;
+  font-weight:400;
+  font-style:normal;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/dinot/DINOT-Medium.otf) format("truetype");
+} 
+@font-face { 
+  font-family:DINOT;
+  font-weight:300;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/dinot/DINOT.otf) format("truetype");
+} 
+@font-face { 
+  font-family:iconFont;
+  font-weight:400;
+  font-style:normal;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/icomoon/icomoon.ttf) format("truetype");
+} 
+@font-face { 
+  font-family:iconGeneralFont;
+  font-weight:400;
+  font-style:normal;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/icomoon/general/general-v.6.3.ttf) format("truetype");
+} 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800,300i,400i,500i,600i,700i,800i&display=swap'); 
+@font-face { 
+  font-family:'DINOT';
+  font-weight:300;
+  src:url('https://etoro-cdn.etorostatic.com/web-client/et/fonts/dinot/DINOT.otf') format('truetype');
+} 
+@font-face { 
+  font-family:"iconFont";
+  font-weight:normal;
+  font-style:normal;
+  src:url("https://etoro-cdn.etorostatic.com/web-client/et/fonts/icomoon/icomoon.ttf") format("ttf");
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:normal;
+  font-weight:300;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/fonts/tajawal/Tajawal-Light.ttf) format("truetype");
+  unicode-range:U+0600 -U 6FF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-weight:400;
+  font-style:normal;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/fonts/tajawal/Tajawal-Regular.ttf) format("truetype");
+  unicode-range:U+0600 -U 6FF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:normal;
+  font-weight:600;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/fonts/tajawal/Tajawal-Medium.ttf) format("truetype");
+  unicode-range:U+0600 -U 6FF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:normal;
+  font-weight:700;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/fonts/tajawal/Tajawal-Bold.ttf) format("truetype");
+  unicode-range:U+0600 -U 6FF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:normal;
+  font-weight:800;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/fonts/tajawal/Tajawal-ExtraBold.ttf) format("truetype");
+  unicode-range:U+0600 -U 6FF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:normal;
+  font-weight:300;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/fonts/noto-sans/NotoSansSC-Light.otf) format("opentype");
+  unicode-range:U+4E00 -U 9FFF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-weight:400;
+  font-style:normal;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/fonts/noto-sans/NotoSansSC-Regular.otf) format("opentype");
+  unicode-range:U+4E00 -U 9FFF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:normal;
+  font-weight:600;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/fonts/noto-sans/NotoSansSC-Medium.otf) format("opentype");
+  unicode-range:U+4E00 -U 9FFF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:normal;
+  font-weight:700;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/fonts/noto-sans/NotoSansSC-Bold.otf) format("opentype");
+  unicode-range:U+4E00 -U 9FFF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:normal;
+  font-weight:300;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/fonts/bai-jamjuree/BaiJamjuree-Light.ttf) format("truetype");
+  unicode-range:U+0E00 -U 0E 7F;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:normal;
+  font-weight:400;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/fonts/bai-jamjuree/BaiJamjuree-Regular.ttf) format("truetype");
+  unicode-range:U+0E00 -U 0E 7F;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:normal;
+  font-weight:600;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/fonts/bai-jamjuree/BaiJamjuree-SemiBold.ttf) format("truetype");
+  unicode-range:U+0E00 -U 0E 7F;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:normal;
+  font-weight:700;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/fonts/bai-jamjuree/BaiJamjuree-Bold.ttf) format("truetype");
+  unicode-range:U+0E00 -U 0E 7F;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:normal;
+  font-weight:300;
+  src:local("Open Sans Light"),local("OpenSans-Light"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-300.woff2) format("woff2"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-300.woff) format("woff");
+  unicode-range:U+0041-007A,U+005F-FFFF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:italic;
+  font-weight:300;
+  src:local("Open Sans Light Italic"),local("OpenSans-LightItalic"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-300italic.woff2) format("woff2"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-300italic.woff) format("woff");
+  unicode-range:U+0041-007A,U+005F-FFFF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:normal;
+  font-weight:400;
+  src:local("Open Sans Regular"),local("OpenSans-Regular"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-regular.woff2) format("woff2"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-regular.woff) format("woff");
+  unicode-range:U+0041-007A,U+005F-FFFF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:italic;
+  font-weight:400;
+  src:local("Open Sans Italic"),local("OpenSans-Italic"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-italic.woff2) format("woff2"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-italic.woff) format("woff");
+  unicode-range:U+0041-007A,U+005F-FFFF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:normal;
+  font-weight:600;
+  src:local("Open Sans SemiBold"),local("OpenSans-SemiBold"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-600.woff2) format("woff2"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-600.woff) format("woff");
+  unicode-range:U+0041-007A,U+005F-FFFF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:italic;
+  font-weight:600;
+  src:local("Open Sans SemiBold Italic"),local("OpenSans-SemiBoldItalic"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-600italic.woff2) format("woff2"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-600italic.woff) format("woff");
+  unicode-range:U+0041-007A,U+005F-FFFF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:normal;
+  font-weight:700;
+  src:local("Open Sans Bold"),local("OpenSans-Bold"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-700.woff2) format("woff2"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-700.woff) format("woff");
+  unicode-range:U+0041-007A,U+005F-FFFF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:italic;
+  font-weight:700;
+  src:local("Open Sans Bold Italic"),local("OpenSans-BoldItalic"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-700italic.woff2) format("woff2"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-700italic.woff) format("woff");
+  unicode-range:U+0041-007A,U+005F-FFFF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:normal;
+  font-weight:800;
+  src:local("Open Sans ExtraBold"),local("OpenSans-ExtraBold"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-800.woff2) format("woff2"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-800.woff) format("woff");
+  unicode-range:U+0041-007A,U+005F-FFFF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-style:italic;
+  font-weight:800;
+  src:local("Open Sans ExtraBold Italic"),local("OpenSans-ExtraBoldItalic"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-800italic.woff2) format("woff2"),url(https://etoro-cdn.etorostatic.com/web-client/fonts/opensans/open-sans-v15-cyrillic-ext_cyrillic_greek_greek-ext_latin_latin-ext_vietnamese-800italic.woff) format("woff");
+  unicode-range:U+0041-007A,U+005F-FFFF;
+} 
+@font-face { 
+  font-family:general-font;
+  font-weight:300;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/dinot/DINOT.otf) format("truetype");
+  unicode-range:U+0030-0039,U+002F;
+} 
+@font-face { 
+  font-family:general-font;
+  font-weight:600;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/dinot/DINOT-Bold.otf) format("truetype");
+  unicode-range:U+0030-0039,U+002F;
+} 
+@font-face { 
+  font-family:general-font;
+  font-weight:400;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/dinot/DINOT-Medium.otf) format("truetype");
+  unicode-range:U+0030-0039,U+002F;
+} 
+@font-face { 
+  font-family:general-font;
+  font-weight:700;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/dinot/DINOT-Bold.otf) format("truetype");
+  unicode-range:U+0030-0039,U+002F;
+} 
+@font-face { 
+  font-family:general-font;
+  font-weight:300;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/roboto/Roboto-Regular.ttf);
+  unicode-range:U+0021,U+0040,U+0023-026,U+005E,U+0024,U+00A2,U+00A3,U+00A4,U+00A5,U+20A3,U+20A4,U+20A6,U+20A7,U+20A8,U+20A9,U+20AA,U+20AB,U+20AC,U+20B1,U+20B9,U+20BA,U+20BC,U+20BD;
+} 
+@font-face { 
+  font-family:general-font;
+  font-weight:400;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/roboto/Roboto-Medium.ttf);
+  unicode-range:U+0021,U+0040,U+0023-026,U+005E,U+0024,U+00A2,U+00A3,U+00A4,U+00A5,U+20A3,U+20A4,U+20A6,U+20A7,U+20A8,U+20A9,U+20AA,U+20AB,U+20AC,U+20B1,U+20B9,U+20BA,U+20BC,U+20BD;
+} 
+@font-face { 
+  font-family:general-font;
+  font-weight:600;
+  src:url(https://etoro-cdn.etorostatic.com/web-client/et/fonts/roboto/Roboto-Bold.ttf);
+  unicode-range:U+0021,U+0040,U+0023-026,U+005E,U+0024,U+00A2,U+00A3,U+00A4,U+00A5,U+20A3,U+20A4,U+20A6,U+20A7,U+20A8,U+20A9,U+20AA,U+20AB,U+20AC,U+20B1,U+20B9,U+20BA,U+20BC,U+20BD;
+} 
+  body {  
+    direction:ltr;
+  }  
+@media all{     
+  body {  
+    color:var(--neutral-100);
+    font-family:'Open Sans',sans-serif;
+  }  
+}  
+* { 
+    scrollbar-color: var(--neutral-40-dm, #555B70) transparent; 
+    scrollbar-width: thin;
+} 
+
+@media all{ 
+  * { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    box-sizing: border-box;
+  } 
+
+  * { 
+    -webkit-tap-highlight-color: rgba(var(--rgb-neutral-100), 0);
+  } 
+
+  div { 
+    margin: 0; 
+    padding: 0;
+  } 
+
+  body { 
+    overflow: scroll; 
+    height: 100%; 
+    width: 100%; 
+    background-color: var(--neutral-20);
+  } 
+}     
+
+@media screen and (min-width: 741px){ 
+  body { 
+    overflow: scroll;
+  } 
+}     
+
+@media all{ 
+  body { 
+    color: var(--neutral-100); 
+    -webkit-text-size-adjust: 100%; 
+    -ms-text-size-adjust: 100%; 
+    text-size-adjust: 100%; 
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -khtml-user-select: none; 
+    -ms-user-select: none;
+  } 
+
+  body { 
+    background-color: var(--neutral-20); 
+    font-family: 'Open Sans',sans-serif; 
+    height: 100%;
+  } 
+
+  body { 
+    margin: 0; 
+    padding: 0;
+  } 
+
+  html { 
+    overflow: scroll; 
+    height: 100%; 
+    width: 100%; 
+    background-color: var(--neutral-20);
+  } 
+}     
+
+@media screen and (min-width: 741px){ 
+  html { 
+    overflow: scroll;
+  } 
+}     
+
+@media all{ 
+  html { 
+    margin: 0; 
+    padding: 0;
+  } 
+}     
+
+:root { 
+    --aa-base-unit: 16; 
+    --aa-spacing-factor: 1; 
+    --aa-spacing: calc(var(--aa-base-unit) * var(--aa-spacing-factor) * 1px); 
+    --aa-spacing-half: calc(var(--aa-spacing) / 2); 
+    --aa-font-size: calc(var(--aa-base-unit) * 1px); 
+    --aa-background-color-rgb: 255, 255, 255; 
+    --aa-scrollbar-thumb-background-color-rgb: var(--aa-background-color-rgb); 
+} 
+
+:root { 
+    --primary-100: #1b1d61; 
+    --primary-100-hover: #1b1d67; 
+    --rgb-neutral-100: 0, 0, 0; 
+    --secondary-110: #0079b9; 
+    --neutral-100: #2c2c2c; 
+    --neutral-90: #777; 
+    --neutral-70: #bababa; 
+    --neutral-20: #f1f1f1; 
+    --neutral-0: #fff; 
+    --lightmode-neutral-dm-70: #85899B; 
+    --neutral-40-dm: #555B70; 
+    --rating-lowest: #3DAE23; 
+} 
+
+:root { 
+    --button-basic-transition-delay-border-color: .65s; 
+    --button-basic-transition-delay-background-color: .5s; 
+} 
+
+[_nghost-ng-c3236568359] { 
+    width: 300px; 
+    position: relative; 
+    display: inline-block; 
+    padding: 20px; 
+    margin: 15px; 
+    background-color: var(--neutral-0); 
+    border-radius: 6px; 
+    font-family: general-font,Arial,sans-serif; 
+    color: var(--neutral-90); 
+    font-size: 12px;
+} 
+
+et-user-card[_ngcontent-ng-c3976956719] { 
+    vertical-align: middle; 
+    margin: 15px;
+} 
+
+:-webkit-scrollbar { 
+    width: 6px;
+} 
+
+:-webkit-scrollbar-thumb:active,:-webkit-scrollbar-thumb { 
+    border-radius: 16px; 
+    background-color: var(--neutral-70, #bababa); 
+    background-clip: padding-box;
+} 
+
+:-webkit-scrollbar-track { 
+    background-color: transparent; 
+    box-shadow: none;
+} 
+
+.card-wrap[_ngcontent-ng-c3236568359] { 
+    height: 250px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+} 
+
+header[_ngcontent-ng-c3236568359] { 
+    padding-bottom: 10px; 
+    margin-bottom: 8px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+} 
+
+header[_ngcontent-ng-c3236568359] { 
+    margin-bottom: 0; 
+    padding-bottom: 2px;
+} 
+
+.price-rate-info[_ngcontent-ng-c3236568359] { 
+    display: flex; 
+    justify-content: space-between; 
+    text-transform: uppercase; 
+    margin-bottom: 5px;
+} 
+
+section.user-card-bottom-wrap[_ngcontent-ng-c3236568359] { 
+    display: flex; 
+    flex-direction: column;
+} 
+
+[_nghost-ng-c3591224755] { 
+    width: 100%; 
+    overflow: hidden; 
+    display: flex; 
+    align-items: center;
+} 
+
+et-card-avatar[_ngcontent-ng-c3236568359] { 
+    flex: 1;
+} 
+
+[_nghost-ng-c3188015029] { 
+    display: inline-block;
+} 
+
+et-trade-item-card-action[_ngcontent-ng-c3236568359] { 
+    flex: none;
+} 
+
+.card-wrap [_nghost-ng-c3188015029]  { 
+    margin-top: -10px;
+} 
+
+.user-card-change-wrap[_ngcontent-ng-c3236568359] { 
+    max-width: 165px;
+} 
+
+.user-card-risk-wrap[_ngcontent-ng-c3236568359] { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+} 
+
+[_nghost-ng-c4186398575] { 
+    display: inline-block;
+} 
+
+.user-card-copy-button[_ngcontent-ng-c3236568359] { 
+    display: flex;
+} 
+
+.users-rate-info[_ngcontent-ng-c3236568359] { 
+    text-align: center; 
+    margin-top: 10px; 
+    text-transform: uppercase;
+} 
+
+@media all{ 
+  a { 
+    text-decoration: none; 
+    outline: 0;
+  } 
+
+  a { 
+    color: var(--neutral-100);
+  } 
+
+  a { 
+    margin: 0; 
+    padding: 0;
+  } 
+}     
+
+.card-avatar-wrap[_ngcontent-ng-c3591224755] { 
+    display: flex; 
+    line-height: 1; 
+    overflow: hidden; 
+    cursor: pointer; 
+    width: 100%;
+} 
+
+.ets-positive { 
+    color: var(--primary-100);
+} 
+
+.user-card-change-p[_ngcontent-ng-c3236568359] { 
+    font-family: DINOT,general-font,Arial,sans-serif; 
+    direction: ltr; 
+    position: relative; 
+    font-size: 24px; 
+    font-weight: 300; 
+    letter-spacing: -1.42px; 
+    line-height: 1;
+} 
+
+.user-card-change-text[_ngcontent-ng-c3236568359] { 
+    margin-top: 8px; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+} 
+
+.risk-default[_ngcontent-ng-c3236568359] { 
+    width: 50px; 
+    height: 26px; 
+    line-height: 1.2; 
+    font-size: 18px; 
+    font-family: DINOT,general-font,Arial,sans-serif; 
+    direction: ltr; 
+    text-align: center; 
+    border-radius: 3px;
+} 
+
+.risk-level6[_ngcontent-ng-c3236568359] { 
+    color: green; 
+    border: 1px solid green;
+} 
+
+.user-card-risk-wrap[_ngcontent-ng-c3236568359] .risk-default[_ngcontent-ng-c3236568359]  { 
+    margin: 0 auto;
+} 
+
+.user-card-risk-text[_ngcontent-ng-c3236568359] { 
+    letter-spacing: -.15px;
+} 
+
+@media all{ 
+  button { 
+    border: none;
+  } 
+
+  button { 
+    font-family: inherit;
+  } 
+}     
+
+.ets-button-basic { 
+    padding: 0 15px; 
+    box-shadow: none; 
+    border: none; 
+    font-weight: 700; 
+    cursor: pointer; 
+    color: var(--neutral-0, #fff); 
+    min-width: 140px; 
+    line-height: 45px; 
+    font-size: 14px; 
+    border-radius: 50px; 
+    text-align: center; 
+    transition: var(--button-basic-transition-delay-border-color, .65s) ease border-color,var(--button-basic-transition-delay-background-color, .5s) ease background-color,var(--button-basic-transition-delay-color, .5s) ease color;
+} 
+
+.et-copy-button { 
+    background-color: var(--primary-100); 
+    min-width: 140px;
+} 
+
+.ets-button-basic.ets-button-small { 
+    line-height: 35px;
+} 
+
+.ets-button-basic.ets-button-small { 
+    min-width: 100px;
+} 
+
+.et-copy-button[_ngcontent-ng-c4186398575] { 
+    flex-grow: 1;
+} 
+
+.ets-button-basic.ets-button-primary:not(.ets-button-basic-outline) { 
+    background: var(--primary-100, #1b1d61);
+} 
+
+.et-copy-button:hover { 
+    background-color: var(--primary-100-hover);
+} 
+
+@media (min-width: 768px){ 
+  .ets-button-basic.ets-button-primary:not(.ets-button-basic-outline):hover { 
+    background: var(--primary-100-hover, #1b1d67);
+  } 
+}     
+
+@media all{ 
+  span {  
+    margin: 0; 
+    padding: 0;
+  } 
+}     
+
+.users-rate-number[_ngcontent-ng-c3236568359] { 
+    max-width: 128px; 
+    display: inline-block; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    vertical-align: middle;
+} 
+
+.users-rate-info[_ngcontent-ng-c3236568359] .user-card-change-p[_ngcontent-ng-c3236568359]  { 
+    font-size: 12px; 
+    letter-spacing: -.15px; 
+    display: inline-block; 
+    padding: 0 4px;
+} 
+
+[_nghost-ng-c148223938] { 
+    position: relative; 
+    display: inline-block; 
+    cursor: pointer;
+} 
+
+et-smart-signals[_ngcontent-ng-c3591224755] { 
+    z-index: 0;
+} 
+
+.avatar-info[_ngcontent-ng-c3591224755] { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    vertical-align: middle; 
+    flex: 1; 
+    overflow: hidden; 
+    padding-inline-end: 10px; 
+    max-width: -moz-fit-content; 
+    max-width: fit-content;
+} 
+
+.card-avatar-wrap[_ngcontent-ng-c3591224755] [_ngcontent-ng-c3591224755]  { 
+    font-family: general-font,Arial,sans-serif;
+} 
+
+.arrow-sign[_ngcontent-ng-c3236568359] { 
+    display: inline-block; 
+    margin: 2px 3px;
+} 
+
+.ets-positive[_ngcontent-ng-c3236568359] .arrow-sign[_ngcontent-ng-c3236568359]  { 
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent; 
+    border-right: 4px solid transparent; 
+    border-bottom: 4px solid var(--rating-lowest);
+} 
+
+.content-wrapper[_ngcontent-ng-c148223938] { 
+    border: 1.5px solid transparent; 
+    border-radius: 8px; 
+    padding: 2px; 
+    display: inline-block;
+} 
+
+.ets-info { 
+    color: var(--neutral-100, #2c2c2c); 
+    font-family: Open Sans,ariel,sans-serif;
+} 
+
+.ets-info { 
+    font-size: 14px; 
+    letter-spacing: -.25px; 
+    font-weight: 400;
+} 
+
+.ets-bold { 
+    font-weight: 700;
+} 
+
+.symbol[_ngcontent-ng-c3591224755] { 
+    letter-spacing: -.2px; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    line-height: 1.2; 
+    margin-top: -2px;
+} 
+
+.ets-secondary-info { 
+    color: var(--neutral-90, #777); 
+    font-family: Open Sans,ariel,sans-serif;
+} 
+
+.ets-secondary-info { 
+    font-size: 12px; 
+    font-weight: 400;
+} 
+
+.name[_ngcontent-ng-c3591224755] { 
+    padding-top: 1px; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    line-height: 1.2; 
+    letter-spacing: -.15px;
+} 
+
+[_nghost-ng-c206250979] { 
+    display: inline-block; 
+    position: relative;
+} 
+
+.ets-avatar-m { 
+    height: 35px; 
+    width: 35px; 
+    border-radius: 6px;
+} 
+
+.ets-instrument-icon { 
+    display: block; 
+    position: relative; 
+    z-index: 1; 
+    overflow: hidden;
+} 
+
+et-smart-signals[_ngcontent-ng-c3591224755] .ets-instrument-icon[_ngcontent-ng-c3591224755]  { 
+    overflow: visible;
+} 
+
+.ets-instrument-icon:before { 
+    content: ""; 
+    display: block; 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    top: 0; 
+    left: 0; 
+    z-index: 1; 
+    mix-blend-mode: overlay; 
+    background-image: linear-gradient(to bottom,rgba(255,255,255,.75),rgba(44,44,44,0));
+} 
+
+.ets-instrument-icon[_ngcontent-ng-c3591224755]:before { 
+    border-radius: 6px;
+} 
+
+.ets-instrument-icon > img  { 
+    position: relative; 
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+    border-radius: 4px; 
+    z-index: 2;
+} 
+
+.ets-plain-text { 
+    color: var(--neutral-100, #2c2c2c); 
+    font-family: Open Sans,ariel,sans-serif;
+} 
+
+.ets-plain-text { 
+    font-size: 16px; 
+    letter-spacing: -.25px; 
+    font-weight: 400;
+} 
+
+.icon-indicator[_ngcontent-ng-c3591224755] { 
+    width: 18px; 
+    height: 18px; 
+    background-color: var(--neutral-0); 
+    border-radius: 50%; 
+    position: absolute; 
+    text-align: center; 
+    line-height: 18px; 
+    bottom: -2px; 
+    right: -7px; 
+    box-shadow: -2px -2px 1px 0 rgba(var(--rgb-neutral-100),.1); 
+    color: var(--lightmode-neutral-dm-70); 
+    z-index: 2;
+} 
+
+.pi-star-2:before { 
+    color: #27b6f5;
+} 
+
+.ets-icon-star-fill:before { 
+    font-family: iconGeneralFont; 
+    content: "\e98b";
+} 
+
+et-select-header { 
+    color: var(--neutral-100, #2c2c2c);
+} 
+
+[_nghost-ng-c3317408547] { 
+    color: var(--secondary-110); 
+    font-size: 14px; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    border-radius: 3px; 
+    background-color: var(--neutral-0); 
+    cursor: pointer; 
+    transition: background-color .2s linear; 
+    padding: 9px; 
+    box-sizing: border-box; 
+    box-shadow: inset 0 1px #c8c8c866,0 1px 2px 0 rgba(var(--rgb-neutral-100),.3); 
+    -webkit-user-select: none; 
+    user-select: none; 
+    display: flex; 
+    align-items: center;
+} 
+
+[_nghost-ng-c1370385705] et-select-header  { 
+    background: transparent;
+} 
+
+.watchlists-edit[_ngcontent-ng-c1370385705] { 
+    box-shadow: none; 
+    border: none;
+} 
+
+et-watchlist-quick-edit[_nghost-ng-c1370385705] et-select-header[_ngcontent-ng-c1370385705]  { 
+    padding: 5px 0;
+} 
+
+.watchlists-edit[_ngcontent-ng-c1370385705]:after { 
+    content: "\e93e"; 
+    font-family: iconFont,sans-serif; 
+    font-style: normal; 
+    font-size: 22px; 
+    text-align: center; 
+    color: var(--neutral-40-dm); 
+    font-weight: 400; 
+    line-height: 1.2;
+} 
+
+.header-text[_ngcontent-ng-c3317408547] { 
+    flex: 1; 
+    text-overflow: ellipsis; 
+    overflow: hidden; 
+    text-transform: uppercase;
+} 
+
+.icon-arrow-down[_ngcontent-ng-c3317408547] { 
+    display: none;
+} 
+
+.no-arrow [_nghost-ng-c3317408547] .icon-arrow-down[_ngcontent-ng-c3317408547]  { 
+    display: none;
+} 
+
+.icon-arrow-down:before { 
+    content: "\e906"; 
+    font-family: iconGeneralFont,sans-serif; 
+    font-family: iconGeneralFont; 
+    font-weight: 400; 
+    font-style: normal;
+} 
+
+.arrow-down[_ngcontent-ng-c3317408547] { 
+    display: block; 
+    width: 0; 
+    height: 0; 
+    border: 6px solid transparent; 
+    border-top: 6px solid var(--secondary-110); 
+    box-sizing: border-box; 
+    margin: 6px 5px 0;
+} 
+
+.no-arrow [_nghost-ng-c3317408547] .arrow-down[_ngcontent-ng-c3317408547]  { 
+    display: none;
+} 
+
+
+/* These were inline style tags. Uses id+class to override almost everything */
+#style-CnFmO.style-CnFmO {  
+   background-color: unset;  
+}  
+
+</style>
+
+<%- include('../../../../partials/footer.ejs') %>

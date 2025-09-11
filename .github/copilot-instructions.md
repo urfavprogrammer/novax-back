@@ -1,0 +1,2 @@
+- [x] Created initial MVC folder structure for Node.js/Express/EJS/Sequelize/PostgreSQL/connect-flash/express-session/dotenv project.
+- [ ] Next: Scaffold base files and install dependencies.

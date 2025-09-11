@@ -1,0 +1,30 @@
+# Ignore all .log files
+*.log
+
+# Ignore the 'build' directory and its contents
+build/
+
+# Ignore the 'temp' directory and its contents
+temp/
+
+# Ignore Node.js module directory
+node_modules/
+
+# Ignore IDE-specific files (e.g., IntelliJ IDEA, VS Code)
+.idea/
+.vscode/
+
+# Ignore operating system files
+.DS_Store
+Thumbs.db
+
+# Ignore compiled Python files
+*.pyc
+__pycache__/
+
+# Ignore environment variables files
+.env
+.env.*
+
+# Exception: do not ignore 'important.log' even if it's a .log file
+!important.log

@@ -1,0 +1,123 @@
+ <%- include('../../../../partials/header.ejs') %>
+
+<section class="content invoice">
+      <div class="block-header" style="margin-top:5rem;">
+        <div class="row">
+          <div class="col-lg-7 col-md-6 col-sm-12">
+            <h2>
+            Stock and ETF History
+              <small class="text-muted">Welcome to  Novax-Assets</small>
+            </h2>
+          </div>
+          <div class="col-lg-5 col-md-6 col-sm-12">
+            <ul class="breadcrumb float-md-right">
+              <li class="breadcrumb-item">
+                <a href="dashboard"><i class="zmdi zmdi-home"></i> Novax-Assets</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0);">Stock and ETF History</a>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row clearfix">
+          <div class="col-lg-12">
+            
+            <div class="tab-content">
+              <div
+                role="tabpanel"
+                class="tab-pane in active"
+                id="details"
+                aria-expanded="true"
+              >
+                <div class="card" id="details">
+                  <div class="body">
+                    
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="table-responsive">
+                          <table
+                            id="mainTable"
+                            class="table table-striped"
+                            style="cursor: pointer"
+                          >
+                            <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Amount</th>
+                                <th>Trade Name</th>
+                                <th>Trade Type</th>
+                                <th>Percentage</th>
+                                <th>Profit</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <% if (events && events.length > 0) { %>
+                                <% events.forEach(function(e, index){ %>
+                                  <tr>
+                                    <td><%= index + 1 %></td>
+                                    <td><%= e.amount %></td>
+                                    <td><%= e.stock_name %></td>
+                                    <td><%= e.stock_type %></td>
+                                    <td><%= e.rate %></td>
+                                    <td><%= e.profit %></td>
+                                    <td><span class="<%= e.stock_status === 'completed' ? 'text-success' : 'text-warning' %>"><%= e.stock_status %></span></td>
+                                    <td><%= (e.date && e.date.toLocaleString) ? e.date.toLocaleString() : e.date %></td>
+                                    <td><a href="/member/account/payment?id=<%= e.id %>" class="btn btn-primary">View</a></td>
+                                  </tr>
+                                <% }) %>
+                              <% } else { %>
+                                <tr>
+                                  <td class="alert alert-warning" colspan="9">No Data Yet</td>
+                                </tr>
+                              <% } %>
+                            </tbody>
+
+                                                          </table>
+                        </div>
+                      </div>
+                    </div>
+                   
+                  
+                  </div>
+                </div>
+              </div>
+              
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="/assets/bundles/libscripts.bundle.js"></script>
+    <script src="/assets/bundles/vendorscripts.bundle.js"></script>
+    <script src="/assets/bundles/mainscripts.bundle.js"></script>
+  </body>
+
+<script>
+    const elements = document.getElementsByClassName("clickrow");
+    const giveReceipt = function() {
+      const ref = this.getAttribute('data-ref');
+      const URL = "etfpayment?id=" + ref;
+      openInNewTab(URL);
+    };
+
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].addEventListener('click', giveReceipt, false);
+    }
+
+    function openInNewTab(href) {
+      Object.assign(document.createElement('a'), {
+        target: '_blank',
+        href: href,
+      }).click();
+    }
+  </script>
+</html>

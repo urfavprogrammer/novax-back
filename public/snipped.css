@@ -1,0 +1,950 @@
+@font-face { 
+  font-family:PPUI-Icons;
+  src:url(./fonts/PPUI-Icons.woff2) format("woff2"),url(./fonts/PPUI-Icons.woff) format("woff"),url(./fonts/PPUI-Icons.eot#iefix) format("embedded-opentype"),url(./fonts/PPUI-Icons.svg) format("svg");
+  font-style:normal;
+  font-weight:500;
+} 
+@font-face { 
+  font-family:PayPalSansSmall-Regular;
+  font-style:normal;
+  font-display:swap;
+  src:url(./fonts/PayPalSansSmall-Regular.woff2) format('woff2'),url(./fonts/PayPalSansSmall-Regular.woff) format('woff'),url(./fonts/PayPalSansSmall-Regular.eot-#iefix) format('embedded-opentype'),url(./fonts/PayPalSansSmall-Regular.svg) format('svg');
+} 
+@font-face { 
+  font-family:PayPalSansBig-Regular;
+  font-style:normal;
+  font-display:swap;
+  src:url(./fonts/PayPalSansBig-Regular.woff2) format('woff2'),url(./fonts/PayPalSansBig-Regular.woff) format('woff'),url(./fonts/PayPalSansBig-Regular.eot-#iefix) format('embedded-opentype'),url(./fonts/PayPalSansBig-Regular.svg) format('svg');
+} 
+@font-face { 
+  font-display:swap;
+  font-family:PayPalOpen-Regular;
+  font-style:normal;
+  src:url(./fonts/PayPalOpen-Regular.woff2) format("woff2"),url(./fonts/PayPalOpen-Regular.woff) format("woff");
+} 
+@font-face { 
+  font-display:swap;
+  font-family:PayPalOpen-Bold;
+  font-style:normal;
+  src:url(./fonts/PayPalOpen-Bold.woff2) format("woff2"),url(./fonts/PayPalOpen-Bold.woff) format("woff");
+} 
+  body {  
+    font-family:PayPalSansBig-Regular,Helvetica Neue,Arial,sans-serif;
+    color:#2c2e2f;
+    font-size:100%;
+    line-height:1.15;
+  }  
+* { 
+    box-sizing: inherit;
+} 
+
+body { 
+    height: 100%; 
+    font-family: PayPalSansBig-Regular,Helvetica Neue,Arial,sans-serif; 
+    color: #2c2e2f;
+} 
+
+body { 
+    margin: 0; 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;
+} 
+
+body { 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
+    text-rendering: optimizeLegibility;
+} 
+
+body { 
+    color: #2c2e2f; 
+    font-display: swap; 
+    font-family: PayPalSansBig-Regular,Helvetica Neue,HelveticaNeue,helvetica,arial,sans-serif; 
+    font-size: 1rem; 
+    -moz-osx-font-smoothing: grayscale; 
+    -webkit-font-smoothing: antialiased; 
+    line-height: 1.5rem;
+} 
+
+html { 
+    box-sizing: border-box; 
+    line-height: 1.15; 
+    -webkit-text-size-adjust: 100%;
+} 
+
+html { 
+    height: 100%; 
+    font-family: PayPalSansBig-Regular,Helvetica Neue,Arial,sans-serif; 
+    color: #2c2e2f;
+} 
+
+html { 
+    box-sizing: border-box; 
+    font-size: 100%; 
+    scroll-behavior: smooth; 
+    -ms-text-size-adjust: 100%; 
+    -webkit-text-size-adjust: 100%;
+} 
+
+:root { 
+    --sys-size-field-lg: 4rem; 
+    --sys-space-xs: 0.25rem; 
+    --sys-space-sm: 0.5rem; 
+    --sys-space-md: 0.75rem; 
+    --sys-space-lg: 1rem; 
+    --sys-space-xl: 1.5rem; 
+    --sys-border-thickness-normal: 0.0625rem; 
+    --sys-border-radius-sm: 0.25rem; 
+    --sys-typography-heading-sm-size: 1.75rem; 
+    --sys-typography-title-size: 1.375rem; 
+    --sys-typography-body-family: PayPalOpen-Regular; 
+    --sys-typography-body-size: 1.125rem; 
+    --sys-typography-body-weight: 400; 
+    --sys-typography-body-line-height: 1.5rem; 
+    --sys-typography-caption-family: PayPalOpen-Regular; 
+    --sys-typography-caption-size: 0.875rem; 
+    --sys-typography-caption-weight: 400; 
+    --sys-typography-caption-line-height: 1.25rem; 
+    --sys-typography-field-label-lg-size: 1.125rem; 
+    --sys-typography-field-label-lg-line-height: 1.5rem; 
+    --sys-color-background-main: #faf8f5; 
+    --sys-color-background-high-contrast: #001435; 
+    --sys-color-background-medium-contrast: #545d68; 
+    --sys-color-primary-main: #003087; 
+    --sys-color-secondary-main: #0070e0; 
+    --sys-color-system-main-hover: #929496; 
+    --sys-color-structure-border-low-contrast: rgba(0,0,0,0.1); 
+} 
+
+:root { 
+    --sys-typography-body-family: PayPalOpen-Regular,Helvetica Neue,Arial,sans-serif; 
+    --sys-typography-caption-family: PayPalOpen-Regular,Helvetica Neue,Arial,sans-serif; 
+} 
+
+.InterstitialWithBodyScroll_wrapper_2tfR3 { 
+    min-height: 100%;
+} 
+
+[dir] .InterstitialWithBodyScroll_wrapper_2tfR3  { 
+    background-color: #fff;
+} 
+
+*,:after,:before { 
+    box-sizing: inherit;
+} 
+
+.InterstitialHeader_container_3L_kM { 
+    align-items: center; 
+    display: flex; 
+    height: auto; 
+    justify-content: space-between; 
+    min-height: 3.5rem; 
+    position: relative;
+} 
+
+[dir] .InterstitialHeader_container_3L_kM  { 
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.08); 
+    padding: 1rem 1.5rem;
+} 
+
+.InterstitialHeader_container_3L_kM  { 
+    height: unset;
+} 
+
+.InterstitialHeader_container_3L_kM  { 
+    padding: 0;
+} 
+
+.InterstitialHeader_container_3L_kM.InterstitialHeader_tall-90-percent_2u1ox  { 
+    min-height: 72px;
+} 
+
+.InterstitialHeader_container_3L_kM  { 
+    box-shadow: none;
+} 
+
+[dir] .InterstitialWithBodyScroll_inner-container_1bJRL  { 
+    padding: 1.125rem 1.5rem;
+} 
+
+.InterstitialWithBodyScroll_inner-container_1bJRL  { 
+    padding: 0 4rem var(--sys-space-xl) 4rem;
+} 
+
+.InterstitialHeader_header_rptaJ { 
+    align-items: flex-start; 
+    display: flex; 
+    flex-direction: column; 
+    width: 100%;
+} 
+
+.InterstitialHeader_header_rptaJ  { 
+    align-items: center;
+} 
+
+button { 
+    overflow: visible;
+} 
+
+button { 
+    font-family: inherit; 
+    font-size: 100%; 
+    line-height: 1.15; 
+    margin: 0;
+} 
+
+button { 
+    text-transform: none;
+} 
+
+button { 
+    -webkit-appearance: button;
+} 
+
+button { 
+    font: inherit;
+} 
+
+button { 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
+    text-rendering: optimizeLegibility;
+} 
+
+.InterstitialHeader_closeBtn_36m7m { 
+    align-items: center; 
+    color: #515354; 
+    display: flex; 
+    height: 3rem; 
+    justify-content: center; 
+    overflow: visible; 
+    position: absolute; 
+    top: 0; 
+    width: 3rem; 
+    z-index: 2;
+} 
+
+[dir] button  { 
+    border: 0;
+} 
+
+[dir] button  { 
+    margin: 0;
+} 
+
+[dir] .InterstitialHeader_closeBtn_36m7m  { 
+    background-color: transparent; 
+    border: 0; 
+    cursor: pointer;
+} 
+
+[dir="ltr"] .InterstitialHeader_closeBtn_36m7m  { 
+    right: 0;
+} 
+
+.InterstitialHeader_closeBtn_36m7m  { 
+    color: var(--sys-color-background-medium-contrast); 
+    top: calc(50% - 1.5rem);
+} 
+
+.InterstitialHeader_closeBtn_36m7m  { 
+    right: var(--sys-space-sm);
+} 
+
+.xo-member-1sgwra0-svg-size_sm { 
+    speak: none; 
+    display: inline-block; 
+    aspect-ratio: 1 / 1; 
+    width: 1.5rem; 
+    height: 1.5rem;
+} 
+
+[dir] .Title_root_1UjTD  { 
+    clear: both;
+} 
+
+.AddFiChoiceList_title_2LhPM  { 
+    font-size: var(--sys-typography-title-size); 
+    line-height: var(--sys-typography-heading-sm-size);
+} 
+
+.AddFiChoiceList_title_2LhPM  { 
+    margin-bottom: var(--sys-space-md);
+} 
+
+[dir] .AddFiChoiceList_backButton_h1FgC  { 
+    margin: .75rem 0;
+} 
+
+.xo-member-1sgwra0-svg-size_sm svg  { 
+    width: 100%; 
+    height: 100%; 
+    display: block;
+} 
+
+.xo-member-151vsl0-text_caption { 
+    color: rgb(0, 20, 53); 
+    font-family: PayPalOpen-Regular, "Helvetica Neue", Arial, sans-serif; 
+    font-size: 0.875rem; 
+    line-height: 1.25rem; 
+    font-weight: 400;
+} 
+
+[dir="ltr"] .Title_alignLeft_1UJfc  { 
+    text-align: left;
+} 
+
+.AddOption_container_1YSQc { 
+    display: flex; 
+    position: relative; 
+    z-index: 10;
+} 
+
+[dir] .AddOption_container_1YSQc  { 
+    margin-bottom: .625rem;
+} 
+
+.AddOption_container_1YSQc  { 
+    margin-bottom: 0;
+} 
+
+[dir] .AddCardForm_container_19zbS  { 
+    margin-bottom: 1.125rem;
+} 
+
+.AddCardForm_container_19zbS  { 
+    margin-bottom: 0;
+} 
+
+[type="submit"],button { 
+    -webkit-appearance: button;
+} 
+
+.Buttons_base_2xi07 { 
+    width: 100%;
+} 
+
+.xo-member-ylhy9c-button_base-text_button_lg-btn_full_width { 
+    position: relative; 
+    border-radius: 1000px; 
+    cursor: pointer; 
+    display: inline-block; 
+    min-width: 6rem; 
+    text-align: center; 
+    text-decoration: none; 
+    transition: color 0.2s ease 0s, background-color 0.2s ease 0s, border-color 0.2s ease 0s, box-shadow 0.2s ease 0s; 
+    border: 0.125rem solid rgb(0, 48, 135); 
+    color: rgb(255, 255, 255); 
+    font-family: PayPalOpen-Bold, "Helvetica Neue", Arial, sans-serif; 
+    font-size: 1.125rem; 
+    line-height: 1.5rem; 
+    font-weight: 400; 
+    background-color: rgb(0, 48, 135); 
+    padding: 0.625rem 1.875rem;
+} 
+
+.Buttons_base_2xi07  { 
+    min-height: 3rem; 
+    overflow-wrap: break-word;
+} 
+
+.xo-member-ylhy9c-button_base-text_button_lg-btn_full_width:hover,.xo-member-ylhy9c-button_base-text_button_lg-btn_full_width:active { 
+    color: rgb(255, 255, 255);
+} 
+
+.xo-member-ylhy9c-button_base-text_button_lg-btn_full_width:hover { 
+    text-decoration: none; 
+    background-color: rgb(0, 112, 224); 
+    border-color: rgb(0, 112, 224);
+} 
+
+[type="button"],button { 
+    -webkit-appearance: button;
+} 
+
+.xo-member-bi6b71-links_base-text_body_strong { 
+    text-decoration: none; 
+    color: rgb(0, 112, 224); 
+    font-family: PayPalOpen-Bold, "Helvetica Neue", Arial, sans-serif; 
+    font-size: 1.125rem; 
+    line-height: 1.5rem; 
+    font-weight: 400;
+} 
+
+button,[type="button"]  { 
+    -webkit-appearance: button;
+} 
+
+[dir] .Link_link_12w0g  { 
+    background: transparent;
+} 
+
+[dir="ltr"] .AddOption_link_8_YEt  { 
+    text-align: left;
+} 
+
+[dir] .AddFiChoiceList_backButton_h1FgC button  { 
+    margin: 0 auto;
+} 
+
+.AddOption_container_1YSQc .AddOption_link_8_YEt  { 
+    padding: 0;
+} 
+
+.Link_link_12w0g:active { 
+    color: #003087; 
+    text-decoration: underline;
+} 
+
+.xo-member-bi6b71-links_base-text_body_strong:hover { 
+    text-decoration: underline; 
+    cursor: pointer;
+} 
+
+.xo-member-bi6b71-links_base-text_body_strong:hover { 
+    color: rgb(0, 48, 135); 
+    border-radius: 0.125rem;
+} 
+
+.UserName_flexContainer_12BCg { 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+} 
+
+.SupportedFundingSourceIcons_supportedFundingSourceIconsContainer_3NchG { 
+    display: flex; 
+    flex-direction: column;
+} 
+
+[dir] .SupportedFundingSourceIcons_supportedFundingSourceIconsContainer_3NchG  { 
+    background-color: #f5f7fa; 
+    border-radius: 4px; 
+    margin: 0 0 .75rem; 
+    padding: .4rem;
+} 
+
+.SupportedFundingSourceIcons_supportedFundingSourceIconsContainer_3NchG  { 
+    background-color: var(--sys-color-background-main); 
+    margin-bottom: var(--sys-space-lg); 
+    margin-top: 0;
+} 
+
+.AddCardForm_flexContainer_2oXOm { 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+} 
+
+.AddressForm_flexContainer_1otxU { 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    position: relative;
+} 
+
+[dir] .AddressForm_flexContainer_1otxU  { 
+    margin-bottom: 0;
+} 
+
+[dir] .AddressForm_addressFormContainer_3mULU  { 
+    margin-bottom: .375rem;
+} 
+
+.AddressForm_addressFormContainer_3mULU  { 
+    margin-bottom: var(--sys-space-md);
+} 
+
+.xo-member-1hv7ga5-text_input_base-text_body { 
+    color: rgb(0, 20, 53); 
+    font-family: PayPalOpen-Regular, "Helvetica Neue", Arial, sans-serif; 
+    font-size: 1.125rem; 
+    line-height: 1.5rem; 
+    font-weight: 400; 
+    padding: 0px; 
+    position: relative; 
+    text-align: left;
+} 
+
+.AddCardForm_halfSizedInputStyle_HyPiI { 
+    flex-basis: 48.8%;
+} 
+
+[dir] .AddCardForm_halfSizedInputStyle_HyPiI  { 
+    margin-bottom: .75rem;
+} 
+
+.AddCardForm_halfSizedInputStyle_HyPiI  { 
+    flex: 1 1;
+} 
+
+.UserName_firstNameInput_1oA44  { 
+    margin-right: var(--sys-space-md);
+} 
+
+.AddCardForm_halfSizedInputStyle_HyPiI  { 
+    margin-bottom: var(--sys-space-lg);
+} 
+
+.UserName_lastNameInput_3rf7c  { 
+    margin-left: var(--sys-space-md);
+} 
+
+.SupportedFundingSourceIcons_fundingSourceIconContainer_3G45V { 
+    display: flex; 
+    flex-wrap: wrap;
+} 
+
+[dir] .SupportedFundingSourceIcons_fundingSourceIconContainer_3G45V  { 
+    margin-bottom: -.4rem;
+} 
+
+[dir] .SupportedFundingSourceIcons_fundingSourceIconContainer_3G45V:not(:last-child)  { 
+    padding-bottom: .4rem;
+} 
+
+.xo-member-16jt5za-text_body { 
+    color: rgb(0, 20, 53); 
+    font-family: PayPalOpen-Regular, "Helvetica Neue", Arial, sans-serif; 
+    font-size: 1.125rem; 
+    line-height: 1.5rem; 
+    font-weight: 400;
+} 
+
+.AddressForm_sectionTitle_1MyAH  { 
+    font-size: var(--sys-typography-field-label-lg-size); 
+    line-height: var(--sys-typography-field-label-lg-line-height);
+} 
+
+.AddressForm_sectionTitle_1MyAH  { 
+    margin: var(--sys-space-sm) 0 var(--sys-space-md) 0;
+} 
+
+.AddressForm_cancelLink_2E3_E  { 
+    padding: 0;
+} 
+
+[dir] .AddressForm_input_2SODF  { 
+    margin-bottom: .75rem;
+} 
+
+.AddressForm_input_2SODF  { 
+    margin-bottom: var(--sys-space-lg);
+} 
+
+input { 
+    overflow: visible;
+} 
+
+input { 
+    font-family: inherit; 
+    font-size: 100%; 
+    line-height: 1.15; 
+    margin: 0;
+} 
+
+input { 
+    font: inherit;
+} 
+
+input { 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
+    text-rendering: optimizeLegibility;
+} 
+
+.xo-member-16mpn99-text_input_control-text_body-label_placeholder_shown_and_not_focused-text_body { 
+    padding: 1.75rem 0.6875rem 0.625rem; 
+    color: rgb(0, 20, 53); 
+    font-family: PayPalOpen-Regular, "Helvetica Neue", Arial, sans-serif; 
+    font-size: 1.125rem; 
+    line-height: 1.5rem; 
+    font-weight: 400; 
+    text-overflow: ellipsis; 
+    box-sizing: border-box; 
+    width: 100%; 
+    border: 0.0625rem solid rgb(146, 148, 150); 
+    border-radius: 0.25rem; 
+    background-color: rgb(255, 255, 255); 
+    margin: 0px; 
+    outline: none; 
+    position: relative; 
+    appearance: none; 
+    min-height: 4rem;
+} 
+
+[dir] input  { 
+    margin: 0;
+} 
+
+.xo-member-16mpn99-text_input_control-text_body-label_placeholder_shown_and_not_focused-text_body:first-line { 
+    line-height: 1.5rem;
+} 
+
+.xo-member-7nxsij-label-text_field_label_sm { 
+    color: rgb(84, 93, 104); 
+    font-family: PayPalOpen-Regular, "Helvetica Neue", Arial, sans-serif; 
+    font-size: 0.875rem; 
+    line-height: 1.25rem; 
+    font-weight: 400; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    overflow: hidden; 
+    pointer-events: none; 
+    position: absolute; 
+    top: 0.5rem; 
+    transition: font-size 0.1s ease-in-out 0s, top 0.1s ease-in-out 0s, background-color 10ms linear 0.1s; 
+    right: 0.75rem; 
+    left: 0.75rem; 
+    background-clip: padding-box;
+} 
+
+.SupportedFundingSourceIcons_fundingSourceIcon_3_bOy { 
+    display: flex;
+} 
+
+[dir] .SupportedFundingSourceIcons_fundingSourceIcon_3_bOy  { 
+    padding: 0 .4rem .4rem;
+} 
+
+[dir] .AddCardForm_inputStyle_9NEKu  { 
+    margin-bottom: .75rem;
+} 
+
+.AddCardForm_inputStyle_9NEKu  { 
+    flex: 1 1;
+} 
+
+.AddCardForm_inputStyle_9NEKu  { 
+    margin-bottom: var(--sys-space-lg);
+} 
+
+.xo-member-16mpn99-text_input_control-text_body-label_placeholder_shown_and_not_focused-text_body:placeholder-shown:not(:focus) ~ label  { 
+    color: rgb(84, 93, 104); 
+    font-family: PayPalOpen-Regular, "Helvetica Neue", Arial, sans-serif; 
+    font-size: 1.125rem; 
+    line-height: 1.5rem; 
+    font-weight: 400; 
+    top: 1.25rem; 
+    background-color: transparent; 
+    margin-bottom: 0px;
+} 
+
+.AddressForm_flexInput_107rs { 
+    flex-basis: 48.8%;
+} 
+
+[dir] .AddressForm_flexInput_107rs  { 
+    margin-bottom: .75rem;
+} 
+
+.AddressForm_postalCode_P_bmi  { 
+    flex: 1 1;
+} 
+
+.AddressForm_flexInput_107rs  { 
+    margin-bottom: var(--sys-space-lg);
+} 
+
+.AddressForm_verticalSpace_1XHHX { 
+    width: var(--sys-space-xl);
+} 
+
+.AddressForm_stateContainer_BRUYv { 
+    width: 48.8%;
+} 
+
+.AddressForm_addressFormContainer_3mULU .AddressForm_stateContainer_BRUYv  { 
+    flex: 1 1;
+} 
+
+.xo-member-19s4o06-text_input_control-text_body-text_input_control_with_icon_right-label_placeholder_shown_and_not_focused-text_body { 
+    padding: 1.75rem 4.1875rem 0.625rem 0.6875rem; 
+    color: rgb(0, 20, 53); 
+    font-family: PayPalOpen-Regular, "Helvetica Neue", Arial, sans-serif; 
+    font-size: 1.125rem; 
+    line-height: 1.5rem; 
+    font-weight: 400; 
+    text-overflow: ellipsis; 
+    box-sizing: border-box; 
+    width: 100%; 
+    border: 0.0625rem solid rgb(146, 148, 150); 
+    border-radius: 0.25rem; 
+    background-color: rgb(255, 255, 255); 
+    margin: 0px; 
+    outline: none; 
+    position: relative; 
+    appearance: none; 
+    min-height: 4rem;
+} 
+
+.xo-member-19s4o06-text_input_control-text_body-text_input_control_with_icon_right-label_placeholder_shown_and_not_focused-text_body:first-line { 
+    line-height: 1.5rem;
+} 
+
+.xo-member-1h2psxc-label-text_field_label_sm-label_with_icon_right { 
+    color: rgb(84, 93, 104); 
+    font-family: PayPalOpen-Regular, "Helvetica Neue", Arial, sans-serif; 
+    font-size: 0.875rem; 
+    line-height: 1.25rem; 
+    font-weight: 400; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    overflow: hidden; 
+    pointer-events: none; 
+    position: absolute; 
+    top: 0.5rem; 
+    transition: font-size 0.1s ease-in-out 0s, top 0.1s ease-in-out 0s, background-color 10ms linear 0.1s; 
+    background-clip: padding-box; 
+    left: 0.75rem; 
+    right: 3.75rem;
+} 
+
+.xo-member-19s4o06-text_input_control-text_body-text_input_control_with_icon_right-label_placeholder_shown_and_not_focused-text_body:placeholder-shown:not(:focus) ~ label  { 
+    color: rgb(84, 93, 104); 
+    font-family: PayPalOpen-Regular, "Helvetica Neue", Arial, sans-serif; 
+    font-size: 1.125rem; 
+    line-height: 1.5rem; 
+    font-weight: 400; 
+    top: 1.25rem; 
+    background-color: transparent; 
+    margin-bottom: 0px;
+} 
+
+.xo-member-seefud-icon_right { 
+    text-decoration: none; 
+    position: absolute; 
+    width: 3rem; 
+    height: 3rem; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    top: 0.5rem; 
+    right: 0.5rem; 
+    left: auto;
+} 
+
+.AddCardForm_expireDateInput_2ewgO  { 
+    margin-right: var(--sys-space-md);
+} 
+
+.AddCardForm_cvvInput_1Pp31  { 
+    margin-left: var(--sys-space-md);
+} 
+
+.Dropdown_container_UW2Ij { 
+    position: relative;
+} 
+
+.CreditCardForm_cardIconContainer_L_uCM  { 
+    align-items: center; 
+    color: var(--sys-color-primary-main); 
+    display: flex; 
+    height: 1.5625rem; 
+    justify-content: center; 
+    width: 2.5rem;
+} 
+
+.CreditCardForm_cardIconContainer_L_uCM  { 
+    border: var(--sys-border-thickness-normal) solid var(--sys-color-structure-border-low-contrast); 
+    border-radius: var(--sys-border-radius-sm);
+} 
+
+.ppvx_dropdown___3-6-1 { 
+    position: relative; 
+    font-size: .9375rem; 
+    line-height: 1.5rem; 
+    font-family: PayPalSansSmall-Regular,Helvetica Neue,Arial,sans-serif; 
+    font-weight: 400; 
+    font-family: PayPalSansBig-Regular,Helvetica Neue,Arial,sans-serif;
+} 
+
+.ppvx_dropdown___3-6-1:before { 
+    content: "\E913"; 
+    font-family: PPUI-Icons!important; 
+    font-style: normal; 
+    font-weight: 500; 
+    font-feature-settings: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    line-height: 0; 
+    speak: none; 
+    font-size: 1.875rem; 
+    display: block; 
+    color: #2c2e2f; 
+    text-indent: -.25rem; 
+    width: 1.5rem; 
+    height: 1.5rem; 
+    -o-object-fit: contain; 
+    object-fit: contain; 
+    position: absolute; 
+    top: 1.5rem; 
+    z-index: 2; 
+    pointer-events: none;
+} 
+
+[dir="ltr"] .ppvx_dropdown___3-6-1::before { 
+    right: .75rem;
+} 
+
+.Dropdown_container_UW2Ij [class^="ppvx_dropdown___"]::before { 
+    display: none;
+} 
+
+.Arrow_arrow_1phAu { 
+    color: #0070ba;
+} 
+
+.Arrow_arrow_1phAu  { 
+    color: var(--sys-color-secondary-main);
+} 
+
+.Dropdown_container_UW2Ij span[class^="Arrow"]  { 
+    color: var(--sys-color-background-medium-contrast); 
+    pointer-events: none; 
+    position: absolute; 
+    top: 1.25rem;
+} 
+
+[dir="ltr"] .Dropdown_container_UW2Ij span[class^="Arrow"]  { 
+    right: 1.25rem;
+} 
+
+.xo-member-4757ty-svg-size_xs { 
+    speak: none; 
+    display: inline-block; 
+    aspect-ratio: 1 / 1; 
+    width: 1.125rem; 
+    height: 1.125rem;
+} 
+
+select { 
+    font-family: inherit; 
+    font-size: 100%; 
+    line-height: 1.15; 
+    margin: 0;
+} 
+
+select { 
+    text-transform: none;
+} 
+
+select { 
+    font: inherit;
+} 
+
+select { 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
+    text-rendering: optimizeLegibility;
+} 
+
+.ppvx_dropdown__control___3-6-1 { 
+    font-size: .9375rem; 
+    line-height: 1.5rem; 
+    font-family: PayPalSansSmall-Regular,Helvetica Neue,Arial,sans-serif; 
+    font-weight: 400; 
+    font-family: PayPalSansBig-Regular,Helvetica Neue,Arial,sans-serif; 
+    display: block; 
+    box-sizing: border-box; 
+    height: 3rem; 
+    width: 100%; 
+    color: #2c2e2f; 
+    -moz-padding-start: .5rem; 
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+} 
+
+[dir] select  { 
+    margin: 0;
+} 
+
+[dir] .ppvx_dropdown__control___3-6-1  { 
+    border: .0625rem solid #b7bcbf; 
+    border-radius: .25rem; 
+    background-color: #fff;
+} 
+
+[dir="ltr"] .ppvx_dropdown__control___3-6-1  { 
+    padding: 1.15rem 2.5rem .15rem .75rem;
+} 
+
+.Dropdown_container_UW2Ij [class^="ppvx_dropdown__control"]  { 
+    color: var(--sys-color-background-high-contrast); 
+    font-family: var(--sys-typography-body-family); 
+    font-size: var(--sys-typography-body-size); 
+    font-weight: var(--sys-typography-body-weight); 
+    height: var(--sys-size-field-lg); 
+    line-height: var(--sys-typography-body-line-height); 
+    min-height: var(--sys-size-field-lg);
+} 
+
+[dir] .Dropdown_container_UW2Ij [class^="ppvx_dropdown__control"]  { 
+    border: var(--sys-border-thickness-normal) solid var(--sys-color-system-main-hover); 
+    padding-bottom: .625rem; 
+    padding-top: 1.75rem;
+} 
+
+.ppvx_dropdown__label___3-6-1 { 
+    pointer-events: none; 
+    color: #687173; 
+    font-family: PayPalSansBig-Regular,Helvetica Neue,Arial,sans-serif; 
+    font-size: .75rem; 
+    line-height: .9375rem; 
+    position: absolute; 
+    top: .125rem; 
+    transition: font-size .1s ease-in-out,top .1s ease-in-out,background-color 10ms linear .1s;
+} 
+
+[dir] .ppvx_dropdown__label___3-6-1  { 
+    text-align: initial; 
+    padding-top: .3125rem;
+} 
+
+[dir="ltr"] .ppvx_dropdown__label___3-6-1  { 
+    left: .75rem;
+} 
+
+.Dropdown_container_UW2Ij [class^="ppvx_dropdown__label"]  { 
+    color: var(--sys-color-background-medium-contrast); 
+    font-family: var(--sys-typography-caption-family); 
+    font-size: var(--sys-typography-caption-size); 
+    font-weight: var(--sys-typography-caption-weight); 
+    line-height: var(--sys-typography-caption-line-height); 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    top: var(--sys-space-xs); 
+    white-space: nowrap;
+} 
+
+[dir="ltr"] .Dropdown_container_UW2Ij [class^="ppvx_dropdown__label"]  { 
+    left: var(--sys-space-md); 
+    right: var(--sys-space-md);
+} 
+
+.xo-member-4757ty-svg-size_xs svg  { 
+    width: 100%; 
+    height: 100%; 
+    display: block;
+} 
+
+img { 
+    border-style: none;
+} 
+
+img { 
+    -ms-interpolation-mode: bicubic; 
+    vertical-align: middle;
+} 
+
+
+/* These were inline style tags. Uses id+class to override almost everything */
+#style-hMeeU.style-hMeeU {  
+   width: 100%;  
+    margin-bottom: 0px;  
+}  
+/* These were inline style tags. Uses id+class to override almost everything */
+#style-fvyDF.style-fvyDF {  
+   width: 100%;  
+    margin-bottom: 0px;  
+}  

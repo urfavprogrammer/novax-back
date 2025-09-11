@@ -1,0 +1,577 @@
+ <%- include('../../../../partials/header.ejs') %>
+
+
+<section class="content home">
+  <div class="block-header" style="margin-top:5rem;">
+    <div class="row">
+      <div class="col-lg-7 col-md-6 col-sm-12">
+        <h2>
+                  Real Estate Investment Trust
+                 </h2>
+      </div>
+      <div class="col-lg-5 col-md-6 col-sm-12">
+
+        <ul class="breadcrumb float-md-right">
+          <li class="breadcrumb-item">
+            <a href="dashboard"><i class="zmdi zmdi-home"></i> Novax-Assets</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="javascript:void(0);">REITs</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row clearfix">
+        <link rel="stylesheet" type="text/css" href="/assets/main.259e36d1.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </div>
+    <script>
+        // this function is called when a small image is clicked
+        function showModal() {
+            var modal = document.getElementById("crd");
+            modal.classList.remove('hidden');
+        }
+
+        // this function is called when the close button is clicked
+        function closeModal() {
+            var modal = document.getElementById("crd");
+            modal.classList.add('hidden');
+        }
+    </script>
+    <div class="row clearfix">
+      <div class="col-lg-12 col-md-12">
+        <div id="crd" class="card hidden">
+            
+          <div class="body">
+              
+            <div id="demo2" class="carousel slide" data-ride="carousel">
+              <ul class="carousel-indicators">
+                <li data-target="#demo2" data-slide-to="0" class="active"></li>
+                <li data-target="#demo2" data-slide-to="1" class=""></li>
+                <li data-target="#demo2" data-slide-to="2" class=""></li>
+              </ul>
+              <div class="carousel-inner">
+                  
+                <div class="carousel-item active">
+                  <img src="/uploads/reit/<%= reit.image %>" class="img-fluid" alt="" />
+                  <div class="carousel-caption">
+                    <!-- <h3>Chicago</h3>
+                    <p>Thank you, Chicago!</p> -->
+                  </div>
+                </div>
+                                <div class="carousel-item">
+                  <img src="/uploads/reit/<%= reit.image1 %>" class="img-fluid" alt="" />
+                </div>
+                                <div class="carousel-item">
+                  <img src="/uploads/reit/<%= reit.image2 %>" class="img-fluid" alt="" />
+                </div>
+                                <div class="carousel-item">
+                  <img src="/uploads/reit/<%= reit.image3 %>" class="img-fluid" alt="" />
+                </div>
+                                <div class="carousel-item">
+                  <img src="/uploads/reit/<%= reit.image4 %>" class="img-fluid" alt="" />
+                </div>
+                                <div class="carousel-item">
+                  <img src="/uploads/reit/<%= reit.image5 %>" class="img-fluid" alt="" />
+                </div>
+                                <div class="carousel-item">
+                  <img src="/uploads/reit/<%= reit.image6 %>" class="img-fluid" alt="" />
+                </div>
+                                <div class="carousel-item">
+                  <img src="/uploads/reit/<%= reit.image7 %>" class="img-fluid" alt="" />
+                </div>
+                                <div class="carousel-item">
+                  <img src="/uploads/reit/<%= reit.image8 %>" class="img-fluid" alt="" />
+                </div>
+                                <div class="carousel-item">
+                  <img src="/uploads/reit/<%= reit.image9 %>" class="img-fluid" alt="" />
+                </div>
+                              </div>
+                <div class="max-w-1140-px w-full absolute mx-auto right-0 left-0 top-4 flex justify-center pointer-events-none">
+                    <button onclick="closeModal();" class="pointer-events-auto flex justify-center items-center font-semibold py-3 px-5 rounded-md shadow-lg cursor-pointer active:scale-95 bg-white" fdprocessedid="klzs2i"><span class="text-black">close</span></button>
+                </div>
+              <a class="carousel-control-prev" href="#demo2" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+              <a class="carousel-control-next" href="#demo2" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="col-md-12 col-12">
+            <section class="w-full mx-auto max-w-1600-px">
+              <div class="p-0 mx-auto my-0 max-w-1600-px">
+                <section id="hero-image" class="relative w-full mx-auto my-0 block max-w-1600-px">
+                  <div class="hidden md:block">
+                    <div class="flex relative justify-center max-h-50-vh min-h-400-px overflow-hidden">
+                      <div class="flex">
+                        <div class="max-h-50-vh min-h-400-px w-full transition duration-300 ease-out hover:cursor-pointer hover:brightness-90">
+                          <picture>
+                            <img
+                              src="/uploads/reit/<%= reit.image10 %>"
+                              alt="" class="w-full h-full object-cover">
+                          </picture>
+                        </div>
+                        <div
+                          class="max-h-50-vh min-h-400-px w-full transition duration-300 ease-out hover:cursor-pointer hover:brightness-90">
+                          <picture>
+                            <img
+                              src="/uploads/reit/<%= reit.image11 %>"
+                              alt="" class="w-full h-full object-cover">
+                          </picture>
+                        </div>
+                        <div
+                          class="max-h-50-vh min-h-400-px w-full transition duration-300 ease-out hover:cursor-pointer hover:brightness-90">
+                          <picture>
+                            <img
+                              src="/uploads/reit/<%= reit.image12 %>"
+                              alt="" class="w-full h-full object-cover">
+                          </picture>
+                        </div>
+                      </div>
+                      
+                      <div
+                        class="max-w-1140-px w-full absolute mx-auto right-0 left-0 top-4 flex justify-end pointer-events-none">
+                        <button onclick="showModal();"
+                          class="pointer-events-auto flex justify-center items-center font-semibold py-3 px-5 rounded-md shadow-lg cursor-pointer active:scale-95 bg-white"
+                          fdprocessedid="klzs2i"><i class="fas fa-image mr-2 text-sm text-lofty-dark opacity-50"></i><span
+                            class="text-black">View all photos</span></button></div>
+                    </div>
+                  </div>
+                  <div class="block md:hidden">
+                    <div id="property-images-slider" class="swipe" style="visibility: visible;">
+                      <div class="swipe-wrap">
+                                                  <div
+                          class="slider-image flex items-center justify-center bg-center bg-no-repeat bg-cover p-0 md:px-0 lg:px-0 h-250-px lg:h-500-px"
+                          data-index="1"
+                          style="width: 414px; left: 0px; transition-duration: 300ms; transform: translateX(0px);">
+                          <picture>
+                            <img
+                              src="/uploads/reit/<%= reit.image13 %>" 
+                              alt="" class="w-full h-full object-cover">
+                          </picture>
+                        </div>
+                                                <div
+                          class="slider-image flex items-center justify-center bg-center bg-no-repeat bg-cover p-0 md:px-0 lg:px-0 h-250-px lg:h-500-px"
+                          data-index="2"
+                          style="width: 414px; left: 0px; transition-duration: 300ms; transform: translateX(0px);">
+                          <picture>
+                            <img
+                              src="/uploads/reit/<%= reit.image14 %>" 
+                              alt="" class="w-full h-full object-cover">
+                          </picture>
+                        </div>
+                                                <div
+                          class="slider-image flex items-center justify-center bg-center bg-no-repeat bg-cover p-0 md:px-0 lg:px-0 h-250-px lg:h-500-px"
+                          data-index="3"
+                          style="width: 414px; left: 0px; transition-duration: 300ms; transform: translateX(0px);">
+                          <picture>
+                            <img
+                              src="/uploads/reit/<%= reit.image15 %>" 
+                              alt="" class="w-full h-full object-cover">
+                          </picture>
+                        </div>
+                                                <div
+                          class="slider-image flex items-center justify-center bg-center bg-no-repeat bg-cover p-0 md:px-0 lg:px-0 h-250-px lg:h-500-px"
+                          data-index="4"
+                          style="width: 414px; left: 0px; transition-duration: 300ms; transform: translateX(0px);">
+                          <picture>
+                            <img
+                              src="/uploads/reit/<%= reit.image16 %>" 
+                              alt="" class="w-full h-full object-cover">
+                          </picture>
+                        </div>
+                                                <div
+                          class="slider-image flex items-center justify-center bg-center bg-no-repeat bg-cover p-0 md:px-0 lg:px-0 h-250-px lg:h-500-px"
+                          data-index="5"
+                          style="width: 414px; left: 0px; transition-duration: 300ms; transform: translateX(0px);">
+                          <picture>
+                            <img
+                              src="/uploads/reit/<%= reit.image16 %>" 
+                              alt="" class="w-full h-full object-cover">
+                          </picture>
+                        </div>
+                                                <div
+                          class="slider-image flex items-center justify-center bg-center bg-no-repeat bg-cover p-0 md:px-0 lg:px-0 h-250-px lg:h-500-px"
+                          data-index="6"
+                          style="width: 414px; left: 0px; transition-duration: 300ms; transform: translateX(0px);">
+                          <picture>
+                            <img
+                              src="/uploads/reit/<%= reit.image17 %>" 
+                              alt="" class="w-full h-full object-cover">
+                          </picture>
+                        </div>
+                                                <div
+                          class="slider-image flex items-center justify-center bg-center bg-no-repeat bg-cover p-0 md:px-0 lg:px-0 h-250-px lg:h-500-px"
+                          data-index="7"
+                          style="width: 414px; left: 0px; transition-duration: 300ms; transform: translateX(0px);">
+                          <picture>
+                            <img
+                              src="/uploads/reit/<%= reit.image18 %>" 
+                              alt="" class="w-full h-full object-cover">
+                          </picture>
+                        </div>
+                                                <div
+                          class="slider-image flex items-center justify-center bg-center bg-no-repeat bg-cover p-0 md:px-0 lg:px-0 h-250-px lg:h-500-px"
+                          data-index="8"
+                          style="width: 414px; left: 0px; transition-duration: 300ms; transform: translateX(0px);">
+                          <picture>
+                            <img
+                              src="/uploads/reit/<%= reit.image19 %>" 
+                              alt="" class="w-full h-full object-cover">
+                          </picture>
+                        </div>
+                                              </div>
+                    </div>
+                    <script>
+                        let currentIndex = 0; 
+                        const sliderWidth = 414;
+                        const sliderImages = document.querySelectorAll('.slider-image');
+                        
+                        const swipeWrap = document.querySelector('.swipe-wrap');
+                        const sliderImagesLength = sliderImages.length;
+                        
+                        swipeWrap.style.width = `${sliderWidth * sliderImagesLength}px`;
+                        
+                        sliderImages.forEach((image, index) => {
+                            image.style.left = `${-(index - currentIndex) * sliderWidth}px`;
+                          });
+                        
+                        // Update slider image positions
+                        function updateSliderPosition() {
+                          sliderImages.forEach((image, index) => {
+                            image.style.transform = `translateX(${(index - currentIndex) * sliderWidth}px)`;
+                            
+                          });
+                          document.getElementById("mtac").innerHTML = currentIndex+1;
+                        }
+                        
+                        // Next button click event handler
+                        function nxt(){
+                          if (currentIndex < sliderImages.length - 1) {
+                            currentIndex++;
+                            updateSliderPosition();
+                          }
+                        }
+                        
+                        // Prev button click event handler
+                        function bck(){
+                          if (currentIndex > 0) {
+                            currentIndex--;
+                            updateSliderPosition();
+                          }
+                        }
+                        
+                        // Initialize slider positions
+                        updateSliderPosition();
+                    </script>
+                    <div class="absolute top-0 bottom-0 flex items-center ml-0 left-4"><button type="button"
+                        id="slider-back" onclick="bck()" title="View previous image"
+                        class="w-12 h-12 overflow-hidden slider-button cursor-pointer disabled:cursor-default rounded-full flex justify-center items-center bg-lofty-gray backdrop-blur-sm whitespace-nowrap select-none p-0.5 font-normal opacity-80 transition-all hover:opacity-100 hover:font-semibold">
+                        <svg  class="text-lofty-dark flex-shrink-0 h-14 w-14 opacity-60" xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd"
+                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                            clip-rule="evenodd"></path>
+                        </svg></button></div>
+                    <div class="absolute top-0 bottom-0 flex items-center mr-0 right-4"><button type="button"
+                        id="slider-next" onclick="nxt();" title="View next image"
+                        class="w-12 h-12 overflow-hidden slider-button cursor-pointer disabled:cursor-default rounded-full flex justify-center items-center bg-lofty-gray backdrop-blur-sm whitespace-nowrap select-none p-0.5 font-normal opacity-80 transition-all hover:opacity-100 hover:font-semibold">
+                        <svg class="text-lofty-dark flex-shrink-0 h-14 w-14 opacity-60" xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd"></path>
+                        </svg></button></div>
+                    <div class="absolute bottom-0 right-2 py-1 px-2 text-white font-semibold text-xs rounded bg-black bg-opacity-50 m-0 mb-2.5 mr-1"><span class="meta-count" id="mtac">1</span> / <span>8</span></div>
+                  </div>
+                </section>
+              </div>
+            </section>
+            <section class="flex w-full mt-3 mb-20 text-black dark:text-gray-200">
+              <div class="flex w-full p-0 mx-auto my-0 max-w-1600-px px-4.5 sm:px-6 lg:px-14 xl:px-20 2xl:px-40">
+                <section class="flex flex-col mr-0 lg:mr-16 w-full">
+                  <div class="flex">
+                    <div
+                      class="self-start bg-transparent border-2 border-opacity-20 mx-1 capitalize rounded-2xl sm:rounded-3xl text-xs sm:text-lg lg:text-sm xl:text-lg 2xl:text-2xl !leading-none px-3 py-1.5 sm:py-2.5 md:px-4.5 2xl:px-6 2xl:py-3 text-exchange-green border-exchange-green">
+                      Active</div>
+                  </div>
+                  <div class="flex flex-col md:flex-row md:items-start md:justify-between">
+                    <div class="mr-6 mt-3">
+                      <h1 class="text-2xl md:text-5xl font-bold text-lofty-dark dark:text-white"><%= reit.name %></h1>
+                        <h4 class="mb-2.5 text-lg md:text-2xl font-normal text-lofty-dark dark:text-white">
+                            <%= reit.location %>                        </h4>
+                    </div>
+                    <div class="mt-2 md:mt-0"></div>
+                  </div>
+                  <section
+                    class="flex flex-col items-center w-full lg:w-auto relative lg:hidden flex min-w-transactCard lg:min-w-transactCard lg:max-w-transactCard-2xl xl:min-w-transactCard-2xl 2xl:min-w-transactCard-xl 2xl:max-w-transactCard-2xl">
+                    <div class="flex flex-col items-center w-full lg:w-auto lg:hidden flex">
+                      <div
+                        class="overflow-hidden bg-white min-w-transactCard max-w-2xl lg:min-w-transactCard lg:max-w-transactCard-2xl xl:min-w-transactCard-2xl 2xl:min-w-transactCard-2xl 2xl:max-w-transactCard-2xl rounded-lg shadow-transactCard w-full">
+                        <div
+                          class="bg-exchange-lightpurple px-4.5 py-5 sm:p-8 lg:px-4.5 lg:py-5 xl:px-6 xl:py-7.5 2xl:p-8 flex flex-col gap-y-1">
+                          <div class="flex items-center justify-between w-full">
+                            <div class="text-gray-400 dark:text-themeBlue-dark">
+                              <div class="flex items-start justify-center mr-px p-0 cursor-pointer">
+                                <div class="flex items-center"><span
+                                    class="text-exchange-darkpurple font-bold text-lg sm:text-28 lg:text-lg xl:text-xl 2xl:text-28">Token
+                                    Price</span><span onclick="toolTip('lprice')"
+                                    class="ml-2 cursor-pointer bg-[#9383ff1a] text-exchange-purple rounded-full text-sm text-center w-4 h-4 leading-4">i</span>
+                                </div>
+                              </div>
+                              <div id="lprice"
+                                class="transition-opacity rounded z-50 bg-gray-600 text-white text-sm font-normal p-1.5 pointer-events-none invisible opacity-0"
+                                data-popper-reference-hidden="true" data-popper-escaped="true" data-popper-placement="right"
+                                style="position: absolute; inset: 0px auto auto 0px; transform: translate3d(4px, 3544px, 0px);">
+                                <div class="block max-w-350-px p-2 text-left"><span>This is the lowest current price 
+                                    available for this property.</span></div>
+                                <div class="tt-pp-arrow block w-2 h-2 bg-transparent -left-1"
+                                  style="position: absolute; top: 0px; transform: translate3d(0px, 0px, 0px);"></div>
+                              </div>
+                            </div>
+                            <div class="text-exchange-purple font-bold flex items-end"><span
+                                class="opacity-75 text-lg sm:text-xl lg:text-lg 2xl:text-32 items-end !leading-none pb-0.5">$</span><span
+                                class="text-2xl sm:text-32 lg:text-2xl xl:text-28 2xl:text-40 !leading-none"><%= reit.price %>.00</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="p-4.5 sm:p-8 lg:p-4.5 xl:p-6 2xl:p-8 flex flex-col gap-y-6 sm:gap-y-8 lg:gap-y-6 xl:gap-y-7 2xl:gap-y-8">
+                          <div class="flex items-center justify-between">
+                            <div class="text-gray-400 dark:text-themeBlue-dark">
+                              <div class="flex items-start justify-center mr-px p-0 cursor-pointer">
+                                <div class="flex items-center"><span
+                                    class="text-exchange-darkpurple text-sm sm:text-2xl lg:text-sm xl:text-base 2xl:text-xl">Projected
+                                    Yield rate</span><span onclick="toolTip('aprice')"
+                                    class="ml-2 cursor-pointer bg-[#9383ff1a] text-exchange-purple rounded-full text-sm text-center w-4 h-4 leading-4">i</span>
+                                </div>
+                              </div>
+                              <div id="aprice"
+                                class="transition-opacity rounded z-50 bg-gray-600 text-white text-sm font-normal p-1.5 pointer-events-none invisible opacity-0"
+                                data-popper-reference-hidden="true" data-popper-escaped="true" data-popper-placement="right"
+                                style="position: absolute; inset: 0px auto auto 0px; transform: translate3d(4px, 3544px, 0px);">
+                                <div class="block max-w-350-px p-2 text-left"><span>The projected total return on investment
+                                    over a 12 month period.</span></div>
+                                <div class="tt-pp-arrow block w-2 h-2 bg-transparent -left-1"
+                                  style="position: absolute; top: 0px; transform: translate3d(0px, 0px, 0px);"></div>
+                              </div>
+                            </div><span class="flex">
+                              <div
+                                class="text-lofty-lightpurple font-bold text-lg sm:text-32 lg:text-18 xl:text-2xl 2xl:text-32">
+                                <span><%= reit.yield_rate %>%</span></div>
+                            </span>
+                          </div>
+                                                  <form method="post">
+                          <div
+                            class="flex items-center justify-between px-0 gap-x-3 sm:gap-6 lg:gap-3 xl:gap-4.5 2xl:gap-6 ">
+                            <div><input type="number" name="amount"  placeholder="Enter USD Amount" required style="width:200px" class="text-exchange-token block mt-2 shadow-sm rounded-lg focus:outline-none focus:ring-lofty focus:border-lofty invalid:border-2 p-4 lg:text-xl 2xl:text-2xl border border-slate-300 bg-white"></div>
+                            <button  type="submit" name="submit" value="submit"
+                              class="flex items-center justify-center border-2 disabled:bg-gray-100 bg-lofty border-transparent text-white font-medium lg:font-semibold 2xl:font-semibold text-lg sm:leading-6 2xl:text-xl 2xl:leading-6 rounded-3xl 2xl:rounded-[32px] w-70-px h-70-px px-5 py-4 sm:py-6 lg:py-4 2xl:py-6"><span>Buy</span></button>
+                            
+                          </div>
+                          </form>
+                                                  </div>
+                      </div>
+                    </div>
+                  </section>
+                  <section class="flex flex-col mt-8 2xl:mt-12">
+                    <div class="mb-4 border-b border-gray-200 dark:border-gray-700 overflow-hidden">
+                      <ul class="flex -mb-px overflow-x-auto" role="tablist">
+                        <li role="presentation">
+                            <button class="text-lofty border-lofty dark:text-white font-normal text-center whitespace-nowrap text-base lg:text-sm xl:text-base inline-block py-2 px-4 rounded-t-lg border-b-2 border-transparent focus:outline-none focus:border-0 hover:text-lofty dark:hover:text-white hover:border-lofty"
+                                type="button" role="tab" fdprocessedid="czjkdl">
+                                Details
+                            </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </section>
+                  <section>
+                    <div class=" pt-4" role="tabpanel">
+                      <section id="section-property-highlights" class="flex flex-row flex-wrap mt-7">
+                        <div
+                          class="inline-flex flex-col items-center justify-center leading-tight border dark:border-none dark:bg-lofty-dark rounded-lg mr-4 mb-4 w-20 h-20 md:w-24 md:h-24">
+                          <svg class="text-lofty-purple dark:text-lofty-light h-6 w-6" width="27" height="21"
+                            viewBox="0 0 27 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.7793 17.1467V20.1533" stroke="currentColor" stroke-width="2.425"></path>
+                            <path d="M25.2207 17.1468V20.1534" stroke="currentColor" stroke-width="2.425"></path>
+                            <path
+                              d="M5.41709 4.21336C5.41709 2.65085 6.68375 1.38419 8.24626 1.38419H18.7546C20.3171 1.38419 21.5838 2.65085 21.5838 4.21336V8.65919H5.41709V4.21336Z"
+                              stroke="currentcolor" stroke-width="2.425"></path>
+                            <path d="M2.52812 15.9344L5.75909 9.46769H21.2414L24.4723 15.9344H2.52812Z"
+                              stroke="currentColor" stroke-width="2.425"></path>
+                          </svg><span class="text-lofty-dark dark:text-white text-xs text-center mt-2"> Bed</span></div>
+                        <div
+                          class="inline-flex flex-col items-center justify-center leading-tight border dark:border-none dark:bg-lofty-dark rounded-lg mr-4 mb-4 w-20 h-20 md:w-24 md:h-24">
+                          <svg class="text-lofty-purple dark:text-lofty-light h-6 w-6" width="25" height="25"
+                            viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M3.03218 17.8235L1.97292 12.8714H23.0273L21.9681 17.8235C21.6131 19.483 20.1467 20.6689 18.4496 20.6689H6.55068C4.85355 20.6689 3.38717 19.483 3.03218 17.8235Z"
+                              stroke="currentColor" stroke-width="2.425"></path>
+                            <path
+                              d="M20.0239 12.2604V5.1948C20.0239 3.45126 18.6105 2.03784 16.8669 2.03784V2.03784C15.1234 2.03784 13.71 3.45126 13.71 5.1948V6.24712"
+                              stroke="currentColor" stroke-width="2.425"></path>
+                            <path d="M6.66895 21.2805V24.2871" stroke="currentColor" stroke-width="2.425"></path>
+                            <path d="M18.5159 21.2805V24.2871" stroke="currentColor" stroke-width="2.425"></path>
+                          </svg><span class="text-lofty-dark dark:text-white text-xs text-center mt-2">7500 Bath</span></div>
+                        <div
+                          class="inline-flex flex-col items-center justify-center leading-tight border dark:border-none dark:bg-lofty-dark rounded-lg mr-4 mb-4 w-20 h-20 md:w-24 md:h-24">
+                          <svg class="text-lofty-purple dark:text-lofty-light h-6 w-6" width="25" height="25"
+                            viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1.5875" y="1.25001" width="21.825" height="21.825" rx="2.02083" stroke="currentColor"
+                              stroke-width="2.425"></rect>
+                            <path d="M10.8833 1.65421V6.50421" stroke="currentColor" stroke-width="2.425"></path>
+                            <path d="M10.8834 8.92908V12.1624C10.8834 12.6088 10.5215 12.9707 10.075 12.9707H1.9917"
+                              stroke="currentColor" stroke-width="2.425"></path>
+                            <path d="M23.8167 14.5874H15.7334C15.287 14.5874 14.925 14.9493 14.925 15.3957V23.4791"
+                              stroke="currentColor" stroke-width="2.425"></path>
+                            <path d="M16.9458 1.24991V1.24991C16.9458 4.82135 19.841 7.71658 23.4125 7.71658V7.71658"
+                              stroke="currentColor" stroke-width="2.425"></path>
+                          </svg><span class="text-lofty-dark dark:text-white text-xs text-center mt-2"> sqft</span>
+                        </div>
+                        <div
+                          class="inline-flex flex-col items-center justify-center leading-tight border dark:border-none dark:bg-lofty-dark rounded-lg mr-4 mb-4 w-20 h-20 md:w-24 md:h-24">
+                          <svg class="text-lofty-purple dark:text-lofty-light h-6 w-6" width="29" height="26"
+                            viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1550_5695)">
+                              <path
+                                d="M22.872 25.4013H6.12819C5.81099 25.4013 5.50679 25.2753 5.2825 25.051C5.05821 24.8267 4.9322 24.5225 4.9322 24.2053V13.4414H1.34424L13.6952 2.2135C13.9154 2.01314 14.2024 1.90211 14.5001 1.90211C14.7978 1.90211 15.0848 2.01314 15.305 2.2135L27.656 13.4414H24.068V24.2053C24.068 24.5225 23.942 24.8267 23.7177 25.051C23.4934 25.2753 23.1892 25.4013 22.872 25.4013ZM15.6961 23.0093H21.676V11.2372L14.5001 4.71431L7.32418 11.2372V23.0093H13.3041V15.8334H15.6961V23.0093Z"
+                                fill="currentColor"></path>
+                            </g>
+                            <defs>
+                              <clippath id="clip0_1550_5695">
+                                <rect width="28.7037" height="25" fill="white" transform="translate(0.148193 0.629166)">
+                                </rect>
+                              </clippath>
+                            </defs>
+                          </svg><span class="text-lofty-dark dark:text-white text-xs text-center mt-2"><%= reit.type %></span>
+                        </div>
+                      </section>
+                      <div class="mt-10">
+                        <h3 class="lofty-header">About the Property</h3>
+                        <div class="flex flex-col flex-wrap">
+                          <div class="rendered-text md-item">
+                              <p class="rendered-text md-item">
+                                <p>Property originally listed for sale on the marketplace by <em>HH Eldridge LLC</em>.</p>
+<hr>
+<p><strong>Strip Mall with McDonalds & Dominos Pizza in Quad Cities, Iowa</strong></p>
+<p>Located in the Quad Cities Metro area, this is a 4-unit retail building built in 2010. The tenants include McDonalds, Domino's, US Cellular, and a Real Estate Office. All tenants are on multi-year triple-net leases (NNN). This means that the tenants pay all the expenses of the property including real estate taxes, building insurance, and maintenance.</p>
+<ul>
+<li>McDonalds has been a tenant since 2010 and extended its lease to 2026</li>
+<li>Dominos recently moved in and invested $250K in renovations. Their 10-yr lease expires in 2031</li>
+<li>US Cellular has been a tenant since 2012 and extended its lease to 2024</li>
+<li>A Real Estate Office recently moved in and signed a 3-yr lease</li>
+</ul>
+<p><strong>Near new Amazon project</strong></p>
+<p>Amazon is building a 2.9M square foot robotics fulfillment center just a 12 minute drive from this strip mall. The warehouse is expected to open summer of 2024 and create a minimum annual economic impact of $148M to the region.</p>
+<p><strong>Big Anchor Tenants</strong></p>
+<p>3 of the 4 current tenants are big-name brands who have recently moved in or renewed their leases at higher rental rates. Other recognizable businesses nearby include Subway, Dollar General and Snap Fitness.</p>
+<p><strong>1 min from major highway</strong></p>
+<p>Located on an entrance/exit of a major U.S highway, it takes drivers just 1 minute to reach the mall. Route 61 passes through 3 US states (New Orleans, Iowa and Mississippi).</p>                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </section>
+                <section
+                  class="flex flex-col items-center w-full lg:w-auto relative hidden lg:flex -top-28 min-w-transactCard lg:min-w-transactCard lg:max-w-transactCard-2xl xl:min-w-transactCard-2xl 2xl:min-w-transactCard-xl 2xl:max-w-transactCard-2xl">
+                  <div
+                    class="flex flex-col items-center w-full lg:w-auto hidden lg:flex sticky lg:top-12 xl:top-14 2xl:top-16">
+                    <div
+                      class="overflow-hidden bg-white min-w-transactCard max-w-2xl lg:min-w-transactCard lg:max-w-transactCard-2xl xl:min-w-transactCard-2xl 2xl:min-w-transactCard-2xl 2xl:max-w-transactCard-2xl rounded-lg shadow-transactCard w-full">
+                      <div
+                        class="bg-exchange-lightpurple px-4.5 py-5 sm:p-8 lg:px-4.5 lg:py-5 xl:px-6 xl:py-7.5 2xl:p-8 flex flex-col gap-y-1">
+                        <div class="flex items-center justify-between w-full">
+                          <div class="text-gray-400 dark:text-themeBlue-dark">
+                            <div class="flex items-start justify-center mr-px p-0 cursor-pointer">
+                              <div class="flex items-center"><span
+                                  class="text-exchange-darkpurple font-bold text-lg sm:text-28 lg:text-lg xl:text-xl 2xl:text-28">Estimated
+                                  Price</span><span onclick="toolTip('price')"
+                                  class="ml-2 cursor-pointer bg-[#9383ff1a] text-exchange-purple rounded-full text-sm text-center w-4 h-4 leading-4">i</span>
+                              </div>
+                            </div>
+                            <script>
+                            // When the user clicks on <div>, open the popup
+                            function toolTip(e) {
+                                var x = document.getElementById(e);
+                                if (x.classList.contains("invisible")) {
+                                    x.classList.remove("invisible");
+                                    x.classList.remove("opacity-0");
+                                }else{
+                                    x.style.display === "none"
+                                    x.classList.add("invisible");
+                                    x.classList.add("opacity-0");
+                                }
+                              
+                            }
+                            </script>
+                            <div id="price"
+                              class="transition-opacity rounded z-50 bg-gray-600 text-white text-sm font-normal p-1.5 pointer-events-none invisible opacity-0"
+                              data-popper-reference-hidden="false" data-popper-escaped="false"
+                              data-popper-placement="bottom"
+                              style="position: absolute; inset: 0px auto auto 0px; transform: translate3d(-68.6667px, 62px, 0px);">
+                              <div class="block max-w-350-px p-2 text-left"><span>This is the current price
+                                  per token for this property.</span></div>
+                              <div class="tt-pp-arrow block w-2 h-2 bg-transparent -top-1"
+                                style="position: absolute; transform: translate3d(177.333px, 0px, 0px); left: 0px;"></div>
+                            </div>
+                          </div>
+                          <div class="text-exchange-purple font-bold flex items-end"><span
+                              class="opacity-75 text-lg sm:text-xl lg:text-lg 2xl:text-32 items-end !leading-none pb-0.5">$</span><span
+                              class="text-2xl sm:text-32 lg:text-2xl xl:text-28 2xl:text-40 !leading-none">50.00</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="p-4.5 sm:p-8 lg:p-4.5 xl:p-6 2xl:p-8 flex flex-col gap-y-6 sm:gap-y-8 lg:gap-y-6 xl:gap-y-7 2xl:gap-y-8">
+                        <div class="flex items-center justify-between">
+                          <div class="text-gray-400 dark:text-themeBlue-dark">
+                            <div class="flex items-start justify-center mr-px p-0 cursor-pointer">
+                              <div class="flex items-center"><span
+                                  class="text-exchange-darkpurple text-sm sm:text-2xl lg:text-sm xl:text-base 2xl:text-xl">Projected
+                                  Yield rate</span><span onclick="toolTip('annual')"
+                                  class="ml-2 cursor-pointer bg-[#9383ff1a] text-exchange-purple rounded-full text-sm text-center w-4 h-4 leading-4">i</span>
+                              </div>
+                            </div>
+                            <div id="annual"
+                              class="transition-opacity rounded z-50 bg-gray-600 text-white text-sm font-normal p-1.5 pointer-events-none invisible opacity-0"
+                              data-popper-reference-hidden="false" data-popper-escaped="false" data-popper-placement="left"
+                              style="position: absolute; inset: 0px 0px auto auto; transform: translate3d(-440px, 54px, 0px);">
+                              <div class="block max-w-350-px p-2 text-left"><span>The projected total return on investment
+                                  over a 12 month period.</span></div>
+                              <div class="tt-pp-arrow block w-2 h-2 bg-transparent -right-1"
+                                style="position: absolute; transform: translate3d(0px, 70px, 0px); top: 0px;"></div>
+                            </div>
+                          </div><span class="flex">
+                            <div
+                              class="text-lofty-lightpurple font-bold text-lg sm:text-32 lg:text-18 xl:text-2xl 2xl:text-32">
+                              <span>2%</span></div>
+                          </span>
+                        </div>
+                                                <form method="post" action="/member/account/property/fund_reits/<%= reit.id %>">
+                            <div class="flex items-center justify-between px-0 gap-x-3 sm:gap-6 lg:gap-3 xl:gap-4.5 2xl:gap-6 ">
+                                <div><input type="number" name="amount" min="<%= reit.price %>" placeholder="Enter USD Amount" required style="width:200px" class="text-exchange-token block mt-2 shadow-sm rounded-lg focus:outline-none focus:ring-lofty focus:border-lofty invalid:border-2 p-4 lg:text-xl 2xl:text-2xl border border-slate-300 bg-white"></div>
+                                <button type="submit" name="submit" value="submit"
+                                  class="flex items-center justify-center border-2 disabled:bg-gray-100 bg-lofty border-transparent text-white font-medium lg:font-semibold 2xl:font-semibold text-lg sm:leading-6 2xl:text-xl 2xl:leading-6 rounded-3xl 2xl:rounded-[32px] w-70-px h-70-px px-5 py-4 sm:py-6 lg:py-4 2xl:py-6"><span>Buy</span></button>
+                                
+                          </div>
+                        </form>
+                                              </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </section>
+          </div>  
+    </div>
+  </div>
+</section>
+
+<script src="/assets/bundles/libscripts.bundle.js"></script>
+<script src="/assets/bundles/vendorscripts.bundle.js"></script>
+<script src="/assets/bundles/mainscripts.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<%-include('../../adminlayout/partials/header')%>
+<body>
+  <div class="container-scroller">
+    <%-include('../../adminlayout/partials/navbar') %>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <%-include('../../adminlayout/partials/topbar') %>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="page-header">
+            <h3 class="page-title">Create CTrader Details</h3>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/admin/view_payment_details">View Payment Details</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                 Create CTrader Details
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Create CTrader Details</h4>
+                  <p class="card-description">Update Crypto Payment Information</p>
+                    <form action="/novax-assets/admin/create_ctrader" method="POST" class="forms-sample">
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="total_balance">Name</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="name" name="name" value="" placeholder="Name" />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="profit">Minimum</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="minimum" name="minimum" value="" placeholder="Minimum" />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="trade_bonus">Profit</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="profit" name="profit" value="" placeholder="Profit" />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="referal_bonus">Select Image:</label>
+                      <div class="col-sm-8">
+                        <input type="file" class="form-control" id="avatar" name="avatar" value="" placeholder="avatar" />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="total_won">Earnings Rate</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" id="rate" name="rate" value="" placeholder="Earnings Rate" />
+                      </div>
+                      </div>
+                      <div class="form-group row">
+                      <label class="col-sm-4 col-form-label" for="total_won">Description</label>
+                      <div class="col-sm-8">
+                        <textarea class="form-control" id="description" name="description" placeholder="Description"></textarea>
+                      </div>
+                      </div>
+                    <button type="submit" class="btn btn-primary mr-2">Create CTrader Details</button>
+                    </form>
+                </div>
+              </div>
+            </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+    <%-include('../../adminlayout/partials/footer') %>

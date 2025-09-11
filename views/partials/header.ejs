@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <!-- <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Digital Assets Equity."
+    />
+    <title>Novax Assets - Homepage</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/NovaxLogo.png">
+    <link rel="icon" href="/assets/images/NovaxLogo3.jpg" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="/assets/plugins/bootstrap/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css"
+    />
+    <link rel="stylesheet" href="/assets/plugins/morrisjs/morris.min.css" />
+
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/color_skins.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /*google translate Dropdown */
+
+        #google_translate_element select {
+            background: #4c5cf4;
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            padding: 6px 8px
+        }
+
+        .goog-te-combo {
+            width: 150px;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 50px;
+        }
+
+        /* google translate banner-frame */
+
+        .VIpgJd-ZVi9od-l4eHX-hSRGPd{
+         display:none !important;
+         }
+ 
+ .VIpgJd-yAWNEb-L7lbkb, .VIpgJd-ZVi9od-ORHb-OEVmcd{display: none !important;}
+
+        .goog-text-highlight {
+            background: none !important;
+            box-shadow: none !important;
+        }
+       @media screen and (max-width: 600px) {
+        .block-header {
+            padding-top: 75px;
+            margin-top: 25px;
+        }
+       }
+    </style>
+    
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- Smartsupp Live Chat script -->
+<!-- <script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '2a5bbb922d1a2dc65b49821855bd1d0c36a27616';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script> -->
+<!-- <noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript> -->
+  </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<body class="theme-blue">
+    <div class="page-loader-wrapper">
+      <div class="loader">
+        <div class="m-t-30">
+          <img
+            class="zmdi-hc-spin"
+            style="display: inline !important;"
+            src="/assets/images/loading-gif-png-5.gif"
+            width="48"
+            height="48"
+            alt="Compass"
+          />
+        </div>
+        <p>Please wait...</p>
+      </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <nav class="navbar">
+      <div class="col-12" style="background-color: #1b1d61;">
+        <div class="navbar-header">
+          <a href="javascript:void(0);" class="bars"></a>
+          <a class="navbar-brand" href="/member/account/dashboard"
+            ><img width="60%" height="30px" src="/assets/images/NovaxLogo2.png" alt="Novax-Assets" /><span
+              class="m-l-10"
+              ></span
+            ></a
+          >
+        </div>
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+            <a
+              href="javascript:void(0);"
+              class="ls-toggle-btn"
+              data-close="true"
+              ><i class="zmdi zmdi-swap"></i
+            ></a>
+          </li>
+         <li class="hidden-sm-down">
+            <div class="input-group">
+                <input type="text" id="src" class="form-control" placeholder="Search">
+                <span id="srchbtn" class="input-group-addon">
+                    <i onclick="search()" class="zmdi zmdi-search"></i>
+                </span>
+            </div>
+        </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+         
+         
+          <li>
+            <a
+              href="javascript:void(0);"
+              class="fullscreen hidden-sm-down"
+              data-provide="fullscreen"
+              data-close="true"
+              ><i class="zmdi zmdi-fullscreen"></i
+            ></a>
+          </li>
+          <li>
+            <a href="/auth/logout" class="mega-menu" data-close="true"
+              ><i class="zmdi zmdi-power"></i
+            ></a>
+          </li>
+         
+        </ul>
+      </div>
+    </nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js" integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+
+        <script>
+            function search() {
+                let search = $("#src").val();
+                
+                $.ajax({
+                    url: 'search.php',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        search: search 
+                        },
+                    beforeSend: function(){
+                        $("#srchbtn").html('<i class="zmdi zmdi-spinner zmdi-hc-spin"></i> searching...');
+                    },
+                    success: function(data){
+                        if(data.stat == 1){
+                            
+                            $("#srchbtn").html('<i class="zmdi zmdi-search"></i>');
+                            $("#rightsidebar").toggleClass("open");
+                            // $(".search-toggle-btn i").removeClass(" fi ti-close");
+                            // $(".header-search-form").removeClass("header-search-content-toggle");
+                            // $(".mini-cart-content").toggleClass("mini-cart-content-toggle");
+                            // console.log(data.msg);
+                            let msgitems = data.msg;
+                            // // Save to localStorage
+                            localStorage.setItem("searchmsg", JSON.stringify(msgitems));
+                            
+                            $.each(msgitems, function(index,item){
+                                let images = item.image.split(',');
+                                let cartItemHTML = `
+                                    <li class="online">
+                                        <a href="details.php?id=${item.id}">
+                                            <div class="media">
+                                                <img class="media-object " src="https://novax-assets.com/uploads/${images[0]}" alt="${item.name}">
+                                                <div class="media-body">
+                                                    <span class="name">${item.name}</span>
+                                                    <span class="message">${item.location}</span>
+                                                    <span class="badge badge-outline status"></span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                
+                                `;
+                                $("#mini-cart").append(cartItemHTML);
+                            });
+                            
+                            // let cartbtn = `<a href="search.php" class="view-cart-btn">View All</a>`;
+                            // $("#mini-btn").append(cartbtn);
+                        }else{
+                            toastr.info("Property not found", "Error",{
+                                positionClass: "toast-top-center",
+                                timeOut: 5e3,
+                                closeButton: !0,
+                                debug: !1,
+                                newestOnTop: !0,
+                                progressBar: !0,
+                                preventDuplicates: !0,
+                                onclick: null,
+                                showDuration: "300",
+                                hideDuration: "1000",
+                                extendedTimeOut: "1000",
+                                showEasing: "swing",
+                                hideEasing: "linear",
+                                showMethod: "fadeIn",
+                                hideMethod: "fadeOut",
+                                tapToDismiss: !1
+                            });
+                            $("#srchbtn").html('<i class="fi flaticon-loupe"></i>');
+                        }
+                    }
+                });
+            }
+        </script><aside id="leftsidebar" class="sidebar">
+      <div class="menu">
+        <ul class="list">
+          <li>
+            <div class="user-info">
+              <div class="image">
+                
+                <a href="/member/account/profile"><img src="<%= user.avatarUrl %>" alt="User"/></a>
+              </div>
+              <div class="detail">
+                <span style="color: #2196f3;">Welcome</span>
+                <h4 class="text-black"><%= user.fullname.charAt(0).toUpperCase() + user.fullname.slice(1) %></h4>
+
+              </div>
+              
+             <br>
+            </div>
+          </li>
+          <!-- <li class="header">MAIN</li> -->
+          <li class="active open">
+            <a href="/member/account/dashboard">
+            <i class="zmdi zmdi-home"></i><span>Dashboard</span></a
+            >
+          </li>
+          <li>
+            <a href="javascript:void(0);" class="menu-toggle"
+              ><i class="zmdi zmdi-account"></i><span>Profile</span>
+            </a>
+            <ul class="ml-menu">
+              <li><a href="/member/account/edit_profile">Edit Profile</a></li>
+              <li><a href="/member/account/change_password">Change Password</a></li>
+              <li><a href="/member/account/check_kyc">Check KYC</a></li>
+
+            </ul>
+          </li>
+          <li>
+            <a href="javascript:void(0);" class="menu-toggle"
+              ><i class="zmdi zmdi-copy"></i><span>Copy Trading</span>
+            </a>
+            <ul class="ml-menu">
+              <li><a href="/member/account/copytrade">Trades</a></li>
+              <li><a href="/member/account/cthistory">History</a></li>
+
+            </ul>
+          </li>
+          <li>
+            <a href="javascript:void(0);" class="menu-toggle"
+              ><i class="zmdi zmdi-city"></i><span>Mortgage</span>
+            </a>
+            <ul class="ml-menu">
+              <li><a href="/member/account/property">Trades</a></li>
+              <li><a href="/member/account/mhistory">History</a></li>
+
+            </ul>
+          </li>
+           <li>
+            <a href="javascript:void(0);" class="menu-toggle"
+              ><i class="zmdi zmdi-store"></i><span>Fractional Real Estate</span>
+            </a>
+            <ul class="ml-menu">
+              <li><a href="/member/account/reits/listings">Trades</a></li>
+              <li><a href="/member/account/rhistory">History</a></li>
+
+            </ul>
+          </li>
+          <li>
+            <a href="javascript:void(0);" class="menu-toggle"
+              ><i class="zmdi zmdi-money-box"></i><span>Savings</span>
+            </a>
+            <ul class="ml-menu">
+              <li><a href="/member/account/savings">Trades</a></li>
+              <li><a href="/member/account/shistory">History</a></li>
+
+            </ul>
+          </li>
+           <li>
+            <a href="javascript:void(0);" class="menu-toggle"
+              ><i class="zmdi zmdi-ticket-star"></i><span>Stocks and ETFs</span>
+            </a>
+            <ul class="ml-menu">
+              <li><a href="/member/account/etf/fund_stock">Trades</a></li>
+              <li><a href="/member/account/etf_history">History</a></li>
+
+            </ul>
+          </li> 
+          <li>
+            <a href="javascript:void(0);" class="menu-toggle"
+              ><i class="zmdi zmdi-store-24"></i><span>Crypto Currency</span>
+            </a>
+            <ul class="ml-menu">
+              <li><a href="/member/account/crypto/trade_crypto">Trades</a></li>
+              <li><a href="/member/account/crypto_history">History</a></li>
+
+            </ul>
+          </li>
+          <li>
+            <a href="javascript:void(0);" class="menu-toggle"
+              ><i class="zmdi zmdi-group-work"></i><span>Robo Portfolios</span>
+            </a>
+            <ul class="ml-menu">
+              <li><a href="/member/account/robo/trade_robo">Trades</a></li>
+              <li><a href="/member/account/robo_history">History</a></li>
+
+            </ul>
+          </li>
+          <li>
+            <a href="/member/account/staking"><i class="zmdi zmdi-pin-assistant"></i><span>Stake Crypto</span></a>
+          </li>
+          <li>
+            <a href="/member/account/withdrawals"><i class="zmdi zmdi-balance-wallet"></i><span>Withdrawals</span></a>
+          </li>
+          <li>
+            <a href="/member/account/referral"><i class="zmdi zmdi-accounts-add"></i><span>Referrals</span></a>
+          </li>
+          <li>
+            <a href="/member/account/support"><i class="zmdi zmdi-email"></i><span>Support</span></a>
+          </li>
+          <li>
+              <div id="google_translate_element"></div>
+          </li>
+          <li>
+            <a href="/auth/logout"><i class="zmdi zmdi-power"></i><span>Logout</span></a>
+          </li>
+
+          
+        </ul>
+      </div>
+    </aside>
+    
+<aside id="rightsidebar" class="right-sidebar">
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#chat">
+                Search Results</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane right_chat pullUp active" id="chat">
+                <div class="slim_scroll">
+                    <div class="card">
+                        <ul class="list-unstyled" id="mini-cart">
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    

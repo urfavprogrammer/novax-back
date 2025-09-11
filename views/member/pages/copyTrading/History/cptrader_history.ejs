@@ -1,0 +1,114 @@
+ <%- include('../../../../partials/header.ejs') %>
+
+ <section class="content invoice">
+      <div class="block-header" style="margin-top:5rem;">
+        <div class="row">
+          <div class="col-lg-7 col-md-6 col-sm-12">
+            <h2>
+              History
+              <small class="text-muted">Welcome to  Novax-Assets</small>
+            </h2>
+          </div>
+          <div class="col-lg-5 col-md-6 col-sm-12">
+            <ul class="breadcrumb float-md-right">
+              <li class="breadcrumb-item">
+                <a href="dashboard"><i class="zmdi zmdi-home"></i> Novax-Assets</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0);">CopyTrade History</a>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row clearfix">
+          <div class="col-lg-12">
+            
+            <div class="tab-content">
+              <div
+                role="tabpanel"
+                class="tab-pane in active"
+                id="details"
+                aria-expanded="true"
+              >
+                <div class="card" id="details">
+                  <div class="body">
+                    
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="table-responsive">
+                          <table
+                            id="mainTable"
+                            class="table table-striped"
+                            style="cursor: pointer"
+                          >
+                            <thead>
+                              <t>
+                                <th>#</th>
+                                <th>Amount</th>
+                                <th>Trader Name</th>
+                                <th>Percentage</th>
+                                <th>Profit</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th></th>
+                              </tr>
+                            </thead>
+                                <% events.forEach(function(e) { %>
+                                                        <tbody>
+                                                              <tr class="clickrow" data-ref="195448">
+                                <td><%= e.id %></td>
+                                <td>$<%= e.amount %></td>
+                                <td><%= e.trader_name %></td>
+                                <td> <%= e.rate %>%</td>
+                                <td>$<%= e.profit %></td>
+                                <td><span class="<%= e.status === 'completed' ? 'text-success' : 'text-warning' %>"><%= e.status %></span></td>
+                                <td><%= e.date.toLocaleString() %></td>
+
+                              </tr>
+                            </tbody>
+                            <% }) %>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                   
+                  
+                  </div>
+                </div>
+              </div>
+              
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ <script src="/assets/bundles/libscripts.bundle.js"></script>
+    <script src="/assets/bundles/vendorscripts.bundle.js"></script>
+    <script src="/assets/bundles/mainscripts.bundle.js"></script>
+     <script>
+    const elements = document.getElementsByClassName("clickrow");
+    const giveReceipt = function() {
+      const ref = this.getAttribute('data-ref');
+      const URL = "payment?id=" + ref;
+      openInNewTab(URL);
+    };
+
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].addEventListener('click', giveReceipt, false);
+    }
+
+    function openInNewTab(href) {
+      Object.assign(document.createElement('a'), {
+        target: '_blank',
+        href: href,
+      }).click();
+    }
+  </script>
+  </body>
+
+</html>

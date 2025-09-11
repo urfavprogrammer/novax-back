@@ -1,0 +1,182 @@
+<%-include('../../../partials/header') %>
+
+<section class="content home">
+      <div class="block-header" style="margin-top:5rem;">
+        <div class="row">
+          <div class="col-lg-7 col-md-6 col-sm-12">
+            <h2>
+           <%=depositData.source.charAt(0).toUpperCase() + depositData.source.slice(1)%> Payment
+            </h2>
+          </div>
+          <div class="col-lg-5 col-md-6 col-sm-12">
+           
+            <ul class="breadcrumb float-md-right">
+              <li class="breadcrumb-item">
+                <a href="dashboard"><i class="zmdi zmdi-home"></i>  Novax-Assets</a>
+              </li>
+              <li class="breadcrumb-item active"><%=depositData.source.charAt(0).toUpperCase() + depositData.source.slice(1)%> Payment</li>
+            </ul>
+          </div>
+          
+        </div>
+        <br>
+                  </div>
+      
+      <link href="/stl.css" rel="stylesheet">
+      
+                <div style="display:block" id="bank" class="sc-engKbd ezdUho snipcss-BZlnJ">
+            <div id="style-wYa5c" class="style-wYa5c">
+                <div class="sc-eFqGBh gwRsPK">
+                    <div class="sc-dlyeST kMsBOO">
+                        <div class="sc-iAEyYk klvgaX">
+                            <p class="sc-fsQiph kmkmic">Make Payment into the stipulated Bank Account</p>
+                        </div>
+                    </div>
+                    <div class="sc-dxroEu sc-cMlaQw ctxFOe bvEhVa">
+                        
+                        <div class="sc-hsiEis cROXbm">
+                            <div class="sc-gueYoa sc-caslwl fRRxgd lnKoDG">Paying With</div>
+                            <div class="sc-hlindT dgbAWq">
+                                <div class="sc-gWrJbu eNuKzo">
+                                    <div class="sc-gueYoa sc-jTrPJq fRRxgd hmtOjM">Bank Pay</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sc-grpWxK brJhAa style-wHvID" id="style-wHvID">
+                            <svg class="rc-progress-line" viewBox="0 0 100 1" preserveAspectRatio="none">
+                                <path class="rc-progress-line-trail" d="M 0,0.5 L 100,0.5" stroke-linecap="square" stroke="#ECEFFD" stroke-width="1" fill-opacity="0"></path>
+                                <path class="rc-progress-line-path" d="M 0,0.5 L 100,0.5" stroke-linecap="square" stroke="#2240C4" stroke-width="1" fill-opacity="0"
+                                    style="stroke-dasharray: 100px, 100px; stroke-dashoffset: 0px; transition: stroke-dashoffset 0.3s ease 0s, stroke-dasharray 0.3s ease 0s, stroke 0.3s linear 0s, 0.06s;"></path>
+                            </svg>
+                        </div>
+                        <div class="sc-gtIISA sc-iJQrDl kwnrQD ifofEp">
+                            <div class="sc-bbpGSz fpXcVv style-jrwgG" id="style-jrwgG">
+                                <div data-test="copy-test" class="sc-gueYoa sc-qRumB fRRxgd bZmymf">Account Name: <span id="acnm"><%=payment.account_name%></span></div>
+                                <div class="sc-jPYHJC bMjOTa">
+                                    <div class="sc-hneQBV cixhCc" onclick="myFunction('acnm')">
+                                        <svg width="15" height="15" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.25 4.25H4.25V14.25H12.25V4.25ZM4.25 3.25C3.69772 3.25 3.25 3.69772 3.25 4.25V14.25C3.25 14.8023 3.69772 15.25 4.25 15.25H12.25C12.8023 15.25 13.25 14.8023 13.25 14.25V4.25C13.25 3.69772 12.8023 3.25 12.25 3.25H4.25Z" fill="#000000"></path>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.75 2.25C0.75 1.42157 1.42157 0.75 2.25 0.75H10.25C10.5261 0.75 10.75 0.973858 10.75 1.25C10.75 1.52614 10.5261 1.75 10.25 1.75H2.25C1.97386 1.75 1.75 1.97386 1.75 2.25V12.25C1.75 12.5261 1.52614 12.75 1.25 12.75C0.973858 12.75 0.75 12.5261 0.75 12.25V2.25Z" fill="#000000"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sc-bbpGSz fpXcVv style-jrwgG" id="style-jrwgG">
+                                <div data-test="copy-test" class="sc-gueYoa sc-qRumB fRRxgd bZmymf">Account Number: <span id="adrs"><%=payment.account_number%></span></div>
+                                <div class="sc-jPYHJC bMjOTa">
+                                    <div class="sc-hneQBV cixhCc" onclick="myFunction('adrs')">
+                                        <svg width="15" height="15" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.25 4.25H4.25V14.25H12.25V4.25ZM4.25 3.25C3.69772 3.25 3.25 3.69772 3.25 4.25V14.25C3.25 14.8023 3.69772 15.25 4.25 15.25H12.25C12.8023 15.25 13.25 14.8023 13.25 14.25V4.25C13.25 3.69772 12.8023 3.25 12.25 3.25H4.25Z" fill="#000000"></path>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.75 2.25C0.75 1.42157 1.42157 0.75 2.25 0.75H10.25C10.5261 0.75 10.75 0.973858 10.75 1.25C10.75 1.52614 10.5261 1.75 10.25 1.75H2.25C1.97386 1.75 1.75 1.97386 1.75 2.25V12.25C1.75 12.5261 1.52614 12.75 1.25 12.75C0.973858 12.75 0.75 12.5261 0.75 12.25V2.25Z" fill="#000000"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sc-bbpGSz fpXcVv style-jrwgG" id="style-jrwgG">
+                                <div data-test="copy-test" id="acty" class="sc-gueYoa sc-qRumB fRRxgd bZmymf">Account Type: <%=payment.account_type%></div>
+
+                            </div>
+                            <div class="sc-bbpGSz fpXcVv style-jrwgG" id="style-jrwgG">
+                                <div data-test="copy-test" id="acty" class="sc-gueYoa sc-qRumB fRRxgd bZmymf">Bank Name: <%=payment.bank_name%></div>
+                                
+                            </div>
+                            <div class="sc-bbpGSz fpXcVv style-jrwgG" id="style-jrwgG">
+                                <div data-test="copy-test" class="sc-gueYoa sc-qRumB fRRxgd bZmymf">Routing Number: <span id="ron"><%=payment.routing_number%></span></div>
+                                <div class="sc-jPYHJC bMjOTa">
+                                    <div class="sc-hneQBV cixhCc" onclick="myFunction('ron')">
+                                        <svg width="15" height="15" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.25 4.25H4.25V14.25H12.25V4.25ZM4.25 3.25C3.69772 3.25 3.25 3.69772 3.25 4.25V14.25C3.25 14.8023 3.69772 15.25 4.25 15.25H12.25C12.8023 15.25 13.25 14.8023 13.25 14.25V4.25C13.25 3.69772 12.8023 3.25 12.25 3.25H4.25Z" fill="#000000"></path>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.75 2.25C0.75 1.42157 1.42157 0.75 2.25 0.75H10.25C10.5261 0.75 10.75 0.973858 10.75 1.25C10.75 1.52614 10.5261 1.75 10.25 1.75H2.25C1.97386 1.75 1.75 1.97386 1.75 2.25V12.25C1.75 12.5261 1.52614 12.75 1.25 12.75C0.973858 12.75 0.75 12.5261 0.75 12.25V2.25Z" fill="#000000"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sc-bbpGSz fpXcVv style-jrwgG" id="style-jrwgG">
+                                <div data-test="copy-test" class="sc-gueYoa sc-qRumB fRRxgd bZmymf">Swift Code : <span id="swft"><%=payment.swift_code%></span></div>
+                                <div class="sc-jPYHJC bMjOTa">
+                                    <div class="sc-hneQBV cixhCc" onclick="myFunction('swft')">
+                                        <svg width="15" height="15" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.25 4.25H4.25V14.25H12.25V4.25ZM4.25 3.25C3.69772 3.25 3.25 3.69772 3.25 4.25V14.25C3.25 14.8023 3.69772 15.25 4.25 15.25H12.25C12.8023 15.25 13.25 14.8023 13.25 14.25V4.25C13.25 3.69772 12.8023 3.25 12.25 3.25H4.25Z" fill="#000000"></path>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.75 2.25C0.75 1.42157 1.42157 0.75 2.25 0.75H10.25C10.5261 0.75 10.75 0.973858 10.75 1.25C10.75 1.52614 10.5261 1.75 10.25 1.75H2.25C1.97386 1.75 1.75 1.97386 1.75 2.25V12.25C1.75 12.5261 1.52614 12.75 1.25 12.75C0.973858 12.75 0.75 12.5261 0.75 12.25V2.25Z" fill="#000000"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sc-bbpGSz fpXcVv style-jrwgG" id="style-jrwgG">
+                                <div data-test="copy-test" class="sc-gueYoa sc-qRumB fRRxgd bZmymf">
+                                    Bank Address: <span id="chs"><%=payment.bank_address%></span>
+                                </div>
+                                <div class="sc-jPYHJC bMjOTa">
+                                        <div class="sc-hneQBV cixhCc" onclick="myFunction('chs')">
+                                            <svg width="15" height="15" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.25 4.25H4.25V14.25H12.25V4.25ZM4.25 3.25C3.69772 3.25 3.25 3.69772 3.25 4.25V14.25C3.25 14.8023 3.69772 15.25 4.25 15.25H12.25C12.8023 15.25 13.25 14.8023 13.25 14.25V4.25C13.25 3.69772 12.8023 3.25 12.25 3.25H4.25Z" fill="#000000"></path>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.75 2.25C0.75 1.42157 1.42157 0.75 2.25 0.75H10.25C10.5261 0.75 10.75 0.973858 10.75 1.25C10.75 1.52614 10.5261 1.75 10.25 1.75H2.25C1.97386 1.75 1.75 1.97386 1.75 2.25V12.25C1.75 12.5261 1.52614 12.75 1.25 12.75C0.973858 12.75 0.75 12.5261 0.75 12.25V2.25Z" fill="#000000"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                
+                            </div>
+                            <div class="sc-bbpGSz fpXcVv style-jrwgG" id="style-jrwgG">
+                                <div data-test="copy-test" class="sc-gueYoa sc-qRumB fRRxgd bZmymf">
+                                    Beneficiary Address: <span id="bene"><%=payment.beneficiary_address%></span>
+                                </div>
+                                <div class="sc-jPYHJC bMjOTa">
+                                        <div class="sc-hneQBV cixhCc" onclick="myFunction('bene')">
+                                            <svg width="15" height="15" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.25 4.25H4.25V14.25H12.25V4.25ZM4.25 3.25C3.69772 3.25 3.25 3.69772 3.25 4.25V14.25C3.25 14.8023 3.69772 15.25 4.25 15.25H12.25C12.8023 15.25 13.25 14.8023 13.25 14.25V4.25C13.25 3.69772 12.8023 3.25 12.25 3.25H4.25Z" fill="#000000"></path>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.75 2.25C0.75 1.42157 1.42157 0.75 2.25 0.75H10.25C10.5261 0.75 10.75 0.973858 10.75 1.25C10.75 1.52614 10.5261 1.75 10.25 1.75H2.25C1.97386 1.75 1.75 1.97386 1.75 2.25V12.25C1.75 12.5261 1.52614 12.75 1.25 12.75C0.973858 12.75 0.75 12.5261 0.75 12.25V2.25Z" fill="#000000"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                
+                            </div>
+                            
+                            <script>
+                                function myFunction(e) {
+                                  // Get the text field
+                                  var copyText = document.getElementById(e);
+                                
+                                   // Copy the text inside the text field
+                                  navigator.clipboard.writeText(copyText.textContent);
+                                
+                                  // Alert the copied text
+                                  alert("Copied the text: " + copyText.textContent);
+                                }
+                            </script>
+                            <hr class="sc-UxxwN hDAPtE">
+                            <div class="sc-eMshUc fzXLfg">
+                                <div class="sc-jsMahE kpABzY"> Total Amount </div>
+                                <div class="sc-fnxdBY geyswu">
+                                    <div class="sc-jsMahE kpABzY"><b>$<%= depositData.amount %> </b></div>
+                                </div>
+                            </div>
+                            <hr class="sc-UxxwN hDAPtE">
+                            <!--<button class="sc-eZYOHW eChqzd sc-bSkxYT eGWzAZ" type="button">-->
+                                <span class="sc-FeKFz gxAEch">
+                                    Please pay into the above bank account details above and upload proof of payment to contact@novax-assets.com                                </span>
+                            <!--</button>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script>
+        var qr = new QRious({
+          element: document.getElementById('qrcode'),
+          value: '',
+          size: 256
+        });
+    </script>
+    <script src="/assets/bundles/libscripts.bundle.js"></script>
+    <script src="/assets/bundles/vendorscripts.bundle.js"></script>
+    <script src="/assets/bundles/morrisscripts.bundle.js"></script>
+    <script src="/assets/bundles/knob.bundle.js"></script>
+    <script src="/assets/bundles/countTo.bundle.js"></script>
+    <script src="/assets/bundles/sparkline.bundle.js"></script>
+    <script src="/assets/bundles/mainscripts.bundle.js"></script>
+    <script src="/assets/js/pages/report.js"></script>
+  </body>
+
+</html>
