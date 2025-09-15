@@ -50,7 +50,22 @@ export default function indexRouter ({User, Asset, Crypto, CTrader, Mortgage, Re
   const copyTradersController = copyTraders({ CTrader, User, FundingEvent });
   const mortgageController = mortgage({ Mortgage, User });
   const reitsListing = reitsController({ Reit, User });
-  const dashPost = userDashPostController({ User, Asset,Crypto, CTrader, Mortgage, Referral, Reit, Robo, Savings, Stake, Stock, Withdraw, Deposit, KYC });
+  const dashPost = userDashPostController({
+    User,
+    Asset,
+    Crypto,
+    CTrader,
+    Mortgage,
+    Referral,
+    Reit,
+    Robo,
+    Savings,
+    Stake,
+    Stock,
+    Withdraw,
+    Deposit,
+    KYC,
+  });
   const savingControl = savingsController({ Savings, User });
   const etfControl = etfController({ Stock, User });
   const cryptoControl = cryptoController({ Crypto, User });
@@ -59,12 +74,25 @@ export default function indexRouter ({User, Asset, Crypto, CTrader, Mortgage, Re
   const referralControl = referralController({ Savings, User });
   // Support controller needs the Contact model; previously passed Savings incorrectly causing Contact undefined
   const supportControl = supportController({ User, Contact });
-  const payment = paymentController({ Payment, User, CTrader, Savings, Mortgage, Reit, Stock, Deposit, Crypto, Robo, FundingIntent, FundingEvent });
-
+  const payment = paymentController({
+    Payment,
+    User,
+    CTrader,
+    Savings,
+    Mortgage,
+    Reit,
+    Stock,
+    Deposit,
+    Crypto,
+    Robo,
+    FundingIntent,
+    FundingEvent,
+  });
 
   // Admin Controllers
   const adminPost = adminPostController({
     User,
+    KYC,
     Withdraw,
     Deposit,
     Asset,
@@ -164,13 +192,11 @@ export default function indexRouter ({User, Asset, Crypto, CTrader, Mortgage, Re
     admin.createCTrader
   );
 
-
   // API routes for user dashboard *******//
   // *******************************************************//
   router.get("/api/crypto_history", dashPost.cryptoHistory);
   router.get("/api/kyc_history", dashPost.kycHistory);
 
-  
   // *******************************************************//
 
   // END admin get routes END //
@@ -214,12 +240,12 @@ export default function indexRouter ({User, Asset, Crypto, CTrader, Mortgage, Re
     userAuthController.requireAuth,
     copyTradersController.fundTrader
   );
-   router.get(
+  router.get(
     "/member/account/cthistory",
     userAuthController.requireAuth,
     copyTradersController.copyTraderHistory
   );
-  
+
   router.get(
     "/member/account/copytrader/trader/:traderId",
     userAuthController.requireAuth,
@@ -232,18 +258,18 @@ export default function indexRouter ({User, Asset, Crypto, CTrader, Mortgage, Re
     "/member/account/property",
     userAuthController.requireAuth,
     mortgageController.mortgage
-  );  
+  );
   router.post(
     "/member/account/property/fund_mortgage/:mortgageId",
     userAuthController.requireAuth,
     mortgageController.fundMortgage
   );
-   router.get(
-     "/member/account/mhistory",
-     userAuthController.requireAuth,
-     mortgageController.morgageHistory
-   );  
-  
+  router.get(
+    "/member/account/mhistory",
+    userAuthController.requireAuth,
+    mortgageController.morgageHistory
+  );
+
   router.get(
     "/member/account/property/mortgage/:mortgageId",
     userAuthController.requireAuth,
@@ -257,26 +283,26 @@ export default function indexRouter ({User, Asset, Crypto, CTrader, Mortgage, Re
     reitsListing.reitsListing
   );
 
-    router.post(
-      "/member/account/property/fund_reits/:reitId",
-      userAuthController.requireAuth,
-      reitsListing.fundReits
-    );
+  router.post(
+    "/member/account/property/fund_reits/:reitId",
+    userAuthController.requireAuth,
+    reitsListing.fundReits
+  );
 
- router.get(
-   "/member/account/rhistory",
-   userAuthController.requireAuth,
-   reitsListing.reitsHistory
- );
+  router.get(
+    "/member/account/rhistory",
+    userAuthController.requireAuth,
+    reitsListing.reitsHistory
+  );
 
- router.get(
-   "/member/account/reits/listings_details/:reitId",
-   userAuthController.requireAuth,
-   reitsListing.viewReits
- );
+  router.get(
+    "/member/account/reits/listings_details/:reitId",
+    userAuthController.requireAuth,
+    reitsListing.viewReits
+  );
 
- // Savings routes
- router.get(
+  // Savings routes
+  router.get(
     "/member/account/savings",
     userAuthController.requireAuth,
     savingControl.savings
@@ -292,7 +318,7 @@ export default function indexRouter ({User, Asset, Crypto, CTrader, Mortgage, Re
     userAuthController.requireAuth,
     savingControl.savingsHistory
   );
-  
+
   router.get(
     "/member/account/etf/fund_stock",
     userAuthController.requireAuth,
@@ -303,18 +329,18 @@ export default function indexRouter ({User, Asset, Crypto, CTrader, Mortgage, Re
     userAuthController.requireAuth,
     etfControl.fundStock
   );
-router.get(
+  router.get(
     "/member/account/etf/fundetf",
     userAuthController.requireAuth,
     etfControl.fundEtf
   );
 
-   router.get(
+  router.get(
     "/member/account/etf_history",
     userAuthController.requireAuth,
     etfControl.etfHistory
   );
-  
+
   router.get(
     "/member/account/etf/view_stock",
     userAuthController.requireAuth,
@@ -340,18 +366,17 @@ router.get(
     "/member/account/crypto/view_Cryptos",
     userAuthController.requireAuth,
     cryptoControl.viewCrypto
-  );  
+  );
   router.get(
     "/member/account/robo/trade_robo",
     userAuthController.requireAuth,
     roboControl.roboTrader
   );
- router.get(
+  router.get(
     "/member/account/robo_history",
     userAuthController.requireAuth,
     roboControl.roboHistory
   );
-
 
   router.get(
     "/member/account/robo/fund_robo/:id",
@@ -362,22 +387,22 @@ router.get(
     "/member/account/staking",
     userAuthController.requireAuth,
     stakeControl.stakeCrypto
-  )
+  );
   router.get(
     "/member/account/referral",
     userAuthController.requireAuth,
     referralControl.referral
-  )
+  );
   router.get(
     "/member/account/support",
     userAuthController.requireAuth,
     supportControl.support
-  )
+  );
   router.post(
     "/member/account/support/create_ticket",
     userAuthController.requireAuth,
     supportControl.createSupportTicket
-  )
+  );
 
   // Payment routes
   router.post(
@@ -416,7 +441,6 @@ router.get(
   //   payment.confirmDeposit
   // );
 
-
   // router.get("/member/account/profile", userAuthController.requireAuth, userAuthController.profile);
 
   //protected USER post routes//
@@ -432,23 +456,20 @@ router.get(
     userAuthController.requireAuth,
     profile.uploadAvatarHandler
   );
-   router.post(
-     "/member/account/profile/upload_kyc",
-     kycUpload.array("kyc"),
-     userAuthController.requireAuth,
-     profile.uploadKycData
-   );
-  
+  router.post(
+    "/member/account/profile/upload_kyc",
+    kycUpload.array("kyc"),
+    userAuthController.requireAuth,
+    profile.uploadKycData
+  );
+
   router.post(
     "/member/account/profile/update_profile",
     userAuthController.requireAuth,
     profile.updateProfile
   );
-  
-
 
   //END USER post routes//
-
 
   //admin post routes
   // *************************************//
@@ -457,11 +478,30 @@ router.get(
     admin.requireAdmin,
     adminPost.updateUserDetails
   );
-  router.post("/novax-assets/admin/update_payment_details", admin.requireAdmin, adminPost.updatePaymentDetails);
+  router.post(
+    "/novax-assets/admin/update_payment_details",
+    admin.requireAdmin,
+    adminPost.updatePaymentDetails
+  );
+  router.get(
+    "/api/view_kyc/:userId",
+    admin.requireAdmin,
+    adminPost.viewKycRequests
+  );
+  router.post(
+    "/api/approve_kyc/:username",
+    admin.requireAdmin,
+    adminPost.approveKyc
+  );
+  router.post(
+    "/api/decline_kyc/:username",
+    admin.requireAdmin,
+    adminPost.declineKyc
+  );
   // router.post("/novax-assets/admin/change_password", admin.requireAdmin, adminPost.changeAdminPassword);
   // router.post("/novax-assets/admin/update_bank_details", admin.requireAdmin, adminPost.updateBankDetails);
   // router.post("/novax-assets/admin/update_crypto_details", admin.requireAdmin, adminPost.updateCryptoDetails);
-  // router.post("/novax-assets/admin/approve_deposit", admin.requireAdmin, adminPost.approveDeposit);
+  router.post("/admin/approve_deposit", admin.requireAdmin, adminPost.approvedepositrequest);
   // router.post("/novax-assets/admin/decline_deposit", admin.requireAdmin, adminPost.declineDeposit);
   // router.post("/novax-assets/admin/approve_withdrawal", admin.requireAdmin, adminPost.approveWithdrawal);
   // router.post("/novax-assets/admin/decline_withdrawal", admin.requireAdmin, adminPost.declineWithdrawal);

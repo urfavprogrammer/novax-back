@@ -18,6 +18,7 @@ export default (sequelize) => {
         defaultValue: "pending",
       },
       date: { type: DataTypes.DATE, allowNull: false },
+      transactionid: { type: DataTypes.STRING(100), allowNull: false },
     },
     {
       tableName: "reits",

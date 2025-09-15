@@ -4,10 +4,61 @@
 
       <%-include('../../adminlayout/partials/navbar') %>
       <!-- partial -->
+
+      <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">View KYC</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <tr>
+            <th>Image1</th>
+            <td id="image1"></td>
+          </tr>
+          <tr>
+            <th>Image2</th>
+            <td id="image2"></td>
+          </tr>
+          <tr>
+            <th>Image3</th>
+            <td id="image3"></td>
+          </tr>
+          <tr>
+            <th>Image4</th>
+            <td id="image4"></td>
+          </tr>
+
+
+        </table>
+      </div>
+      <div class="modal-footer">
+        <form id="approveKycForm" method="POST">
+          <button type="submit" class="btn btn-primary" id="approveBtn" disabled>Approve</button>
+        </form>
+        <form id="declineKycForm" method="POST">
+          <button type="submit" class="btn btn-secondary" id="declineBtn" disabled>Decline</button>
+        </form>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
       <div class="container-fluid page-body-wrapper">
        <%-include('../../adminlayout/partials/topbar') %>
 
-
+        <% if (typeof error !== 'undefined' && error) { %>
+          <div class="alert alert-danger">
+            <%= error %>
+          </div>
+        <% } %>
 
        <div class="main-panel">
         <div class="content-wrapper">
@@ -33,20 +84,21 @@
                             <th> Country </th>
                             <th> Registered Date </th>
                             <th> Status </th>
+                            <th> KYC Status </th>
                             <!-- <th> Payment Status </th> -->
                           </tr>
                         </thead>
                         <tbody>
                           <% if (Array.isArray(users) && users.length) { %>
                             <% users.forEach(function(u) { %>
-                              <tr>
+                              <tr data-id="<%= u.id %>" data-username="<%= u.username %>" data-name="<%= (u.fullname && u.fullname.trim()) ? u.fullname : (u.username || '—') %>">
                                 <td>
                                   <!-- <div class="form-check form-check-muted m-0">
                                     <label class="form-check-label">
                                       <input type="checkbox" class="form-check-input">
                                     <i class="input-helper"></i></label>
                                   </div> -->
-                        <img src="<%= u.avatar || '/main/assets/img/default-avatar.png' %>" alt="image" style="width:32px;height:32px;border-radius:50%;object-fit:cover">
+                        <img src="<%= u.avatarUrl || '/main/assets/img/default-avatar.png' %>" alt="image" style="width:32px;height:32px;border-radius:50%;object-fit:cover">
 
                                 </td>
                                 <td>
@@ -57,10 +109,11 @@
                                 <td><%= u.country || '—' %></td>
                                 <td><%= (u.created_at || u.createdAt) ? new Date(u.created_at || u.createdAt).toLocaleString() : '—' %></td>
                                 <td>
-                                  <div class="badge badge-outline-warning">Active</div>
+                                  <div class="badge badge-outline-warning"><%= u.isVerified ? 'Verified' : 'Unverified' %></div>
                                 </td>
                                 <td>
-                                  <div class="badge badge-outline-success">Active</div>
+                                  <button class="btn btn-inverse-info" data-toggle="modal" data-target="#exampleModalCenter">View</button>
+                                  <!-- <div class="badge badge-outline-success"><%= u.kycStatus == 'null' ? 'Pending' : 'Verified' %></div> -->
                                 </td>
                               </tr>
                             <% }) %>
@@ -80,7 +133,63 @@
         </div>
        </div>
 
+       <script>
+         (function(){
+           const rows = document.querySelectorAll('tbody tr[data-id]');
+           const approveForm = document.getElementById('approveKycForm');
+           const declineForm = document.getElementById('declineKycForm');
+           const approveBtn = document.getElementById('approveBtn');
+           const declineBtn = document.getElementById('declineBtn');
+           rows.forEach(row => {
+             row.addEventListener('click', () => handleRowClick(row));
+           });
 
+           async function handleRowClick(row){
+             const username = row.getAttribute('data-username');
+             const userId = row.getAttribute('data-id');
+             try {
+               const res = await fetch(`/api/view_kyc/${userId}`);
+               const json = await res.json();
+               if(!json.success){
+                 alert(json.message || 'Failed to fetch KYC');
+                 return;
+               }
+               const record = json.data;
+               populateModal(record);
+               if(username){
+                 approveForm.action = `/api/approve_kyc/${encodeURIComponent(username)}`;
+                 declineForm.action = `/api/decline_kyc/${encodeURIComponent(username)}`;
+                 approveBtn.disabled = false;
+                 declineBtn.disabled = false;
+               } else {
+                 approveBtn.disabled = true;
+                 declineBtn.disabled = true;
+               }
+               $('#exampleModalCenter').modal('show');
+             } catch(err){
+               console.error('Error fetching KYC', err);
+               alert('Error fetching KYC');
+             }
+           }
+
+           function populateModal(record){
+             const slots = [
+               { cell: 'image1', field: 'first' },
+               { cell: 'image2', field: 'second' },
+               { cell: 'image3', field: 'third' },
+               { cell: 'image4', field: 'fourth' }
+             ];
+             slots.forEach(s => {
+               const td = document.getElementById(s.cell);
+               if(record && record[s.field]){
+                 td.innerHTML = `<img src="${record[s.field]}" alt="${s.field}" style="max-width:100%;">`;
+               } else {
+                 td.textContent = 'N/A';
+               }
+             });
+           }
+         })();
+       </script>
 
 
 

@@ -1,8 +1,8 @@
 export default function approveDepositRequest({ Deposits, Asset }) {
   return async function (req, res) {
     try {
-      const { id, depositid, username, amount } = req.body;
-      // console.log("Request body:", req.body);
+      const { id, depositid, depositSrc, username, amount } = req.body;
+      console.log("Request body:", req.body.depositSrc);
       if (!id) {
         return res
           .status(400)
@@ -23,6 +23,8 @@ export default function approveDepositRequest({ Deposits, Asset }) {
         return res
           .status(404)
           .json({ success: false, message: "Deposit not found" });
+
+    
 
       // Update asset balance if Asset model exists
       const asset = await Asset.findOne({

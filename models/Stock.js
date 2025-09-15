@@ -5,7 +5,7 @@ export default (sequelize) => {
     "Stock",
     {
       id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-      username: { type: DataTypes.STRING(100), allowNull: false},
+      username: { type: DataTypes.STRING(100), allowNull: false },
       amount: { type: DataTypes.DECIMAL, allowNull: false, defaultValue: 0 },
       stock_name: { type: DataTypes.STRING(100), allowNull: false },
       stock_type: { type: DataTypes.STRING(50), allowNull: true },
@@ -17,6 +17,7 @@ export default (sequelize) => {
         defaultValue: "pending",
       },
       date: { type: DataTypes.DATE, allowNull: false },
+      transactionid: { type: DataTypes.STRING(100), allowNull: false },
     },
     {
       tableName: "stocks",

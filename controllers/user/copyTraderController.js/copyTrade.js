@@ -6,7 +6,7 @@ export default function copyTraders({ CTrader, User, FundingEvent }) {
 
     async function copyTrade(req, res) {
         try {
-           return res.render("member/pages/copyTrading/Trades/copyTrader.ejs", { traders: Traders });
+           return res.render("member/pages/copyTrading/Trades/copyTrader.ejs", { traders: Traders, pageTitle: "Copy Traders" });
 
         } catch (err) {
             console.error("copyTrade error:", err && err.stack ? err.stack : err);

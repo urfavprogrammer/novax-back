@@ -46,7 +46,7 @@
                             <th> Method of Payment </th>
                             <th> Payment Status </th>
                             <th> Date of Deposit </th>
-                            <th> Proof of Payment </th>
+                            <th> Investment Type </th>
                             <th colspan="3"> Operations </th>
                             <!-- <th> Decline </th>
                             <th> Delete </th> -->
@@ -66,15 +66,17 @@
                                 <td><%= d.depositmethod || '—' %></td>
                                 <td><%= d.depositstatus || '—' %></td>
                                 <td><%= (d.created_at || d.createdAt).toLocaleDateString() || '—' %></td>
-                                <% if (d.filePath) { %>  
+                                <td><%= (d.depositmemo || '—')%></td>
+                                <!-- <% if (d.filePath) { %>  
                                   <td><a href="/uploads<%= d.filePath.split('uploads')[1] %> " target="_blank" alt="Proof" style="max-width:200px;">View Proof</a></td>
                                 <% } else { %>
                                   <td>—</td>
-                                <% } %>
+                                <% } %> -->
                                 <td>
-                                    <form action="/admin/deposit/approve" method="post" class="approve-deposit-form">
+                                    <form action="/admin/approve_deposit" method="post" class="approve-deposit-form">
                                         <input type="hidden" name="id" value="<%= d.id %>">
                                         <input type="hidden" name="depositid" value="<%= d.deposittransactionid %>">
+                                        <input type="hidden" name="depositSrc" value="<%= d.depositmemo %>">
                                         <input type="hidden" name="username" value="<%= d.username %>">
                                         <input type="hidden" name="amount" value="<%= d.amount %>">
                                         <button type="submit" class="btn btn-inverse-success btn-fw">Approve</button>

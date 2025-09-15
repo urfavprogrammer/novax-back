@@ -439,21 +439,21 @@ export default function adminController(models = {}) {
         .json({ success: false, message: "Internal server error" });
     }
   }
-    async function createCTrader(req, res) {  
+  //   async function createCTrader(req, res) {  
 
-    try {
-      if (res.render)
-        return res.render("admin/adminView/adminPages/createCTrader.ejs");
-    } catch (err) {
-      console.error(
-        "Admin createCTrader error:",
-        err && err.stack ? err.stack : err
-      );
-      return res
-        .status(500)
-        .json({ success: false, message: "Internal server error" });
-    }
-  }
+  //   try {
+  //     if (res.render)
+  //       return res.render("admin/adminView/adminPages/createCTrader.ejs");
+  //   } catch (err) {
+  //     console.error(
+  //       "Admin createCTrader error:",
+  //       err && err.stack ? err.stack : err
+  //     );
+  //     return res
+  //       .status(500)
+  //       .json({ success: false, message: "Internal server error" });
+  //   }
+  // }
 
   async function changeAdminPassword(req, res) {
     try {

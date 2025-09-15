@@ -9,7 +9,12 @@ export default function userAuth({User, Asset}) {
   }
 
   function userRegister(req, res) {
-    res.render("user/register.ejs", { message: req.flash("info") });
+    const ref = req.query.referral;
+    if (typeof ref === 'undefined') {
+      res.render("user/register.ejs", { message: req.flash("info"), ref: '' });
+    } else {
+      res.render("user/register.ejs", { message: req.flash("info"), ref: ref });
+    }
   }
 
     //Register User
@@ -25,6 +30,7 @@ export default function userAuth({User, Asset}) {
         password,
         cpassword,
       } = req.body;
+  const refValue = referral || '';
       // Basic validation
       const errors = [];
       if (
@@ -43,7 +49,7 @@ export default function userAuth({User, Asset}) {
       }
       if (errors.length) {
         console.log(errors);
-        return res.render("user/register.ejs", { errors });
+        return res.render("user/register.ejs", { errors, ref: refValue });
       }
       // Check if user exists
       try {
@@ -58,7 +64,7 @@ export default function userAuth({User, Asset}) {
         );
         if (existingUser) {
           errors.push({ msg: "Username already exists." });
-          return res.render("user/register.ejs", { errors });
+          return res.render("user/register.ejs", { errors, ref: refValue });
         }
       } catch (err) {
         console.error(
@@ -67,6 +73,7 @@ export default function userAuth({User, Asset}) {
         );
         return res.render("user/register.ejs", {
           errors: [{ msg: "Registration failed. Please try again." }],
+          ref: refValue,
         });
       }
 
@@ -77,7 +84,7 @@ export default function userAuth({User, Asset}) {
         console.log("DEBUG: Result of User.findOne for email:", existingEmail);
         if (existingEmail) {
           errors.push({ msg: "Email already registered." });
-          return res.render("user/register.ejs", { errors });
+          return res.render("user/register.ejs", { errors, ref: refValue });
         }
       } catch (err) {
         console.error(
@@ -86,6 +93,7 @@ export default function userAuth({User, Asset}) {
         );
         return res.render("user/register.ejs", {
           errors: [{ msg: "Registration failed. Please try again." }],
+          ref: refValue,
         });
       }
 
@@ -132,6 +140,7 @@ export default function userAuth({User, Asset}) {
       console.error("Auth register error:", err && err.stack ? err.stack : err);
       res.render("user/register.ejs", {
         errors: [{ msg: "Registration failed. Please try again." }],
+        ref: refValue,
       });
     }
   }
